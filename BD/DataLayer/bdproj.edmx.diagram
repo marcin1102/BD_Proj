@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a388a6890fa4827883d12f741f69a8d" Name="Diagram1">
+        <EntityTypeShape EntityType="BD_ProjModel.ActivitiesTypesDictionary" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_ProjModel.Activity" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_ProjModel.Client" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_ProjModel.Object" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_ProjModel.ObjectType" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_ProjModel.Personel" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_ProjModel.PersonelRole" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_ProjModel.Request" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_ProjModel.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="BD_ProjModel.FK_Activity_ActivitiesTypesDictionary" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_ProjModel.FK_Activity_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_ProjModel.FK_Activity_Request" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_ProjModel.FK_Object_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_ProjModel.FK_Object_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_ProjModel.FK_Request_Object" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_ProjModel.FK_Personel_PersonelRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_ProjModel.FK_Request_Personel" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

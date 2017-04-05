@@ -30,9 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,11 +49,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivitiesTypesDictionary.cs">
+      <DependentUpon>bdproj.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Activity.cs">
+      <DependentUpon>bdproj.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bdproj.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bdproj.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bdproj.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bdproj.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bdproj.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bdproj.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Client.cs">
+      <DependentUpon>bdproj.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Object.cs">
+      <DependentUpon>bdproj.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectType.cs">
+      <DependentUpon>bdproj.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Personel.cs">
+      <DependentUpon>bdproj.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelRole.cs">
+      <DependentUpon>bdproj.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request.cs">
+      <DependentUpon>bdproj.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>bdproj.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="bdproj.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>bdproj.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="bdproj.edmx.diagram">
+      <DependentUpon>bdproj.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bdproj.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>bdproj.Context.cs</LastGenOutput>
+      <DependentUpon>bdproj.edmx</DependentUpon>
+    </Content>
+    <Content Include="bdproj.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bdproj.edmx</DependentUpon>
+      <LastGenOutput>bdproj.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
