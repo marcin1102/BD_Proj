@@ -13,10 +13,10 @@ namespace DataLayer
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BD_ProjEntities : DbContext
+    public partial class RepairContext : DbContext
     {
-        public BD_ProjEntities()
-            : base("name=BD_ProjEntities")
+        public RepairContext()
+            : base("name=RepairContext")
         {
         }
     
@@ -28,11 +28,11 @@ namespace DataLayer
         public virtual DbSet<ActivitiesTypesDictionary> ActivitiesTypesDictionaries { get; set; }
         public virtual DbSet<Activity> Activities { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
         public virtual DbSet<Object> Objects { get; set; }
         public virtual DbSet<ObjectType> ObjectTypes { get; set; }
-        public virtual DbSet<Personel> Personels { get; set; }
-        public virtual DbSet<PersonelRole> PersonelRoles { get; set; }
         public virtual DbSet<Request> Requests { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Status> Status { get; set; }
+        public virtual DbSet<Worker> Workers { get; set; }
     }
 }

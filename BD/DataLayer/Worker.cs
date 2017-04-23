@@ -10,26 +10,26 @@
 namespace DataLayer
 {
     using System;
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
     
-    public partial class Personel
+    public partial class Worker
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Personel()
+        public Worker()
         {
-            this.Activities = new ObservableCollection<Activity>();
-            this.Requests = new ObservableCollection<Request>();
+            this.Activities = new HashSet<Activity>();
+            this.Requests = new HashSet<Request>();
         }
     
-        public System.Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public System.Guid RoleId { get; set; }
+        public int Id { get; set; }
+        public string Role { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableCollection<Activity> Activities { get; set; }
-        public virtual PersonelRole PersonelRole { get; set; }
+        public virtual ICollection<Activity> Activities { get; set; }
+        public virtual Login Login { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableCollection<Request> Requests { get; set; }
+        public virtual ICollection<Request> Requests { get; set; }
     }
 }

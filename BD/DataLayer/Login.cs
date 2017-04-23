@@ -10,14 +10,14 @@
 namespace DataLayer
 {
     using System;
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class Login
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string UName { get; set; }
+        public string Pass { get; set; }
+        public int WorkerId { get; set; }
+    
+        public virtual Worker Worker { get; set; }
     }
 }

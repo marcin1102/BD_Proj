@@ -10,20 +10,20 @@
 namespace DataLayer
 {
     using System;
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
     
     public partial class ActivitiesTypesDictionary
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ActivitiesTypesDictionary()
         {
-            this.Activities = new ObservableCollection<Activity>();
+            this.Activities = new HashSet<Activity>();
         }
     
-        public System.Guid Id { get; set; }
         public string Type { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableCollection<Activity> Activities { get; set; }
+        public virtual ICollection<Activity> Activities { get; set; }
     }
 }

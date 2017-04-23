@@ -10,26 +10,27 @@
 namespace DataLayer
 {
     using System;
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
     
     public partial class Request
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Request()
         {
-            this.Activities = new ObservableCollection<Activity>();
+            this.Activities = new HashSet<Activity>();
         }
     
-        public System.Guid Id { get; set; }
-        public System.Guid ObjectId { get; set; }
-        public string Description { get; set; }
+        public string Descr { get; set; }
         public string Status { get; set; }
         public string Result { get; set; }
-        public Nullable<System.Guid> PersonelId { get; set; }
+        public int ObjId { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> WorkerId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableCollection<Activity> Activities { get; set; }
+        public virtual ICollection<Activity> Activities { get; set; }
         public virtual Object Object { get; set; }
-        public virtual Personel Personel { get; set; }
+        public virtual Status Status1 { get; set; }
+        public virtual Worker Worker { get; set; }
     }
 }

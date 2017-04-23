@@ -8,13 +8,13 @@ namespace DataLayer
 {
     public class Class1
     {
-        public BD_ProjEntities context = new BD_ProjEntities();
+        public RepairContext context = new RepairContext();
 
         public void AddClient()
         {
             context.Clients.Add(new Client()
             {
-                Id = Guid.NewGuid(),
+                Id = 1,
                 FirstName = "Marcin",
                 LastName = "Gurbiel",
                 Name = "Marcin Gurbiel",

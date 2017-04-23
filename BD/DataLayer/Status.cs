@@ -10,20 +10,19 @@
 namespace DataLayer
 {
     using System;
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
     
-    public partial class PersonelRole
+    public partial class Status
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PersonelRole()
+        public Status()
         {
-            this.Personels = new ObservableCollection<Personel>();
+            this.Requests = new HashSet<Request>();
         }
     
-        public System.Guid Id { get; set; }
-        public string Role { get; set; }
+        public string Status1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableCollection<Personel> Personels { get; set; }
+        public virtual ICollection<Request> Requests { get; set; }
     }
 }

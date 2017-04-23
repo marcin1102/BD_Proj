@@ -50,46 +50,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActivitiesTypesDictionary.cs">
-      <DependentUpon>bdproj.tt</DependentUpon>
+      <DependentUpon>RepairContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Activity.cs">
-      <DependentUpon>bdproj.tt</DependentUpon>
-    </Compile>
-    <Compile Include="bdproj.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bdproj.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="bdproj.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bdproj.tt</DependentUpon>
-    </Compile>
-    <Compile Include="bdproj.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bdproj.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="BD_ProjDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BD_ProjDataSet.xsd</DependentUpon>
+      <DependentUpon>RepairContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Client.cs">
-      <DependentUpon>bdproj.tt</DependentUpon>
+      <DependentUpon>RepairContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <DependentUpon>RepairContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Object.cs">
-      <DependentUpon>bdproj.tt</DependentUpon>
+      <DependentUpon>RepairContext.tt</DependentUpon>
     </Compile>
     <Compile Include="ObjectType.cs">
-      <DependentUpon>bdproj.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Personel.cs">
-      <DependentUpon>bdproj.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PersonelRole.cs">
-      <DependentUpon>bdproj.tt</DependentUpon>
+      <DependentUpon>RepairContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -97,53 +74,60 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Request.cs">
-      <DependentUpon>bdproj.tt</DependentUpon>
+    <Compile Include="RepairContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>bdproj.tt</DependentUpon>
+    <Compile Include="RepairContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RepairContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Request.cs">
+      <DependentUpon>RepairContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>RepairContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Worker.cs">
+      <DependentUpon>RepairContext.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="bdproj.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>bdproj.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="bdproj.edmx.diagram">
-      <DependentUpon>bdproj.edmx</DependentUpon>
-    </None>
-    <None Include="BD_ProjDataSet.xsc">
-      <DependentUpon>BD_ProjDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BD_ProjDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BD_ProjDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BD_ProjDataSet.xss">
-      <DependentUpon>BD_ProjDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bdproj.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>bdproj.Context.cs</LastGenOutput>
-      <DependentUpon>bdproj.edmx</DependentUpon>
-    </Content>
-    <Content Include="bdproj.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>bdproj.edmx</DependentUpon>
-      <LastGenOutput>bdproj.cs</LastGenOutput>
-    </Content>
+    <EntityDeploy Include="RepairContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RepairContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RepairContext.edmx.diagram">
+      <DependentUpon>RepairContext.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RepairContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RepairContext.edmx</DependentUpon>
+      <LastGenOutput>RepairContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RepairContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RepairContext.edmx</DependentUpon>
+      <LastGenOutput>RepairContext.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

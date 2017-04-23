@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataLayer;
+using BusinessLayer;
 
 namespace BD
 {
@@ -20,8 +21,13 @@ namespace BD
 
         private void addClientButton_Click(object sender, EventArgs e)
         {
-            var class1 = new Class1();
+            var class1 = new DataLayer.Class1();
             class1.AddClient();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource =   BusinessLayer.Class1.ShowClient(); //Class1.ShowClient();
         }
     }
 }

@@ -10,20 +10,20 @@
 namespace DataLayer
 {
     using System;
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
     
     public partial class Activity
     {
-        public System.Guid Id { get; set; }
-        public System.Guid RequestId { get; set; }
-        public string Description { get; set; }
+        public string Descr { get; set; }
         public string Status { get; set; }
         public string Result { get; set; }
-        public Nullable<System.Guid> PersonelId { get; set; }
-        public Nullable<System.Guid> ActivityTypeId { get; set; }
+        public int Id { get; set; }
+        public int ReqId { get; set; }
+        public string Type { get; set; }
+        public Nullable<int> WorkerId { get; set; }
     
         public virtual ActivitiesTypesDictionary ActivitiesTypesDictionary { get; set; }
-        public virtual Personel Personel { get; set; }
         public virtual Request Request { get; set; }
+        public virtual Worker Worker { get; set; }
     }
 }
