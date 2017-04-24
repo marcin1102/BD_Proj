@@ -12,10 +12,11 @@ Gdy już mamy utworzoną bazę to czas odpalić solucję. Aby aplikacja mogła k
 	3. Powinny wam się załadować wasze lokalne bazy danych. <br/>
 	4. Klikacie prawym na bazę BazaNapraw i wybieracie Properties<br/>
 	5. Znajdujecie pole Connection string, kopiujecie jego zawartość do frazy "integrated security=True;" włącznie. Czyli powinniśmy dostać coś w stylu: <p>Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BazaNapraw;Integrated Security=True;</p>
-	6. Zastępujecie skopiowaną zawartością w pliku App.config w projekcie View w ConnectionString RepairContext tekst od słów "Data Source" do słów "Integrated Security=True;". Dzięki temu otrzymujecie swój własciwy ConnectionString, który powinien wyglądać:
-	<p> <add name="RepairContext" connectionString="metadata=res://*/RepairContext.csdl|res://*/RepairContext.ssdl|res://*/RepairContext.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BazaNapraw;Integrated Security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" /> </p>
+	6. Zastępujecie skopiowaną zawartością w pliku App.config w projekcie View w ConnectionString RepairContext tekst od słów "Data Source" do słów "Integrated Security=True;". Dzięki temu otrzymujecie swój własciwy ConnectionString, który powinien wyglądać: <br/>
+	
+	connectionString="metadata=res://*/RepairContext.csdl|res://*/RepairContext.ssdl|res://*/RepairContext.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BazaNapraw;Integrated Security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;"
 
-	Warto też sprawdzić czy nie wystarczy w istniejącym już ConnectionStringu zamienić po prostu nazwy serwera, jednak nie mam jak tego sprawdzić, bo nie mam innego serwera lokalnego.<br/>
+Warto też sprawdzić czy nie wystarczy w istniejącym już ConnectionStringu zamienić po prostu nazwy serwera, jednak nie mam jak tego sprawdzić, bo nie mam innego serwera lokalnego.<br/>
 
 I to zasadniczo wszystko. Wiem, że ta zamiana ConnectionString to jest pojebana, ale kurde takie są "zalety" pracy na lokalnej bazie danych.<br/>
 
