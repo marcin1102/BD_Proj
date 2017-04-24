@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using BusinessLayer.Responses;
 using DataLayer;
 
-namespace BusinessLayer
+namespace BusinessLayer.Searchers
 {
     public class ClientSearcher
     {

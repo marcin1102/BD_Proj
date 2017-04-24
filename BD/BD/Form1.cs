@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataLayer;
-using BusinessLayer;
+using BusinessLayer.Commands;
+using BusinessLayer.Searchers;
+using BusinessLayer.Services;
 
 namespace BD
 {
@@ -21,8 +15,9 @@ namespace BD
 
         private void addClientButton_Click(object sender, EventArgs e)
         {
-            var class1 = new DataLayer.Class1();
-            class1.AddClient();
+            var clientToCreate = new CreateClient("Bartosz", "Kowalski", "Bartosz Kowalski", "111111111");
+            var clientService = new ClientService();
+            clientService.CreateClient(clientToCreate);
         }
 
         private void button1_Click(object sender, EventArgs e)
