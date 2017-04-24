@@ -7,7 +7,7 @@ using DataLayer;
 
 namespace BusinessLayer
 {
-    public static class Class1
+    public class Class1
     {
         public static RepairContext context = new RepairContext();
 
@@ -23,14 +23,11 @@ namespace BusinessLayer
         }
 
 
-        public static IQueryable<Client> ShowClient()
-        {
-            RepairContext ctx = new RepairContext();
-            var q = from el in ctx.Clients
-                    select el;
+        //public static IQueryable<Client> ShowClient()
+        //{
+        //    var clientSearcher = new ClientSearcher();
+        //    return clientSearcher.GetClients(); 
 
-            return q; 
-
-        }
+        //}
     }
 }

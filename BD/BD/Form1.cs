@@ -27,7 +27,8 @@ namespace BD
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource =   BusinessLayer.Class1.ShowClient(); //Class1.ShowClient();
+            var clientSearcher = new ClientSearcher();
+            dataGridView1.DataSource = clientSearcher.GetClients();
         }
     }
 }

@@ -14,7 +14,6 @@ namespace DataLayer
         {
             context.Clients.Add(new Client()
             {
-                Id = 1,
                 FirstName = "Marcin",
                 LastName = "Gurbiel",
                 Name = "Marcin Gurbiel",
