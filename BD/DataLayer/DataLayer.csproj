@@ -55,7 +55,6 @@
     <Compile Include="Activity.cs">
       <DependentUpon>RepairContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Client.cs">
       <DependentUpon>RepairContext.tt</DependentUpon>
     </Compile>

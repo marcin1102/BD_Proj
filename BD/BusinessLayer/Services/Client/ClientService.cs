@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessLayer.Commands;
+﻿using BusinessLayer.Commands.Client;
 using DataLayer;
 
-namespace BusinessLayer.Services
+namespace BusinessLayer.Services.Client
 {
     public class ClientService
     {
         public int CreateClient(CreateClient command)
         {
-            var clientToCreate = new Client()
+            var clientToCreate = new DataLayer.Client()
             {
                 FirstName = command.FirstName,
                 LastName = command.LastName,

@@ -46,12 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CreateClient.cs" />
+    <Compile Include="Commands\Client\CreateClient.cs" />
+    <Compile Include="Commands\ObjectType\CreateObjectType.cs" />
+    <Compile Include="Commands\Object\CreateObject.cs" />
+    <Compile Include="Responses\Object\ObjectResponse.cs" />
+    <Compile Include="Responses\ObjectType\ObjectTypeResponse.cs" />
     <Compile Include="Searchers\ClientSearcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\GetClients.cs" />
-    <Compile Include="Responses\ClientResponse.cs" />
-    <Compile Include="Services\ClientService.cs" />
+    <Compile Include="Responses\Client\ClientResponse.cs" />
+    <Compile Include="Searchers\ObjectSearcher.cs" />
+    <Compile Include="Searchers\ObjectTypeSearcher.cs" />
+    <Compile Include="Services\Client\ClientService.cs" />
+    <Compile Include="Services\ObjectType\ObjectTypeService.cs" />
+    <Compile Include="Services\Object\ObjectService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">

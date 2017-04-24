@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using BusinessLayer.Responses.Object;
 
-namespace BusinessLayer.Responses
+namespace BusinessLayer.Responses.Client
 {
     public class ClientResponse
     {
-        public ClientResponse(string firstName, string lastName, string name, string phoneNumber, int id, ICollection<DataLayer.Object> objects)
+        public ClientResponse(string firstName, string lastName, string name, string phoneNumber, int id, ICollection<ObjectResponse> objects)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -23,6 +20,6 @@ namespace BusinessLayer.Responses
         public string Name { get; private set; }
         public string PhoneNumber { get; private set; }
         public int Id { get; private set; }
-        public ICollection<DataLayer.Object> Objects { get; private set; }
+        public ICollection<ObjectResponse> Objects { get; private set; }
     }
 }
