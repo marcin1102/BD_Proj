@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer.Searchers;
 using BusinessLayer.Services.Client;
@@ -32,16 +34,17 @@ namespace BD
         private void ShowClients_Click(object sender, EventArgs e)
         {
             var clientSearcher = new ClientSearcher();
-            var clients = clientSearcher.GetClients();
-            ClientDataGridView.DataSource = clients;
+            ClientDataGridView.DataSource = clientSearcher.GetClients().Result;
         }
 
-        private void AddObjectToClient_Click(object sender, EventArgs e)
+        private async void AddObjectToClient_Click(object sender, EventArgs e)
         {
             var clientSearcher = new ClientSearcher();
-            var client = clientSearcher.GetClients().FirstOrDefault();
+            var clients = await clientSearcher.GetClients();
+            var client = clients.FirstOrDefault();
             var objectTypeSearcher = new ObjectTypeSearcher();
-            var objectType = objectTypeSearcher.GetObjectTypes().FirstOrDefault();
+            var objectTypes =  await objectTypeSearcher.GetObjectTypes();
+            var objectType = objectTypes.FirstOrDefault();
             var objectData = new ObjectData
             {
                 Name = "Seat",
@@ -57,7 +60,7 @@ namespace BD
         {
             var objectType = new ObjectTypeData
             {
-                Code = "TEST",
+                Code = "ABC",
                 Name = "Test Object Type"
             };
             var objectTypeService = new ObjectTypeService();
@@ -67,7 +70,31 @@ namespace BD
         private void ShowObjects_Click(object sender, EventArgs e)
         {
             var objectSearcher = new ObjectSearcher();
-            ObjectDataGridView.DataSource = objectSearcher.GetObjects();
+            ObjectDataGridView.DataSource = objectSearcher.GetObjects().Result;
+        }
+
+        private void ObjectsFirstClient_Click(object sender, EventArgs e)
+        {
+            var objectSearcher = new ObjectSearcher();
+            var clientId = (int)ClientDataGridView.CurrentCell.Value;
+            ObjectDataGridView.DataSource = objectSearcher.GetObjectsByClientId(clientId).Result;
+        }
+
+        private async void UpdateObjects_Click(object sender, EventArgs e)
+        {
+            var objectService = new ObjectService();
+            await objectService.UpdateObjectDetails(new ObjectData
+               {
+                   Name = "Andrzej",
+                   Type = "Wajda",
+                   Id = 1
+               });
+
+            objectService.UpdateObjectType(new ObjectData
+            {
+                ObjectTypeCode = "TEST",
+                Id = 1
+            });
         }
     }
 }

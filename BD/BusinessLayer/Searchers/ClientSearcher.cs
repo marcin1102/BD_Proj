@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using BusinessLayer.ValueObjects;
 using DataLayer;
 
@@ -7,7 +8,7 @@ namespace BusinessLayer.Searchers
 {
     public class ClientSearcher
     {
-        public IReadOnlyCollection<ClientData> GetClients()
+        public async Task<IReadOnlyCollection<ClientData>> GetClients()
         {
             var context = new RepairContext();
             return context.Clients.ToList().Select(o => new ClientData

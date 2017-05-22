@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using BusinessLayer.ValueObjects;
 
 namespace BusinessLayer.Searchers
 {
     public class ObjectTypeSearcher
     {
-        public IReadOnlyCollection<ObjectTypeData> GetObjectTypes()
+        public async Task<IReadOnlyCollection<ObjectTypeData>> GetObjectTypes()
         {
             var db = new DataLayer.RepairContext();
             return db.ObjectTypes.ToList().Select(ot => new ObjectTypeData
@@ -17,10 +19,10 @@ namespace BusinessLayer.Searchers
             }).ToList();
         }
 
-        public ObjectTypeData GetObjectTypeByCode(string code)
+        public async Task<ObjectTypeData> GetObjectTypeByCode(string code)
         {
             var db = new DataLayer.RepairContext();
-            var objectType = db.ObjectTypes.Single(ot => ot.Code == code);
+            var objectType = await db.ObjectTypes.SingleAsync(ot => ot.Code == code);
             return new ObjectTypeData
             {
                 Code = objectType.Code,

@@ -35,6 +35,8 @@
             this.AddObjectType = new System.Windows.Forms.Button();
             this.ObjectDataGridView = new System.Windows.Forms.DataGridView();
             this.ShowObjects = new System.Windows.Forms.Button();
+            this.ObjectsFirstClient = new System.Windows.Forms.Button();
+            this.UpdateObjects = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ClientDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ObjectDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -105,11 +107,33 @@
             this.ShowObjects.UseVisualStyleBackColor = true;
             this.ShowObjects.Click += new System.EventHandler(this.ShowObjects_Click);
             // 
+            // ObjectsFirstClient
+            // 
+            this.ObjectsFirstClient.Location = new System.Drawing.Point(584, 246);
+            this.ObjectsFirstClient.Name = "ObjectsFirstClient";
+            this.ObjectsFirstClient.Size = new System.Drawing.Size(149, 23);
+            this.ObjectsFirstClient.TabIndex = 7;
+            this.ObjectsFirstClient.Text = "ShowObjectsToFirstClient";
+            this.ObjectsFirstClient.UseVisualStyleBackColor = true;
+            this.ObjectsFirstClient.Click += new System.EventHandler(this.ObjectsFirstClient_Click);
+            // 
+            // UpdateObjects
+            // 
+            this.UpdateObjects.Location = new System.Drawing.Point(27, 217);
+            this.UpdateObjects.Name = "UpdateObjects";
+            this.UpdateObjects.Size = new System.Drawing.Size(160, 23);
+            this.UpdateObjects.TabIndex = 8;
+            this.UpdateObjects.Text = "Update objects of Client1";
+            this.UpdateObjects.UseVisualStyleBackColor = true;
+            this.UpdateObjects.Click += new System.EventHandler(this.UpdateObjects_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 332);
+            this.Controls.Add(this.UpdateObjects);
+            this.Controls.Add(this.ObjectsFirstClient);
             this.Controls.Add(this.ShowObjects);
             this.Controls.Add(this.ObjectDataGridView);
             this.Controls.Add(this.AddObjectType);
@@ -134,6 +158,8 @@
         private System.Windows.Forms.Button AddObjectType;
         private System.Windows.Forms.DataGridView ObjectDataGridView;
         private System.Windows.Forms.Button ShowObjects;
+        private System.Windows.Forms.Button ObjectsFirstClient;
+        private System.Windows.Forms.Button UpdateObjects;
     }
 }
 

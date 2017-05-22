@@ -4,7 +4,7 @@ namespace BusinessLayer.Services.ObjectType
 {
     public class ObjectTypeService
     {
-        public void CreateObjectType(ObjectTypeData objectTypeData)
+        public async void CreateObjectType(ObjectTypeData objectTypeData)
         {
             var objectType = new DataLayer.ObjectType()
             {
@@ -13,7 +13,7 @@ namespace BusinessLayer.Services.ObjectType
             };
             var db = new DataLayer.RepairContext();
             db.ObjectTypes.Add(objectType);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
     }
 }
