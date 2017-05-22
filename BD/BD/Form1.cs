@@ -1,12 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
-using BusinessLayer.Commands.Client;
-using BusinessLayer.Commands.Object;
-using BusinessLayer.Commands.ObjectType;
 using BusinessLayer.Searchers;
 using BusinessLayer.Services.Client;
 using BusinessLayer.Services.Object;
 using BusinessLayer.Services.ObjectType;
+using BusinessLayer.ValueObjects;
 
 namespace BD
 {
@@ -19,33 +18,53 @@ namespace BD
 
         private void addClientButton_Click(object sender, EventArgs e)
         {
-            var clientToCreate = new CreateClient("Bartosz", "Kowalski", "Bartosz Kowalski", "111111111");
+            var clientToCreate = new ClientData
+            {
+                FirstName = "Bartosz",
+                LastName = "Kowalski",
+                Name = "Bartosz Kowalski",
+                PhoneNumber = "111111111"
+            };
             var clientService = new ClientService();
-            var id = clientService.CreateClient(clientToCreate);
+            clientService.Create(clientToCreate);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ShowClients_Click(object sender, EventArgs e)
         {
             var clientSearcher = new ClientSearcher();
             var clients = clientSearcher.GetClients();
             ClientDataGridView.DataSource = clients;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void AddObjectToClient_Click(object sender, EventArgs e)
         {
-            var command = new CreateObject(1, "TEST", "Ibiza", "TEST");
+            var clientSearcher = new ClientSearcher();
+            var client = clientSearcher.GetClients().FirstOrDefault();
+            var objectTypeSearcher = new ObjectTypeSearcher();
+            var objectType = objectTypeSearcher.GetObjectTypes().FirstOrDefault();
+            var objectData = new ObjectData
+            {
+                Name = "Seat",
+                Type = "Ibiza",
+                ObjectTypeCode = objectType?.Code,
+                ClientId = client.Id
+            };
             var objectService = new ObjectService();
-            var id = objectService.CreateObject(command);
+            objectService.CreateObject(objectData);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void AddObjectType_Click(object sender, EventArgs e)
         {
-            var command = new CreateObjectType("TEST", "Test Object Type");
+            var objectType = new ObjectTypeData
+            {
+                Code = "TEST",
+                Name = "Test Object Type"
+            };
             var objectTypeService = new ObjectTypeService();
-            objectTypeService.CreateObjectType(command);
+            objectTypeService.CreateObjectType(objectType);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void ShowObjects_Click(object sender, EventArgs e)
         {
             var objectSearcher = new ObjectSearcher();
             ObjectDataGridView.DataSource = objectSearcher.GetObjects();

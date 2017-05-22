@@ -30,11 +30,11 @@
         {
             this.addClientButton = new System.Windows.Forms.Button();
             this.ClientDataGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.ShowClients = new System.Windows.Forms.Button();
+            this.AddObjectToClient = new System.Windows.Forms.Button();
+            this.AddObjectType = new System.Windows.Forms.Button();
             this.ObjectDataGridView = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ShowObjects = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ClientDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ObjectDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             this.addClientButton.Name = "addClientButton";
             this.addClientButton.Size = new System.Drawing.Size(140, 67);
             this.addClientButton.TabIndex = 0;
-            this.addClientButton.Text = "AddToDatabase";
+            this.addClientButton.Text = "AddClientToDatabase";
             this.addClientButton.UseVisualStyleBackColor = true;
             this.addClientButton.Click += new System.EventHandler(this.addClientButton_Click);
             // 
@@ -57,35 +57,35 @@
             this.ClientDataGridView.Size = new System.Drawing.Size(240, 150);
             this.ClientDataGridView.TabIndex = 1;
             // 
-            // button1
+            // ShowClients
             // 
-            this.button1.Location = new System.Drawing.Point(272, 217);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Wyswietl klientow";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ShowClients.Location = new System.Drawing.Point(272, 217);
+            this.ShowClients.Name = "ShowClients";
+            this.ShowClients.Size = new System.Drawing.Size(145, 23);
+            this.ShowClients.TabIndex = 2;
+            this.ShowClients.Text = "ShowClients";
+            this.ShowClients.UseVisualStyleBackColor = true;
+            this.ShowClients.Click += new System.EventHandler(this.ShowClients_Click);
             // 
-            // button2
+            // AddObjectToClient
             // 
-            this.button2.Location = new System.Drawing.Point(27, 188);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "AddObjectToClient";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.AddObjectToClient.Location = new System.Drawing.Point(27, 188);
+            this.AddObjectToClient.Name = "AddObjectToClient";
+            this.AddObjectToClient.Size = new System.Drawing.Size(160, 23);
+            this.AddObjectToClient.TabIndex = 3;
+            this.AddObjectToClient.Text = "AddObjectToClient";
+            this.AddObjectToClient.UseVisualStyleBackColor = true;
+            this.AddObjectToClient.Click += new System.EventHandler(this.AddObjectToClient_Click);
             // 
-            // button3
+            // AddObjectType
             // 
-            this.button3.Location = new System.Drawing.Point(27, 159);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(152, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "AddObjectType";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.AddObjectType.Location = new System.Drawing.Point(27, 159);
+            this.AddObjectType.Name = "AddObjectType";
+            this.AddObjectType.Size = new System.Drawing.Size(152, 23);
+            this.AddObjectType.TabIndex = 4;
+            this.AddObjectType.Text = "AddObjectType";
+            this.AddObjectType.UseVisualStyleBackColor = true;
+            this.AddObjectType.Click += new System.EventHandler(this.AddObjectType_Click);
             // 
             // ObjectDataGridView
             // 
@@ -95,26 +95,26 @@
             this.ObjectDataGridView.Size = new System.Drawing.Size(240, 150);
             this.ObjectDataGridView.TabIndex = 5;
             // 
-            // button4
+            // ShowObjects
             // 
-            this.button4.Location = new System.Drawing.Point(584, 217);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(149, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Wyswietl obiekty";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.ShowObjects.Location = new System.Drawing.Point(584, 217);
+            this.ShowObjects.Name = "ShowObjects";
+            this.ShowObjects.Size = new System.Drawing.Size(149, 23);
+            this.ShowObjects.TabIndex = 6;
+            this.ShowObjects.Text = "ShowObjects";
+            this.ShowObjects.UseVisualStyleBackColor = true;
+            this.ShowObjects.Click += new System.EventHandler(this.ShowObjects_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 332);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.ShowObjects);
             this.Controls.Add(this.ObjectDataGridView);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddObjectType);
+            this.Controls.Add(this.AddObjectToClient);
+            this.Controls.Add(this.ShowClients);
             this.Controls.Add(this.ClientDataGridView);
             this.Controls.Add(this.addClientButton);
             this.Name = "Form1";
@@ -129,11 +129,11 @@
 
         private System.Windows.Forms.Button addClientButton;
         private System.Windows.Forms.DataGridView ClientDataGridView;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button ShowClients;
+        private System.Windows.Forms.Button AddObjectToClient;
+        private System.Windows.Forms.Button AddObjectType;
         private System.Windows.Forms.DataGridView ObjectDataGridView;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button ShowObjects;
     }
 }
 

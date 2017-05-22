@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessLayer.Commands.ObjectType;
+﻿using BusinessLayer.ValueObjects;
 
 namespace BusinessLayer.Services.ObjectType
 {
     public class ObjectTypeService
     {
-        public void CreateObjectType(CreateObjectType command)
+        public void CreateObjectType(ObjectTypeData objectTypeData)
         {
             var objectType = new DataLayer.ObjectType()
             {
-                Name = command.Name,
-                Code = command.Code
+                Name = objectTypeData.Name,
+                Code = objectTypeData.Code
             };
             var db = new DataLayer.RepairContext();
             db.ObjectTypes.Add(objectType);
