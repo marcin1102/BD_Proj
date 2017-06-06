@@ -91,24 +91,6 @@
     <Compile Include="Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerActivitiesCreateForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerActivitiesCreateForm.Designer.cs">
-      <DependentUpon>ManagerActivitiesCreateForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerActivitiesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerActivitiesForm.Designer.cs">
-      <DependentUpon>ManagerActivitiesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerActivityAttachment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerActivityAttachment.Designer.cs">
-      <DependentUpon>ManagerActivityAttachment.cs</DependentUpon>
-    </Compile>
     <Compile Include="Manager\ManagerActivityCancelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,12 +126,6 @@
     </Compile>
     <Compile Include="Manager\ManagerForm.Designer.cs">
       <DependentUpon>ManagerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerRequestsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerRequestsForm.Designer.cs">
-      <DependentUpon>ManagerRequestsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\ManagerRequestCancelForm.cs">
       <SubType>Form</SubType>
@@ -225,20 +201,8 @@
     <EmbeddedResource Include="Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerActivitiesCreateForm.resx">
-      <DependentUpon>ManagerActivitiesCreateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerActivitiesForm.resx">
-      <DependentUpon>ManagerActivitiesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerActivityAttachment.resx">
-      <DependentUpon>ManagerActivityAttachment.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRequestsForm.resx">
-      <DependentUpon>ManagerRequestsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManagerRequestCreateForm.resx">
       <DependentUpon>ManagerRequestCreateForm.cs</DependentUpon>

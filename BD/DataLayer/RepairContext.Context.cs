@@ -32,7 +32,6 @@ namespace DataLayer
         public virtual DbSet<Object> Objects { get; set; }
         public virtual DbSet<ObjectType> ObjectTypes { get; set; }
         public virtual DbSet<Request> Requests { get; set; }
-        public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<Worker> Workers { get; set; }
     }
 }

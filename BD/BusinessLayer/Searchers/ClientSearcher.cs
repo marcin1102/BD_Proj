@@ -16,13 +16,12 @@ namespace BusinessLayer.Searchers
                 Id = o.Id,
                 Name = o.Name,
                 FirstName = o.FirstName,
-                LastName = o.LastName, 
+                LastName = o.LastName,
                 PhoneNumber = o.PhoneNumber,
                 Objects = o.Objects.Select(x => new ObjectData
                     {
                         Id = x.Id,
                         Name = x.Name,
-                        Type = x.Type,
                         ObjectTypeCode = x.ObjectType.Code,
                         ClientId = o.Id
                     }).ToList()

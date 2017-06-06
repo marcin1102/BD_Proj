@@ -17,6 +17,7 @@ namespace DataLayer
         public string UName { get; set; }
         public string Pass { get; set; }
         public int WorkerId { get; set; }
+        public Nullable<System.DateTime> Expiration { get; set; }
     
         public virtual Worker Worker { get; set; }
     }

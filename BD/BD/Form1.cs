@@ -48,7 +48,6 @@ namespace BD
             var objectData = new ObjectData
             {
                 Name = "Seat",
-                Type = "Ibiza",
                 ObjectTypeCode = objectType?.Code,
                 ClientId = client.Id
             };
@@ -60,7 +59,7 @@ namespace BD
         {
             var objectType = new ObjectTypeData
             {
-                Code = "ABC",
+                Code = "TEST",
                 Name = "Test Object Type"
             };
             var objectTypeService = new ObjectTypeService();
@@ -82,19 +81,45 @@ namespace BD
 
         private async void UpdateObjects_Click(object sender, EventArgs e)
         {
-            var objectService = new ObjectService();
-            await objectService.UpdateObjectDetails(new ObjectData
-               {
-                   Name = "Andrzej",
-                   Type = "Wajda",
-                   Id = 1
-               });
+            var clientService = new ClientService();
 
-            objectService.UpdateObjectType(new ObjectData
+            var objects = new List<ObjectData>()
             {
-                ObjectTypeCode = "TEST",
-                Id = 1
-            });
+                new ObjectData
+                {
+                    ClientId = 1,
+                    Name = "HWDP",
+                    ObjectTypeCode = "ABC"
+                },
+                new ObjectData
+                {
+                    Id = 2,
+                    ClientId = 1,
+                    Name = "ZMIENIONY2",
+                    ObjectTypeCode = "TEST"
+                },
+                new ObjectData
+                {
+                    Id = 6,
+                    ClientId = 1,
+                    Name = "STALY",
+                    ObjectTypeCode = "ABC"
+                }
+            };
+
+            clientService.UpdateObjects(1, objects);
+
+            //await objectService.UpdateObjectDetails(new ObjectData
+            //   {
+            //       Name = "Andrzej",
+            //       Id = 1
+            //   });
+
+            //objectService.UpdateObjectType(new ObjectData
+            //{
+            //    ObjectTypeCode = "TEST",
+            //    Id = 1
+            //});
         }
     }
 }

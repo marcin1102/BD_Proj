@@ -4,25 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="793660876574487989f1a42e8b4d8ad9" Name="Diagram1">
-        <EntityTypeShape EntityType="RepairContext.ActivitiesTypesDictionary" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairContext.Activity" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairContext.Client" Width="1.5" PointX="1.5" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairContext.Login" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairContext.Object" Width="1.5" PointX="3.75" PointY="12.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairContext.ObjectType" Width="1.5" PointX="1.5" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairContext.Request" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairContext.Status" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairContext.Worker" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <AssociationConnector Association="RepairContext.FK_Activity_ActivitiesTypesDictionary1" ManuallyRouted="false" />
-        <AssociationConnector Association="RepairContext.FK_Activity_Request1" ManuallyRouted="false" />
-        <AssociationConnector Association="RepairContext.FK_Activity_Worker" ManuallyRouted="false" />
-        <AssociationConnector Association="RepairContext.FK_Object_Client" ManuallyRouted="false" />
-        <AssociationConnector Association="RepairContext.FK_Login_Worker" ManuallyRouted="false" />
-        <AssociationConnector Association="RepairContext.FK_Object_ObjectType" ManuallyRouted="false" />
-        <AssociationConnector Association="RepairContext.FK_Request_Object" ManuallyRouted="false" />
-        <AssociationConnector Association="RepairContext.FK_Request_Status" ManuallyRouted="false" />
-        <AssociationConnector Association="RepairContext.FK_Request_Worker" ManuallyRouted="false" />
+      <Diagram DiagramId="81ff06011e47400e9d2a1acdb012b551" Name="Diagram1">
+        <EntityTypeShape EntityType="BazaNaprawModel.ActivitiesTypesDictionary" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.Activity" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.Client" Width="1.5" PointX="1.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.Login" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.Object" Width="1.5" PointX="3.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.ObjectType" Width="1.5" PointX="1.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.Request" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.Worker" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="BazaNaprawModel.FK_Activity_ActivitiesTypesDictionary1" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaNaprawModel.FK_Activity_Request1" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaNaprawModel.FK_Activity_Worker" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaNaprawModel.FK_Object_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaNaprawModel.FK_Login_Worker" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaNaprawModel.FK_Object_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaNaprawModel.FK_Request_Object" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaNaprawModel.FK_Request_Worker" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

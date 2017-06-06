@@ -14,8 +14,7 @@ namespace BusinessLayer.Searchers
             {
                 Id = o.Id,
                 Name = o.Name,
-                Type = o.Type,
-                ClientId = o.ClientId, 
+                ClientId = o.ClientId,
                 ObjectTypeCode = o.ObjectType.Code
             }).ToList();
         }
@@ -27,7 +26,6 @@ namespace BusinessLayer.Searchers
             {
                 Id = o.Id,
                 Name = o.Name,
-                Type = o.Type,
                 ClientId = o.ClientId,
                 ObjectTypeCode = o.ObjectType.Code
             }).ToList();
@@ -41,7 +39,6 @@ namespace BusinessLayer.Searchers
             {
                 Id = objectEntity.Id,
                 Name = objectEntity.Name,
-                Type = objectEntity.Type,
                 ClientId = objectEntity.ClientId,
                 ObjectTypeCode = objectEntity.ObjectType.Code
             };

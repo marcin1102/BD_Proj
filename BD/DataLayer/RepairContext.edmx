@@ -4,85 +4,80 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="RepairContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BazaNaprawModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ActivitiesTypesDictionary">
           <Key>
             <PropertyRef Name="Type" />
           </Key>
-          <Property Name="Type" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Activity">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Descr" Type="nchar" MaxLength="254" Nullable="false" />
-          <Property Name="Status" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="Result" Type="nchar" MaxLength="254" />
+          <Property Name="Descr" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Result" Type="nvarchar" MaxLength="254" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ReqId" Type="int" Nullable="false" />
-          <Property Name="Type" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="WorkerId" Type="int" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="FirstName" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="Name" Type="nchar" MaxLength="50" />
-          <Property Name="PhoneNumber" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
             <PropertyRef Name="WorkerId" />
           </Key>
-          <Property Name="UName" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="Pass" Type="nchar" MaxLength="254" Nullable="false" />
+          <Property Name="UName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="254" Nullable="false" />
           <Property Name="WorkerId" Type="int" Nullable="false" />
+          <Property Name="Expiration" Type="date" />
         </EntityType>
         <EntityType Name="Object">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ClientId" Type="int" Nullable="false" />
-          <Property Name="Type" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="ObjectType">
           <Key>
             <PropertyRef Name="Code" />
           </Key>
-          <Property Name="Code" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Request">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Descr" Type="nchar" MaxLength="254" Nullable="false" />
-          <Property Name="Status" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="Result" Type="nchar" MaxLength="254" />
+          <Property Name="Descr" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Result" Type="nvarchar" MaxLength="254" />
           <Property Name="ObjId" Type="int" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="WorkerId" Type="int" />
-        </EntityType>
-        <EntityType Name="Status">
-          <Key>
-            <PropertyRef Name="Status" />
-          </Key>
-          <Property Name="Status" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="WorkerId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Worker">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="FirstName" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Role" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <Association Name="FK_Activity_ActivitiesTypesDictionary1">
           <End Role="ActivitiesTypesDictionary" Type="Self.ActivitiesTypesDictionary" Multiplicity="1" />
@@ -168,20 +163,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Request_Status">
-          <End Role="Status" Type="Self.Status" Multiplicity="1" />
-          <End Role="Request" Type="Self.Request" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Status">
-              <PropertyRef Name="Status" />
-            </Principal>
-            <Dependent Role="Request">
-              <PropertyRef Name="Status" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Request_Worker">
-          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
           <End Role="Request" Type="Self.Request" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Worker">
@@ -192,7 +175,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="RepairContextStoreContainer">
+        <EntityContainer Name="BazaNaprawModelStoreContainer">
           <EntitySet Name="ActivitiesTypesDictionary" EntityType="Self.ActivitiesTypesDictionary" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
@@ -200,7 +183,6 @@
           <EntitySet Name="Object" EntityType="Self.Object" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ObjectType" EntityType="Self.ObjectType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Worker" EntityType="Self.Worker" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Activity_ActivitiesTypesDictionary1" Association="Self.FK_Activity_ActivitiesTypesDictionary1">
             <End Role="ActivitiesTypesDictionary" EntitySet="ActivitiesTypesDictionary" />
@@ -230,37 +212,34 @@
             <End Role="Object" EntitySet="Object" />
             <End Role="Request" EntitySet="Request" />
           </AssociationSet>
-          <AssociationSet Name="FK_Request_Status" Association="Self.FK_Request_Status">
-            <End Role="Status" EntitySet="Status" />
-            <End Role="Request" EntitySet="Request" />
-          </AssociationSet>
           <AssociationSet Name="FK_Request_Worker" Association="Self.FK_Request_Worker">
             <End Role="Worker" EntitySet="Worker" />
             <End Role="Request" EntitySet="Request" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="RepairContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BazaNaprawModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ActivitiesTypesDictionary">
           <Key>
             <PropertyRef Name="Type" />
           </Key>
-          <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Activities" Relationship="Self.FK_Activity_ActivitiesTypesDictionary1" FromRole="ActivitiesTypesDictionary" ToRole="Activity" />
         </EntityType>
         <EntityType Name="Activity">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Descr" Type="String" MaxLength="254" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Status" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Result" Type="String" MaxLength="254" FixedLength="true" Unicode="true" />
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descr" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Result" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ReqId" Type="Int32" Nullable="false" />
-          <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="WorkerId" Type="Int32" />
           <NavigationProperty Name="ActivitiesTypesDictionary" Relationship="Self.FK_Activity_ActivitiesTypesDictionary1" FromRole="Activity" ToRole="ActivitiesTypesDictionary" />
           <NavigationProperty Name="Request" Relationship="Self.FK_Activity_Request1" FromRole="Activity" ToRole="Request" />
@@ -270,30 +249,31 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Objects" Relationship="Self.FK_Object_Client" FromRole="Client" ToRole="Object" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
             <PropertyRef Name="WorkerId" />
           </Key>
-          <Property Name="UName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Pass" Type="String" MaxLength="254" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="UName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pass" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="WorkerId" Type="Int32" Nullable="false" />
+          <Property Name="Expiration" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Worker" Relationship="Self.FK_Login_Worker" FromRole="Login" ToRole="Worker" />
         </EntityType>
         <EntityType Name="Object">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ClientId" Type="Int32" Nullable="false" />
-          <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Client" Relationship="Self.FK_Object_Client" FromRole="Object" ToRole="Client" />
           <NavigationProperty Name="ObjectType" Relationship="Self.FK_Object_ObjectType" FromRole="Object" ToRole="ObjectType" />
           <NavigationProperty Name="Requests" Relationship="Self.FK_Request_Object" FromRole="Object" ToRole="Request" />
@@ -302,40 +282,32 @@
           <Key>
             <PropertyRef Name="Code" />
           </Key>
-          <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Objects" Relationship="Self.FK_Object_ObjectType" FromRole="ObjectType" ToRole="Object" />
         </EntityType>
         <EntityType Name="Request">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Descr" Type="String" MaxLength="254" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Status" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Result" Type="String" MaxLength="254" FixedLength="true" Unicode="true" />
+          <Property Name="Descr" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Result" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
           <Property Name="ObjId" Type="Int32" Nullable="false" />
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="WorkerId" Type="Int32" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkerId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Activities" Relationship="Self.FK_Activity_Request1" FromRole="Request" ToRole="Activity" />
           <NavigationProperty Name="Object" Relationship="Self.FK_Request_Object" FromRole="Request" ToRole="Object" />
-          <NavigationProperty Name="Status1" Relationship="Self.FK_Request_Status" FromRole="Request" ToRole="Status" />
           <NavigationProperty Name="Worker" Relationship="Self.FK_Request_Worker" FromRole="Request" ToRole="Worker" />
-        </EntityType>
-        <EntityType Name="Status">
-          <Key>
-            <PropertyRef Name="Status1" />
-          </Key>
-          <Property Name="Status1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Requests" Relationship="Self.FK_Request_Status" FromRole="Status" ToRole="Request" />
         </EntityType>
         <EntityType Name="Worker">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Role" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Activities" Relationship="Self.FK_Activity_Worker" FromRole="Worker" ToRole="Activity" />
           <NavigationProperty Name="Login" Relationship="Self.FK_Login_Worker" FromRole="Worker" ToRole="Login" />
           <NavigationProperty Name="Requests" Relationship="Self.FK_Request_Worker" FromRole="Worker" ToRole="Request" />
@@ -424,20 +396,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Request_Status">
-          <End Role="Status" Type="Self.Status" Multiplicity="1" />
-          <End Role="Request" Type="Self.Request" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Status">
-              <PropertyRef Name="Status1" />
-            </Principal>
-            <Dependent Role="Request">
-              <PropertyRef Name="Status" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Request_Worker">
-          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
           <End Role="Request" Type="Self.Request" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Worker">
@@ -448,7 +408,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="RepairDatabase" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="RepairContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ActivitiesTypesDictionaries" EntityType="Self.ActivitiesTypesDictionary" />
           <EntitySet Name="Activities" EntityType="Self.Activity" />
           <EntitySet Name="Clients" EntityType="Self.Client" />
@@ -456,7 +416,6 @@
           <EntitySet Name="Objects" EntityType="Self.Object" />
           <EntitySet Name="ObjectTypes" EntityType="Self.ObjectType" />
           <EntitySet Name="Requests" EntityType="Self.Request" />
-          <EntitySet Name="Status" EntityType="Self.Status" />
           <EntitySet Name="Workers" EntityType="Self.Worker" />
           <AssociationSet Name="FK_Activity_ActivitiesTypesDictionary1" Association="Self.FK_Activity_ActivitiesTypesDictionary1">
             <End Role="ActivitiesTypesDictionary" EntitySet="ActivitiesTypesDictionaries" />
@@ -486,10 +445,6 @@
             <End Role="Object" EntitySet="Objects" />
             <End Role="Request" EntitySet="Requests" />
           </AssociationSet>
-          <AssociationSet Name="FK_Request_Status" Association="Self.FK_Request_Status">
-            <End Role="Status" EntitySet="Status" />
-            <End Role="Request" EntitySet="Requests" />
-          </AssociationSet>
           <AssociationSet Name="FK_Request_Worker" Association="Self.FK_Request_Worker">
             <End Role="Worker" EntitySet="Workers" />
             <End Role="Request" EntitySet="Requests" />
@@ -500,9 +455,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RepairContextStoreContainer" CdmEntityContainer="RepairDatabase">
+        <EntityContainerMapping StorageEntityContainer="BazaNaprawModelStoreContainer" CdmEntityContainer="RepairContext">
           <EntitySetMapping Name="ActivitiesTypesDictionaries">
-            <EntityTypeMapping TypeName="RepairContext.ActivitiesTypesDictionary">
+            <EntityTypeMapping TypeName="BazaNaprawModel.ActivitiesTypesDictionary">
               <MappingFragment StoreEntitySet="ActivitiesTypesDictionary">
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -510,7 +465,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Activities">
-            <EntityTypeMapping TypeName="RepairContext.Activity">
+            <EntityTypeMapping TypeName="BazaNaprawModel.Activity">
               <MappingFragment StoreEntitySet="Activity">
                 <ScalarProperty Name="Descr" ColumnName="Descr" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
@@ -523,7 +478,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Clients">
-            <EntityTypeMapping TypeName="RepairContext.Client">
+            <EntityTypeMapping TypeName="BazaNaprawModel.Client">
               <MappingFragment StoreEntitySet="Client">
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -534,16 +489,17 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Logins">
-            <EntityTypeMapping TypeName="RepairContext.Login">
+            <EntityTypeMapping TypeName="BazaNaprawModel.Login">
               <MappingFragment StoreEntitySet="Login">
                 <ScalarProperty Name="UName" ColumnName="UName" />
                 <ScalarProperty Name="Pass" ColumnName="Pass" />
                 <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+                <ScalarProperty Name="Expiration" ColumnName="Expiration" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Objects">
-            <EntityTypeMapping TypeName="RepairContext.Object">
+            <EntityTypeMapping TypeName="BazaNaprawModel.Object">
               <MappingFragment StoreEntitySet="Object">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ClientId" ColumnName="ClientId" />
@@ -553,7 +509,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ObjectTypes">
-            <EntityTypeMapping TypeName="RepairContext.ObjectType">
+            <EntityTypeMapping TypeName="BazaNaprawModel.ObjectType">
               <MappingFragment StoreEntitySet="ObjectType">
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -561,7 +517,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Requests">
-            <EntityTypeMapping TypeName="RepairContext.Request">
+            <EntityTypeMapping TypeName="BazaNaprawModel.Request">
               <MappingFragment StoreEntitySet="Request">
                 <ScalarProperty Name="Descr" ColumnName="Descr" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
@@ -572,15 +528,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Status">
-            <EntityTypeMapping TypeName="RepairContext.Status">
-              <MappingFragment StoreEntitySet="Status">
-                <ScalarProperty Name="Status1" ColumnName="Status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Workers">
-            <EntityTypeMapping TypeName="RepairContext.Worker">
+            <EntityTypeMapping TypeName="BazaNaprawModel.Worker">
               <MappingFragment StoreEntitySet="Worker">
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />

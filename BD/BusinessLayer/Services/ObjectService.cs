@@ -16,7 +16,6 @@ namespace BusinessLayer.Services.Object
             {
                 Name = objectData.Name,
                 ClientId = objectData.ClientId,
-                Type = objectData.Type,
                 Client = client,
                 ObjectType = objectType
             };
@@ -29,8 +28,12 @@ namespace BusinessLayer.Services.Object
         {
             var db = new DataLayer.RepairContext();
             var objectToUpdate = await db.Objects.SingleAsync(x => x.Id == objectData.Id);
+            if(!string.IsNullOrEmpty(objectData.ObjectTypeCode) && objectData.ObjectTypeCode != objectToUpdate.Type)
+            {
+                var newObjectType = await db.ObjectTypes.SingleAsync(x => x.Code == objectData.ObjectTypeCode);
+                objectToUpdate.ObjectType = newObjectType;
+            }
             objectToUpdate.Name = objectData.Name;
-            objectToUpdate.Type = objectData.Type;
             await db.SaveChangesAsync();
         }
 

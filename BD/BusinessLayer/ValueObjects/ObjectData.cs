@@ -10,7 +10,6 @@ namespace BusinessLayer.ValueObjects
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Type { get; set; }
         public int ClientId { get; set; }
         public string ObjectTypeCode { get; set; }
     }
