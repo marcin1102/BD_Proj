@@ -67,16 +67,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminForm.cs">
+    <Compile Include="Admin\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForm.Designer.cs">
+    <Compile Include="Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientForm.cs">
+    <Compile Include="Client\ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientForm.Designer.cs">
+    <Compile Include="Client\ClientForm.Designer.cs">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -85,10 +85,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerActivitiesCreateForm.cs">
@@ -109,10 +109,40 @@
     <Compile Include="ManagerActivityAttachment.Designer.cs">
       <DependentUpon>ManagerActivityAttachment.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerForm.cs">
+    <Compile Include="Manager\ManagerActivityCancelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerForm.Designer.cs">
+    <Compile Include="Manager\ManagerActivityCancelForm.Designer.cs">
+      <DependentUpon>ManagerActivityCancelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerActivityCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerActivityCreateForm.Designer.cs">
+      <DependentUpon>ManagerActivityCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerActivityEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerActivityEditForm.Designer.cs">
+      <DependentUpon>ManagerActivityEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerActivityFinishForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerActivityFinishForm.Designer.cs">
+      <DependentUpon>ManagerActivityFinishForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerActivityShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerActivityShowForm.Designer.cs">
+      <DependentUpon>ManagerActivityShowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerForm.Designer.cs">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerRequestsForm.cs">
@@ -121,24 +151,78 @@
     <Compile Include="ManagerRequestsForm.Designer.cs">
       <DependentUpon>ManagerRequestsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkerForm.cs">
+    <Compile Include="Manager\ManagerRequestCancelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorkerForm.Designer.cs">
-      <DependentUpon>WorkerForm.cs</DependentUpon>
+    <Compile Include="Manager\ManagerRequestCancelForm.Designer.cs">
+      <DependentUpon>ManagerRequestCancelForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminForm.resx">
+    <Compile Include="Manager\ManagerRequestCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerRequestCreateForm.Designer.cs">
+      <DependentUpon>ManagerRequestCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerRequestEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerRequestEditForm.Designer.cs">
+      <DependentUpon>ManagerRequestEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerRequestFinishForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerRequestFinishForm.Designer.cs">
+      <DependentUpon>ManagerRequestFinishForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerRequestShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerRequestShowForm.Designer.cs">
+      <DependentUpon>ManagerRequestShowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Worker\WorkerActivityFinishForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\WorkerActivityFinishForm.Designer.cs">
+      <DependentUpon>WorkerActivityFinishForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\WorkerActivityEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\WorkerActivityEditForm.Designer.cs">
+      <DependentUpon>WorkerActivityEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\WorkerActivityCancelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\WorkerActivityCancelForm.Designer.cs">
+      <DependentUpon>WorkerActivityCancelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\WorkerForm - Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\WorkerForm - Copy.Designer.cs">
+      <DependentUpon>WorkerForm - Copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\WorkerActivityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\WorkerActivityForm.Designer.cs">
+      <DependentUpon>WorkerActivityForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientForm.resx">
+    <EmbeddedResource Include="Client\ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerActivitiesCreateForm.resx">
@@ -150,11 +234,14 @@
     <EmbeddedResource Include="ManagerActivityAttachment.resx">
       <DependentUpon>ManagerActivityAttachment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerForm.resx">
+    <EmbeddedResource Include="Manager\ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerRequestsForm.resx">
       <DependentUpon>ManagerRequestsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\ManagerRequestCreateForm.resx">
+      <DependentUpon>ManagerRequestCreateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,10 +252,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WorkerForm.resx">
-      <DependentUpon>WorkerForm.cs</DependentUpon>
+    <EmbeddedResource Include="Worker\WorkerActivityFinishForm.resx">
+      <DependentUpon>WorkerActivityFinishForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\WorkerActivityEditForm.resx">
+      <DependentUpon>WorkerActivityEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\WorkerActivityCancelForm.resx">
+      <DependentUpon>WorkerActivityCancelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\WorkerForm - Copy.resx">
+      <DependentUpon>WorkerForm - Copy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\WorkerActivityForm.resx">
+      <DependentUpon>WorkerActivityForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -205,5 +305,6 @@
       <Name>DataLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
