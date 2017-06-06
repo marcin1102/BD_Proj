@@ -10,19 +10,24 @@ using System.Windows.Forms;
 
 namespace BD
 {
-    public partial class WorkerForm : Form
+    public partial class WorkerActivityExecuteForm : Form
     {
-        public WorkerForm()
+        public WorkerActivityExecuteForm()
         {
             InitializeComponent();
         }
 
-        private void executeActivityButton_Click(object sender, EventArgs e)
+        private void executeButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void cancelActivityButton_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void initLabels()
         {
 
         }
