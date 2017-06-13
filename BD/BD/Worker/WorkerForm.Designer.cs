@@ -28,60 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.activitiesListLabel = new System.Windows.Forms.Label();
             this.activitiesDataGridView = new System.Windows.Forms.DataGridView();
             this.showActivityButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // activitiesListLabel
-            // 
-            this.activitiesListLabel.AutoSize = true;
-            this.activitiesListLabel.Location = new System.Drawing.Point(199, 9);
-            this.activitiesListLabel.Name = "activitiesListLabel";
-            this.activitiesListLabel.Size = new System.Drawing.Size(79, 13);
-            this.activitiesListLabel.TabIndex = 0;
-            this.activitiesListLabel.Text = "Lista czynności";
-            this.activitiesListLabel.Click += new System.EventHandler(this.activitiesListLabel_Click);
             // 
             // activitiesDataGridView
             // 
             this.activitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.activitiesDataGridView.Location = new System.Drawing.Point(12, 35);
+            this.activitiesDataGridView.Location = new System.Drawing.Point(6, 19);
             this.activitiesDataGridView.Name = "activitiesDataGridView";
-            this.activitiesDataGridView.Size = new System.Drawing.Size(485, 318);
+            this.activitiesDataGridView.Size = new System.Drawing.Size(464, 316);
             this.activitiesDataGridView.TabIndex = 3;
             // 
             // showActivityButton
             // 
-            this.showActivityButton.Location = new System.Drawing.Point(518, 168);
+            this.showActivityButton.Location = new System.Drawing.Point(509, 165);
             this.showActivityButton.Name = "showActivityButton";
             this.showActivityButton.Size = new System.Drawing.Size(85, 46);
             this.showActivityButton.TabIndex = 5;
-            this.showActivityButton.Text = "Obsługa czynności";
+            this.showActivityButton.Text = "Do Obsługi";
             this.showActivityButton.UseVisualStyleBackColor = true;
             this.showActivityButton.Click += new System.EventHandler(this.showActivityButton_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.activitiesDataGridView);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(476, 341);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Lista Czynności";
             // 
             // WorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 365);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.showActivityButton);
-            this.Controls.Add(this.activitiesDataGridView);
-            this.Controls.Add(this.activitiesListLabel);
             this.Name = "WorkerForm";
             this.Text = "WorkerForm";
             ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label activitiesListLabel;
         private System.Windows.Forms.DataGridView activitiesDataGridView;
         private System.Windows.Forms.Button showActivityButton;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

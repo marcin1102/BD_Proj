@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BD
 {
-    public partial class WorkerActivityForm : Form
+    public partial class WorkerActivityFormFinish : Form
     {
-        public WorkerActivityForm()
+        public WorkerActivityFormFinish()
         {
             InitializeComponent();
         }
@@ -42,5 +42,14 @@ namespace BD
 
         }
 
+        private void statusLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resultLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

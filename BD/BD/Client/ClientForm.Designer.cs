@@ -28,46 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.clientTopLabel = new System.Windows.Forms.Label();
             this.clientReparationsDataGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.clientReparationsDataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // clientTopLabel
-            // 
-            this.clientTopLabel.AutoSize = true;
-            this.clientTopLabel.Location = new System.Drawing.Point(175, 35);
-            this.clientTopLabel.Name = "clientTopLabel";
-            this.clientTopLabel.Size = new System.Drawing.Size(109, 13);
-            this.clientTopLabel.TabIndex = 0;
-            this.clientTopLabel.Text = "Status moich napraw:";
             // 
             // clientReparationsDataGridView
             // 
             this.clientReparationsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.clientReparationsDataGridView.Location = new System.Drawing.Point(125, 67);
+            this.clientReparationsDataGridView.Location = new System.Drawing.Point(6, 19);
             this.clientReparationsDataGridView.Name = "clientReparationsDataGridView";
-            this.clientReparationsDataGridView.Size = new System.Drawing.Size(240, 247);
+            this.clientReparationsDataGridView.Size = new System.Drawing.Size(406, 227);
             this.clientReparationsDataGridView.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.clientReparationsDataGridView);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(418, 252);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Moje Naprawy";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 344);
-            this.Controls.Add(this.clientReparationsDataGridView);
-            this.Controls.Add(this.clientTopLabel);
+            this.ClientSize = new System.Drawing.Size(444, 278);
+            this.Controls.Add(this.groupBox1);
             this.Name = "ClientForm";
             this.Text = "ClientForm";
             ((System.ComponentModel.ISupportInitialize)(this.clientReparationsDataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label clientTopLabel;
         private System.Windows.Forms.DataGridView clientReparationsDataGridView;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

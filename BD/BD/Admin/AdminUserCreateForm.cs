@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BD
+namespace BD.Admin
 {
-    public partial class ClientForm : Form
+    public partial class AdminUserCreateForm : Form
     {
-        public ClientForm()
+        public AdminUserCreateForm()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
