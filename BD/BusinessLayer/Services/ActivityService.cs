@@ -51,42 +51,5 @@ namespace BusinessLayer.Services.Activity
 			activityEntity.Worker = worker,
             await context.SaveChangesAsync();
         }
-
-        [Obsolete("Update many objects of single client in the same time. Use update of single object instead.")]
-        public async Task UpdateObjects(int clientId, ICollection<ObjectData> objects)
-        {
-            var db = new RepairContext();
-            var client = db.Clients.SingleOrDefault(x => x.Id == clientId);
-            var clientObjects = client.Objects.ToList();
-            var objectsToDelete = clientObjects.Where(x => !objects.Any(o => o.Id == x.Id)).ToList();
-            var objectsToAdd = objects.Where(x => !clientObjects.Any(o => o.Id == x.Id)).Select(x => new DataLayer.Object
-            {
-                Name = x.Name,
-                ClientId = x.ClientId,
-                Type = x.ObjectTypeCode,
-                Client = client,
-                ObjectType = db.ObjectTypes.Single(ot => ot.Code == x.ObjectTypeCode)
-            }).ToList();
-            var objectsToUpdate = clientObjects.Where(x => objects.Any(o => o.Id == x.Id)).ToList();
-
-            db.Objects.RemoveRange(objectsToDelete);
-
-            foreach (var objectToAdd in objectsToAdd)
-            {
-                client.Objects.Add(objectToAdd);
-            }
-
-            foreach (var objectToUpdate in objectsToUpdate)
-            {
-                var data = objects.Single(x => x.Id == objectToUpdate.Id);
-                objectToUpdate.Name = data.Name;
-                if(objectToUpdate.Type != data.ObjectTypeCode)
-                {
-                    var newObjectType = await db.ObjectTypes.SingleAsync(x => x.Code == data.ObjectTypeCode);
-                    objectToUpdate.ObjectType = newObjectType;
-                }
-            }
-            await db.SaveChangesAsync();
-        }
     }
 }
