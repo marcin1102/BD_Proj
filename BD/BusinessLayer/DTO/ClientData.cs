@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.ValueObjects
+namespace BusinessLayer.DTO
 {
     public class ClientData
     {

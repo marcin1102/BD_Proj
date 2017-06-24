@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer.Searchers;
 using BusinessLayer.Services.Client;
 using BusinessLayer.Services.Object;
 using BusinessLayer.Services.ObjectType;
-using BusinessLayer.ValueObjects;
+using BusinessLayer.DTO;
 
 namespace BD
 {
