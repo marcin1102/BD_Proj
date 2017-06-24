@@ -53,6 +53,7 @@
     <Compile Include="Services\ClientService.cs" />
     <Compile Include="Services\ObjectTypeService.cs" />
     <Compile Include="Services\ObjectService.cs" />
+    <Compile Include="BizzLayer.cs" />
     <Compile Include="ValueObjects\ClientData.cs" />
     <Compile Include="ValueObjects\ObjectData.cs" />
     <Compile Include="ValueObjects\ObjectTypeData.cs" />

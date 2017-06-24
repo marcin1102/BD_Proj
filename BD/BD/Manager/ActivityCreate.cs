@@ -8,24 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BD
+namespace BD.Manager
 {
-    public partial class WorkerForm : Form
+    public partial class ActivityCreate : Form
     {
-        public WorkerForm()
+        public ActivityCreate()
         {
             InitializeComponent();
         }
-
-        private void showActivityButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void activitiesListLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

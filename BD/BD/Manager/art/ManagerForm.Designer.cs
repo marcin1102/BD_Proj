@@ -88,7 +88,7 @@
             // activitiesListLabel
             // 
             this.activitiesListLabel.AutoSize = true;
-            this.activitiesListLabel.Location = new System.Drawing.Point(387, 9);
+            this.activitiesListLabel.Location = new System.Drawing.Point(372, 9);
             this.activitiesListLabel.Name = "activitiesListLabel";
             this.activitiesListLabel.Size = new System.Drawing.Size(79, 13);
             this.activitiesListLabel.TabIndex = 7;
