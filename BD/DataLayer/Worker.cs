@@ -31,5 +31,12 @@ namespace DataLayer
         public virtual Login Login { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Request> Requests { get; set; }
+
+        public void UpdateData(string firstName, string lastName, string role)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Role = role;
+        }
     }
 }

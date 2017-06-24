@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using BusinessLayer.ValueObjects;
+using BusinessLayer.DTO;
 
 namespace BusinessLayer.Searchers
 {
