@@ -55,7 +55,7 @@ namespace BusinessLayer.Services
 
             var user = await db.Logins.SingleAsync(x => x.UName == uName);
 
-            if (user.Expiration != null && user.Expiration.Value.Date >= DateTime.Today)
+            if (user.Expiration != null && user.Expiration.Value.Date <= DateTime.Today)
                 throw new WorkerAccountExpire($"Worker account with login {uName} expired.");
 
             return pass.ComparePasswordWithHash(user.Pass);
@@ -73,6 +73,17 @@ namespace BusinessLayer.Services
                 login.Expiration = expiration;
                 await db.SaveChangesAsync();
             }
+        }
+
+        public async Task removeExpiration(string uName)
+        {
+            var db = new RepairContext();
+            var login = db.Logins.SingleOrDefault(x => x.UName == uName);
+            if (login == null)
+                throw new EntityDoesNotExist($"Worker with login {uName} does not exist");
+
+            login.Expiration = null;
+            await db.SaveChangesAsync();
         }
     }
 }

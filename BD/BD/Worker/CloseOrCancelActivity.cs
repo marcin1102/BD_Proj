@@ -28,19 +28,9 @@ namespace BD
 
         }
 
-        private void backButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void WorkerActivityForm_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

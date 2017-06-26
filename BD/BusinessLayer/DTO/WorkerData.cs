@@ -4,6 +4,15 @@ namespace BusinessLayer.DTO
 {
     public class WorkerData
     {
+        public WorkerData(string uName, string firstName, string lastName, string role, DateTime? expiration)
+        {
+            UName = uName;
+            FirstName = firstName;
+            LastName = lastName;
+            Role = role;
+            Expiration = expiration;
+        }
+
         public WorkerData(string uName, string pass, string firstName, string lastName, string role, DateTime? expiration)
         {
             UName = uName;
@@ -12,13 +21,6 @@ namespace BusinessLayer.DTO
             LastName = lastName;
             Role = role;
             Expiration = expiration;
-        }
-
-        public WorkerData(string uName, string firstName, string lastName)
-        {
-            UName = uName;
-            FirstName = firstName;
-            LastName = lastName;
         }
         public string UName { get; private set; }
         public string FirstName { get; private set; }

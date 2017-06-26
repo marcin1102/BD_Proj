@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using BusinessLayer.Searchers;
 using AdminView.Helpers;
+using BusinessLayer.DTO;
 
 namespace AdminView
 {
@@ -24,11 +25,13 @@ namespace AdminView
 
         private void nextViewBT_Click(object sender, EventArgs e)
         {
-            var uName = (string)usersDGV.CurrentCell.Value;
+            var worker = (WorkerData)usersDGV.CurrentRow.DataBoundItem;
             if (wantEdit)
-                this.GoToNextView(new UpdateUserWindow(this, uName));
+                this.GoToNextView(new UpdateUserWindow(this, worker.UName));
+            else if (worker.Expiration == null)
+                this.GoToNextView(new DeactivateUserWindow(this, worker.UName));
             else
-                this.GoToNextView(new DeactivateUserWindow(this, uName));
+                this.GoToNextView(new ActivateUserWindow(this, worker.UName));
         }
 
         private void returnBT_Click(object sender, EventArgs e)

@@ -64,6 +64,12 @@
     <Compile Include="AdminWindow.Designer.cs">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActivateUserWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ActivateUserWindow.Designer.cs">
+      <DependentUpon>ActivateUserWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeactivateUserWindow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminWindow.resx">
       <DependentUpon>AdminWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActivateUserWindow.resx">
+      <DependentUpon>ActivateUserWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeactivateUserWindow.resx">
       <DependentUpon>DeactivateUserWindow.cs</DependentUpon>

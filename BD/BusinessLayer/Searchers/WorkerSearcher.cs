@@ -34,7 +34,7 @@ namespace BusinessLayer.Searchers
                 }
             }
 
-            return workers.Select(x => new WorkerData(x.Login.UName, x.FirstName, x.LastName)).ToList();
+            return workers.Select(x => new WorkerData(x.Login.UName, x.FirstName, x.LastName, x.Role, x.Login.Expiration)).ToList();
         }
 
         public async Task<WorkerData> GetByLogin(string uName)
