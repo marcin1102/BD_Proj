@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BD
+namespace BD.Manager.beta
 {
-    public partial class ClientForm : Form
+    public partial class MainPanel : Form
     {
-        public ClientForm()
+        public MainPanel()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BazaNaprawDataSet" targetNamespace="http://tempuri.org/BazaNaprawDataSet.xsd" xmlns:mstns="http://tempuri.org/BazaNaprawDataSet.xsd" xmlns="http://tempuri.org/BazaNaprawDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=(localdb)\MSSQLLocalDb;Initial Catalog=BazaNapraw;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="legas2016\localdb#0b9f7a1e.BazaNapraw.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="WorkerTableAdapter" GeneratorDataComponentClassName="WorkerTableAdapter" Name="Worker" UserDataComponentName="WorkerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="legas2016\localdb#0b9f7a1e.BazaNapraw.dbo" DbObjectName="BazaNapraw.dbo.Worker" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Role FROM dbo.Worker</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Role" DataSetColumn="Role" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BazaNaprawDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BazaNaprawDataSet" msprop:Generator_UserDSName="BazaNaprawDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Worker" msprop:Generator_TableClassName="WorkerDataTable" msprop:Generator_TableVarName="tableWorker" msprop:Generator_TablePropName="Worker" msprop:Generator_RowDeletingName="WorkerRowDeleting" msprop:Generator_RowChangingName="WorkerRowChanging" msprop:Generator_RowEvHandlerName="WorkerRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkerRowDeleted" msprop:Generator_UserTableName="Worker" msprop:Generator_RowChangedName="WorkerRowChanged" msprop:Generator_RowEvArgName="WorkerRowChangeEvent" msprop:Generator_RowClassName="WorkerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Role" msprop:Generator_ColumnVarNameInTable="columnRole" msprop:Generator_ColumnPropNameInRow="Role" msprop:Generator_ColumnPropNameInTable="RoleColumn" msprop:Generator_UserColumnName="Role">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BD
+namespace BD.Worker
 {
-    public partial class ClientForm : Form
+    public partial class SelectObject : UserControl
     {
-        public ClientForm()
+        public SelectObject()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
