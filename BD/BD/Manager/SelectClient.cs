@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using BusinessLayer.Searchers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,8 @@ namespace BD.Manager
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            clientBindingSource.DataSource = ClientFacade.GetClients(null);
+            var clientSearcher = new ClientSearcher();
+            clientBindingSource.DataSource = clientSearcher.GetClients();
         }
 
         private void button2_Click(object sender, EventArgs e)

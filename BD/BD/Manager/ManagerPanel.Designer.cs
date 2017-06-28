@@ -30,11 +30,11 @@
         {
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.selectClientButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.registerRequestButton = new System.Windows.Forms.Button();
@@ -61,14 +61,14 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "klient";
             // 
-            // button1
+            // selectClientButton
             // 
-            this.button1.Location = new System.Drawing.Point(153, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 20);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.selectClientButton.Location = new System.Drawing.Point(153, 68);
+            this.selectClientButton.Name = "selectClientButton";
+            this.selectClientButton.Size = new System.Drawing.Size(23, 20);
+            this.selectClientButton.TabIndex = 25;
+            this.selectClientButton.Text = "...";
+            this.selectClientButton.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -94,17 +94,16 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "status";
             // 
-            // comboBox1
+            // statusComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Items.AddRange(new object[] {
             "OPN",
             ""});
-            this.comboBox1.Location = new System.Drawing.Point(53, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 22;
-            this.comboBox1.Text = "OPN";
+            this.statusComboBox.Location = new System.Drawing.Point(53, 41);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(121, 21);
+            this.statusComboBox.TabIndex = 22;
             // 
             // dataGridView1
             // 
@@ -152,11 +151,11 @@
             this.Controls.Add(this.registerRequestButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.selectClientButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.statusComboBox);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainPanel";
             this.Text = "MainPanel";
@@ -171,11 +170,11 @@
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button selectClientButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox statusComboBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button registerRequestButton;

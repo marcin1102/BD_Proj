@@ -29,13 +29,13 @@ namespace BD.Manager
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Dispose();
         }
 
         private void registerRequestButton_Click(object sender, EventArgs e)
         {
             //
-            this.Close();
+            Dispose();
         }
     }
 }

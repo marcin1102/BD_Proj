@@ -1,9 +1,5 @@
-﻿using BD.Admin;
-using BD.Manager;
+﻿using BD.Manager;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BD
@@ -18,7 +14,7 @@ namespace BD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SelectClient());
+            Application.Run(new LoginForm());
         }
     }
 }
