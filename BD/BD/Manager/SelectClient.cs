@@ -3,12 +3,14 @@ using System.Windows.Forms;
 using BD.Helpers;
 using BusinessLayer.Searchers;
 using BusinessLayer.DTO;
+using System.Collections.Generic;
 
 namespace BD.Manager
 {
     public partial class SelectClient : UserControl
     {
         private readonly UserControl previousControl;
+        private ICollection<ClientData> searchedClients;
 
         public SelectClient(UserControl previousControl)
         {
@@ -28,7 +30,8 @@ namespace BD.Manager
             var phoneNumber = phoneNumberTextBox.Text;
 
             var clientSearcher = new ClientSearcher();
-            clientDataGridView.DataSource = await clientSearcher.SearchClients(firstName, lastName, phoneNumber);
+            searchedClients = await clientSearcher.SearchClients(firstName, lastName, phoneNumber);
+            clientDataGridView.DataSource = searchedClients;
         }
 
         private void returnButton_Click(object sender, EventArgs e)
@@ -42,6 +45,19 @@ namespace BD.Manager
             var managerPanel = previousControl as ManagerPanel;
             managerPanel.SetClient(client);
             this.GoToPreviousView(managerPanel);
+        }
+
+        private void addObjectButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
+                this.GoToNextView(new CreateObject(this, client.Id));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

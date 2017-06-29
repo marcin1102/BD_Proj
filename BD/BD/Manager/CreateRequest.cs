@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BD.Helpers;
+using BusinessLayer.DTO;
+using BusinessLayer.Searchers;
+using BusinessLayer.Services.Object;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +16,12 @@ namespace BD.Manager
 {
     public partial class CreateRequest : UserControl
     {
-        public CreateRequest()
+        private readonly UserControl previousView;
+        private ICollection<ClientData> searchedClients;
+        public CreateRequest(UserControl previousView)
         {
             InitializeComponent();
+            this.previousView = previousView;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -22,20 +29,50 @@ namespace BD.Manager
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
-
         private void registerRequestButton_Click(object sender, EventArgs e)
         {
-            //
-            Dispose();
+            //var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
+            //var description = descriptionTextBox.Text;
+
+
+            //var requestService = new RequestService();
+            //requestService.CreateObject();
+        }
+
+        private async void searchButton_Click(object sender, EventArgs e)
+        {
+            var firstName = firstNameTextBox.Text;
+            var lastName = lastNameTextBox.Text;
+            var phoneNumber = phoneNumberTextBox.Text;
+
+            var clientSearcher = new ClientSearcher();
+            try
+            {
+                searchedClients = await clientSearcher.SearchClients(firstName, lastName, phoneNumber);
+                clientDataGridView.DataSource = searchedClients;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void clientDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
+            try
+            {
+                objectDataGridView.DataSource = searchedClients.Single(x => x.Id == client.Id).Objects.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void returnButton_Click(object sender, EventArgs e)
+        {
+            this.GoToPreviousView(previousView);
         }
     }
 }

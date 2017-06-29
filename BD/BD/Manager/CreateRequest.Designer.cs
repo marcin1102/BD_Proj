@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.descriptionTextBox = new System.Windows.Forms.RichTextBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clientDataGridView = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.objectDataGridView = new System.Windows.Forms.DataGridView();
             this.registerRequestButton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.returnButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.descriptionTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 197);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(607, 144);
@@ -63,30 +63,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opis zgłoszenia";
             // 
-            // richTextBox1
+            // descriptionTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(594, 118);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.descriptionTextBox.Location = new System.Drawing.Point(7, 20);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(594, 118);
+            this.descriptionTextBox.TabIndex = 0;
+            this.descriptionTextBox.Text = "";
             // 
-            // button1
+            // searchButton
             // 
-            this.button1.Location = new System.Drawing.Point(522, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 27);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Szukaj";
-            this.button1.UseVisualStyleBackColor = true;
+            this.searchButton.Location = new System.Drawing.Point(522, 14);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(79, 27);
+            this.searchButton.TabIndex = 24;
+            this.searchButton.Text = "Szukaj";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.phoneNumberTextBox);
+            this.groupBox2.Controls.Add(this.searchButton);
+            this.groupBox2.Controls.Add(this.firstNameTextBox);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.lastNameTextBox);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
@@ -96,19 +97,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtr";
             // 
-            // textBox6
+            // phoneNumberTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(375, 18);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(90, 20);
-            this.textBox6.TabIndex = 36;
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(375, 18);
+            this.phoneNumberTextBox.Name = "phoneNumberTextBox";
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(90, 20);
+            this.phoneNumberTextBox.TabIndex = 36;
             // 
-            // textBox5
+            // firstNameTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(211, 18);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(90, 20);
-            this.textBox5.TabIndex = 35;
+            this.firstNameTextBox.Location = new System.Drawing.Point(211, 18);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(90, 20);
+            this.firstNameTextBox.TabIndex = 35;
             // 
             // label1
             // 
@@ -119,12 +120,12 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Nazwisko";
             // 
-            // textBox2
+            // lastNameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(65, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(90, 20);
-            this.textBox2.TabIndex = 28;
+            this.lastNameTextBox.Location = new System.Drawing.Point(65, 18);
+            this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.Size = new System.Drawing.Size(90, 20);
+            this.lastNameTextBox.TabIndex = 28;
             // 
             // label3
             // 
@@ -147,7 +148,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.clientDataGridView);
             this.groupBox3.Location = new System.Drawing.Point(12, 65);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(330, 126);
@@ -155,13 +156,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Klienci";
             // 
-            // dataGridView1
+            // clientDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(315, 100);
-            this.dataGridView1.TabIndex = 0;
+            this.clientDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientDataGridView.Location = new System.Drawing.Point(7, 20);
+            this.clientDataGridView.Name = "clientDataGridView";
+            this.clientDataGridView.Size = new System.Drawing.Size(315, 100);
+            this.clientDataGridView.TabIndex = 0;
+            this.clientDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientDataGridView_CellEnter);
             // 
             // button2
             // 
@@ -174,7 +176,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Controls.Add(this.objectDataGridView);
             this.groupBox4.Location = new System.Drawing.Point(348, 65);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(272, 126);
@@ -182,13 +184,13 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Obiekty klienta";
             // 
-            // dataGridView2
+            // objectDataGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(258, 100);
-            this.dataGridView2.TabIndex = 0;
+            this.objectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.objectDataGridView.Location = new System.Drawing.Point(7, 20);
+            this.objectDataGridView.Name = "objectDataGridView";
+            this.objectDataGridView.Size = new System.Drawing.Size(258, 100);
+            this.objectDataGridView.TabIndex = 0;
             // 
             // registerRequestButton
             // 
@@ -200,37 +202,36 @@
             this.registerRequestButton.UseVisualStyleBackColor = true;
             this.registerRequestButton.Click += new System.EventHandler(this.registerRequestButton_Click);
             // 
-            // button3
+            // returnButton
             // 
-            this.button3.Location = new System.Drawing.Point(319, 347);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(300, 40);
-            this.button3.TabIndex = 38;
-            this.button3.Text = "Wróć";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.returnButton.Location = new System.Drawing.Point(319, 347);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(300, 40);
+            this.returnButton.TabIndex = 38;
+            this.returnButton.Text = "Wróć";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
-            // RequestCreate
+            // CreateRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 417);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.returnButton);
             this.Controls.Add(this.registerRequestButton);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "RequestCreate";
-            this.Text = "RequestCreate";
+            this.Name = "CreateRequest";
+            this.Size = new System.Drawing.Size(632, 417);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -238,21 +239,21 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox descriptionTextBox;
+        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView clientDataGridView;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox phoneNumberTextBox;
+        private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView objectDataGridView;
         private System.Windows.Forms.Button registerRequestButton;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button returnButton;
     }
 }

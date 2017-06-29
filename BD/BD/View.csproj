@@ -104,6 +104,18 @@
     <Compile Include="Manager\CreateActivity.Designer.cs">
       <DependentUpon>CreateActivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\CreateObject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\CreateObject.Designer.cs">
+      <DependentUpon>CreateObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\CreateObjectType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\CreateObjectType.Designer.cs">
+      <DependentUpon>CreateObjectType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\HandleRequest.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,6 +186,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\CreateActivity.resx">
       <DependentUpon>CreateActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\CreateObject.resx">
+      <DependentUpon>CreateObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\CreateObjectType.resx">
+      <DependentUpon>CreateObjectType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\HandleRequest.resx">
       <DependentUpon>HandleRequest.cs</DependentUpon>

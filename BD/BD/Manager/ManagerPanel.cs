@@ -29,5 +29,10 @@ namespace BD.Manager
             SelectedClient = client;
             currentClientTextBox.Text = client.Name;
         }
+
+        private void registerRequestButton_Click(object sender, EventArgs e)
+        {
+            this.GoToNextView(new CreateRequest(this));
+        }
     }
 }

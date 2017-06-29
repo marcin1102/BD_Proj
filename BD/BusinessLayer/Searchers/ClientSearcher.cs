@@ -43,7 +43,14 @@ namespace BusinessLayer.Searchers
                             Name = o.Name,
                             FirstName = o.FirstName,
                             LastName = o.LastName,
-                            PhoneNumber = o.PhoneNumber
+                            PhoneNumber = o.PhoneNumber,
+                            Objects = o.Objects.Select(x => new ObjectData()
+                                {
+                                    Id = x.Id,
+                                    Name = x.Name,
+                                    ObjectTypeCode = x.Type,
+                                    ClientId = o.Id
+                                }).ToList()
                         })
                     .ToListAsync();
             return result;
