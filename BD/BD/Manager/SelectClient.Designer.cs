@@ -29,51 +29,52 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.chooseClientButton = new System.Windows.Forms.Button();
+            this.addClientButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.clientDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.returnButton = new System.Windows.Forms.Button();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // chooseClientButton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 197);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "wybierz";
-            this.button1.UseVisualStyleBackColor = true;
+            this.chooseClientButton.Location = new System.Drawing.Point(12, 197);
+            this.chooseClientButton.Name = "chooseClientButton";
+            this.chooseClientButton.Size = new System.Drawing.Size(75, 23);
+            this.chooseClientButton.TabIndex = 1;
+            this.chooseClientButton.Text = "wybierz";
+            this.chooseClientButton.UseVisualStyleBackColor = true;
+            this.chooseClientButton.Click += new System.EventHandler(this.chooseClientButton_Click);
             // 
-            // button2
+            // addClientButton
             // 
-            this.button2.Location = new System.Drawing.Point(93, 197);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "dodaj klienta";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.addClientButton.Location = new System.Drawing.Point(93, 197);
+            this.addClientButton.Name = "addClientButton";
+            this.addClientButton.Size = new System.Drawing.Size(75, 23);
+            this.addClientButton.TabIndex = 2;
+            this.addClientButton.Text = "dodaj klienta";
+            this.addClientButton.UseVisualStyleBackColor = true;
+            this.addClientButton.Click += new System.EventHandler(this.addClientButton_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView3);
+            this.groupBox3.Controls.Add(this.clientDataGridView);
             this.groupBox3.Location = new System.Drawing.Point(12, 65);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(350, 126);
@@ -81,28 +82,28 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Klienci";
             // 
-            // dataGridView3
+            // clientDataGridView
             // 
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientDataGridView.AutoGenerateColumns = false;
+            this.clientDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
             this.phoneNumberDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.clientBindingSource;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(344, 107);
-            this.dataGridView3.TabIndex = 0;
+            this.clientDataGridView.DataSource = this.clientBindingSource;
+            this.clientDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clientDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.clientDataGridView.Name = "clientDataGridView";
+            this.clientDataGridView.Size = new System.Drawing.Size(344, 107);
+            this.clientDataGridView.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.phoneNumberTextBox);
+            this.groupBox2.Controls.Add(this.searchButton);
+            this.groupBox2.Controls.Add(this.firstNameTextBox);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.lastNameTextBox);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
@@ -112,29 +113,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtr";
             // 
-            // textBox6
+            // phoneNumberTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(375, 18);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(109, 20);
-            this.textBox6.TabIndex = 36;
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(375, 18);
+            this.phoneNumberTextBox.Name = "phoneNumberTextBox";
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(109, 20);
+            this.phoneNumberTextBox.TabIndex = 36;
             // 
-            // button3
+            // searchButton
             // 
-            this.button3.Location = new System.Drawing.Point(522, 14);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 27);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Szukaj";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.searchButton.Location = new System.Drawing.Point(522, 14);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(79, 27);
+            this.searchButton.TabIndex = 24;
+            this.searchButton.Text = "Szukaj";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // textBox5
+            // firstNameTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(211, 18);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(119, 20);
-            this.textBox5.TabIndex = 35;
+            this.firstNameTextBox.Location = new System.Drawing.Point(211, 18);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(119, 20);
+            this.firstNameTextBox.TabIndex = 35;
             // 
             // label1
             // 
@@ -145,12 +146,12 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Nazwisko";
             // 
-            // textBox2
+            // lastNameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(65, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(108, 20);
-            this.textBox2.TabIndex = 28;
+            this.lastNameTextBox.Location = new System.Drawing.Point(65, 18);
+            this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.Size = new System.Drawing.Size(108, 20);
+            this.lastNameTextBox.TabIndex = 28;
             // 
             // label3
             // 
@@ -170,9 +171,15 @@
             this.label4.TabIndex = 30;
             this.label4.Text = "Imie";
             // 
-            // clientBindingSource
+            // returnButton
             // 
-            this.clientBindingSource.DataSource = typeof(DataLayer.Client);
+            this.returnButton.Location = new System.Drawing.Point(174, 197);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(75, 23);
+            this.returnButton.TabIndex = 31;
+            this.returnButton.Text = "wróć";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -192,30 +199,23 @@
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
             // 
-            // button4
+            // clientBindingSource
             // 
-            this.button4.Location = new System.Drawing.Point(174, 197);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 31;
-            this.button4.Text = "wróć";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.clientBindingSource.DataSource = typeof(DataLayer.Client);
             // 
-            // ClientSelect
+            // SelectClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 257);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.returnButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "ClientSelect";
-            this.Text = "ClientSelect";
+            this.Controls.Add(this.addClientButton);
+            this.Controls.Add(this.chooseClientButton);
+            this.Name = "SelectClient";
+            this.Size = new System.Drawing.Size(630, 257);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
@@ -224,22 +224,22 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button chooseClientButton;
+        private System.Windows.Forms.Button addClientButton;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView clientDataGridView;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox phoneNumberTextBox;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource clientBindingSource;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button returnButton;
     }
 }

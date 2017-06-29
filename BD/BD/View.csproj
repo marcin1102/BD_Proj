@@ -78,12 +78,6 @@
     <Compile Include="Client\ClientForm.Designer.cs">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="enums\FormOpenMode.cs" />
     <Compile Include="Helpers\WindowExtensions.cs" />
     <Compile Include="Login\LoginForm.cs">
@@ -91,6 +85,12 @@
     </Compile>
     <Compile Include="Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\CloseOrCancelRequest.cs">
       <SubType>UserControl</SubType>
@@ -110,29 +110,29 @@
     <Compile Include="Manager\HandleRequest.Designer.cs">
       <DependentUpon>HandleRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager\ManagerPanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Manager\ManagerPanel.Designer.cs">
-      <DependentUpon>ManagerPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Manager\CreateClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Manager\CreateClient.Designer.cs">
       <DependentUpon>CreateClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager\SelectClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Manager\SelectClient.Designer.cs">
-      <DependentUpon>SelectClient.cs</DependentUpon>
-    </Compile>
     <Compile Include="Manager\CreateRequest.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Manager\CreateRequest.Designer.cs">
       <DependentUpon>CreateRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerPanel.Designer.cs">
+      <DependentUpon>ManagerPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\SelectClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\SelectClient.Designer.cs">
+      <DependentUpon>SelectClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,26 +148,26 @@
     <Compile Include="Worker\SelectObject.Designer.cs">
       <DependentUpon>SelectObject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Worker\WorkerPanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Worker\WorkerPanel.Designer.cs">
-      <DependentUpon>WorkerPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Worker\CloseOrCancelActivity.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Worker\CloseOrCancelActivity.Designer.cs">
       <DependentUpon>CloseOrCancelActivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Worker\WorkerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Worker\WorkerPanel.Designer.cs">
+      <DependentUpon>WorkerPanel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Client\ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\CloseOrCancelRequest.resx">
       <DependentUpon>CloseOrCancelRequest.cs</DependentUpon>
@@ -178,17 +178,17 @@
     <EmbeddedResource Include="Manager\HandleRequest.resx">
       <DependentUpon>HandleRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manager\ManagerPanel.resx">
-      <DependentUpon>ManagerPanel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Manager\CreateClient.resx">
       <DependentUpon>CreateClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manager\SelectClient.resx">
-      <DependentUpon>SelectClient.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Manager\CreateRequest.resx">
       <DependentUpon>CreateRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\ManagerPanel.resx">
+      <DependentUpon>ManagerPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\SelectClient.resx">
+      <DependentUpon>SelectClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -205,11 +205,11 @@
     <EmbeddedResource Include="Worker\SelectObject.resx">
       <DependentUpon>SelectObject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Worker\WorkerPanel.resx">
-      <DependentUpon>WorkerPanel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Worker\CloseOrCancelActivity.resx">
       <DependentUpon>CloseOrCancelActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\WorkerPanel.resx">
+      <DependentUpon>WorkerPanel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BazaNaprawDataSet.xsc">
       <DependentUpon>BazaNaprawDataSet.xsd</DependentUpon>

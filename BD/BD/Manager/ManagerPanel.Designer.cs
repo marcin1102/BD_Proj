@@ -1,6 +1,6 @@
-﻿namespace BD.Manager.beta
+﻿namespace BD.Manager
 {
-    partial class MainPanel
+    partial class ManagerPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.selectClientButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.currentClientTextBox = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
@@ -43,14 +43,14 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // searchButton
             // 
-            this.button2.Location = new System.Drawing.Point(182, 41);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 47);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Szukaj";
-            this.button2.UseVisualStyleBackColor = true;
+            this.searchButton.Location = new System.Drawing.Point(182, 41);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 47);
+            this.searchButton.TabIndex = 27;
+            this.searchButton.Text = "Szukaj";
+            this.searchButton.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -69,13 +69,14 @@
             this.selectClientButton.TabIndex = 25;
             this.selectClientButton.Text = "...";
             this.selectClientButton.UseVisualStyleBackColor = true;
+            this.selectClientButton.Click += new System.EventHandler(this.selectClientButton_Click);
             // 
-            // textBox1
+            // currentClientTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(53, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 24;
+            this.currentClientTextBox.Location = new System.Drawing.Point(53, 68);
+            this.currentClientTextBox.Name = "currentClientTextBox";
+            this.currentClientTextBox.Size = new System.Drawing.Size(100, 20);
+            this.currentClientTextBox.TabIndex = 24;
             // 
             // dateTimePicker1
             // 
@@ -142,23 +143,23 @@
             this.button5.Text = "Obsłuż zgłoszenie";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // MainPanel
+            // ManagerPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 520);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.registerRequestButton);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.selectClientButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.currentClientTextBox);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusComboBox);
             this.Controls.Add(this.groupBox1);
-            this.Name = "MainPanel";
-            this.Text = "MainPanel";
+            this.Name = "ManagerPanel";
+            this.Size = new System.Drawing.Size(523, 520);
+            this.Load += new System.EventHandler(this.ManagerPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -168,10 +169,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button selectClientButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox currentClientTextBox;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox statusComboBox;

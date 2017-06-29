@@ -1,5 +1,6 @@
 ﻿using BD.Helpers;
-using BD.Manager.beta;
+using BD.Manager;
+using BD.Worker;
 using BusinessLayer.Searchers;
 using BusinessLayer.Services;
 using DataLayer.Role;
@@ -46,12 +47,12 @@ namespace BD
         {
             if(role == Roles.Worker.ToString())
             {
-                this.OpenNextWindow(new WorkerStart());
+                this.OpenNextWindow(new MainWindow(new WorkerPanel()));
                 
             }
             else
             {
-                this.OpenNextWindow(new MainPanel());
+                this.OpenNextWindow(new MainWindow(new ManagerPanel()));
             }
         }
     }

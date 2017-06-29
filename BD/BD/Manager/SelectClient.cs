@@ -1,38 +1,47 @@
-﻿using BusinessLayer;
-using BusinessLayer.Searchers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using BD.Helpers;
+using BusinessLayer.Searchers;
+using BusinessLayer.DTO;
 
 namespace BD.Manager
 {
-    public partial class SelectClient : Form
+    public partial class SelectClient : UserControl
     {
-        public SelectClient()
+        private readonly UserControl previousControl;
+
+        public SelectClient(UserControl previousControl)
         {
+            this.previousControl = previousControl;
             InitializeComponent();
         }
-        private void button3_Click(object sender, EventArgs e)
+
+        private void addClientButton_Click(object sender, EventArgs e)
         {
+            this.GoToNextView(new CreateClient(this));
+        }
+
+        private async void searchButton_Click(object sender, EventArgs e)
+        {
+            var firstName = firstNameTextBox.Text;
+            var lastName = lastNameTextBox.Text;
+            var phoneNumber = phoneNumberTextBox.Text;
+
             var clientSearcher = new ClientSearcher();
-            clientBindingSource.DataSource = clientSearcher.GetClients();
+            clientDataGridView.DataSource = await clientSearcher.SearchClients(firstName, lastName, phoneNumber);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void returnButton_Click(object sender, EventArgs e)
         {
-            var window = new CreateClient();
-            window.Show();
+            this.GoToPreviousView(previousControl);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void chooseClientButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
+            var managerPanel = previousControl as ManagerPanel;
+            managerPanel.SetClient(client);
+            this.GoToPreviousView(managerPanel);
         }
     }
 }

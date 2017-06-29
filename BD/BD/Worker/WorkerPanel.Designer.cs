@@ -1,6 +1,6 @@
-﻿namespace BD
+﻿namespace BD.Worker
 {
-    partial class WorkerStart
+    partial class WorkerPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -69,7 +69,6 @@
             this.dateTimePicker1.ShowCheckBox = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 7;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // comboBox1
             // 
@@ -91,7 +90,6 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "status";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -108,7 +106,6 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -146,11 +143,11 @@
             this.button3.Text = "Anuluj zgłoszenie";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // WorkerStart
+            // WorkerPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 479);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
@@ -161,9 +158,9 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "WorkerStart";
-            this.Text = "WorkerForm";
-            this.Load += new System.EventHandler(this.WorkerForm_Load);
+            this.Name = "WorkerPanel";
+            this.Size = new System.Drawing.Size(500, 479);
+            this.Load += new System.EventHandler(this.WorkerPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

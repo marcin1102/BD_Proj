@@ -1,64 +1,18 @@
-﻿using BD.Worker;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
-namespace BD
+namespace BD.Worker
 {
-    public partial class WorkerStart : Form
+    public partial class WorkerPanel : UserControl
     {
-        public WorkerStart()
+        public WorkerPanel()
         {
             InitializeComponent();
         }
 
-        private void showActivityButton_Click(object sender, EventArgs e)
+        private void WorkerPanel_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void activitiesListLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WorkerForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var formObjectSelect = new SelectObject();
-            formObjectSelect.Show();
-        }
-
-        private void endButton_Click(object sender, EventArgs e)
-        {
-            var formWorkerMain = new WorkerMain(FormOpenMode.FINISH, null);
-            formWorkerMain.Show();
-        }
-
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            var formWorkerMain = new WorkerMain(FormOpenMode.CANCEL, null);
-            formWorkerMain.Show();
+            Dock = DockStyle.Fill;
         }
     }
 }
