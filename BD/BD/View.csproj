@@ -140,11 +140,11 @@
     <Compile Include="Manager\ManagerPanel.Designer.cs">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager\SelectClient.cs">
+    <Compile Include="Manager\ManageClients.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Manager\SelectClient.Designer.cs">
-      <DependentUpon>SelectClient.cs</DependentUpon>
+    <Compile Include="Manager\ManageClients.Designer.cs">
+      <DependentUpon>ManageClients.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -160,11 +160,11 @@
     <Compile Include="Worker\SelectObject.Designer.cs">
       <DependentUpon>SelectObject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Worker\CloseOrCancelActivity.cs">
+    <Compile Include="Worker\FinishOrCancelActivity.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Worker\CloseOrCancelActivity.Designer.cs">
-      <DependentUpon>CloseOrCancelActivity.cs</DependentUpon>
+    <Compile Include="Worker\FinishOrCancelActivity.Designer.cs">
+      <DependentUpon>FinishOrCancelActivity.cs</DependentUpon>
     </Compile>
     <Compile Include="Worker\WorkerPanel.cs">
       <SubType>UserControl</SubType>
@@ -205,8 +205,8 @@
     <EmbeddedResource Include="Manager\ManagerPanel.resx">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manager\SelectClient.resx">
-      <DependentUpon>SelectClient.cs</DependentUpon>
+    <EmbeddedResource Include="Manager\ManageClients.resx">
+      <DependentUpon>ManageClients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -223,8 +223,8 @@
     <EmbeddedResource Include="Worker\SelectObject.resx">
       <DependentUpon>SelectObject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Worker\CloseOrCancelActivity.resx">
-      <DependentUpon>CloseOrCancelActivity.cs</DependentUpon>
+    <EmbeddedResource Include="Worker\FinishOrCancelActivity.resx">
+      <DependentUpon>FinishOrCancelActivity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Worker\WorkerPanel.resx">
       <DependentUpon>WorkerPanel.cs</DependentUpon>

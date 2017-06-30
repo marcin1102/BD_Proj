@@ -28,57 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.addUserButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.objectDataGridView = new System.Windows.Forms.DataGridView();
+            this.goBackButton = new System.Windows.Forms.Button();
+            this.selectButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // objectDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(418, 237);
-            this.dataGridView1.TabIndex = 0;
+            this.objectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.objectDataGridView.Location = new System.Drawing.Point(13, 13);
+            this.objectDataGridView.Name = "objectDataGridView";
+            this.objectDataGridView.Size = new System.Drawing.Size(418, 237);
+            this.objectDataGridView.TabIndex = 0;
             // 
-            // button1
+            // goBackButton
             // 
-            this.button1.Location = new System.Drawing.Point(215, 256);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Wróć";
-            this.button1.UseVisualStyleBackColor = true;
+            this.goBackButton.Location = new System.Drawing.Point(215, 256);
+            this.goBackButton.Name = "goBackButton";
+            this.goBackButton.Size = new System.Drawing.Size(90, 23);
+            this.goBackButton.TabIndex = 17;
+            this.goBackButton.Text = "Wróć";
+            this.goBackButton.UseVisualStyleBackColor = true;
             // 
-            // addUserButton
+            // selectButton
             // 
-            this.addUserButton.Location = new System.Drawing.Point(123, 256);
-            this.addUserButton.Name = "addUserButton";
-            this.addUserButton.Size = new System.Drawing.Size(90, 23);
-            this.addUserButton.TabIndex = 16;
-            this.addUserButton.Text = "Wybierz";
-            this.addUserButton.UseVisualStyleBackColor = true;
+            this.selectButton.Location = new System.Drawing.Point(123, 256);
+            this.selectButton.Name = "selectButton";
+            this.selectButton.Size = new System.Drawing.Size(90, 23);
+            this.selectButton.TabIndex = 16;
+            this.selectButton.Text = "Wybierz";
+            this.selectButton.UseVisualStyleBackColor = true;
             // 
-            // ObjectSelect
+            // SelectObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 293);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.addUserButton);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "ObjectSelect";
-            this.Text = "ObjectSelect";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.Add(this.goBackButton);
+            this.Controls.Add(this.selectButton);
+            this.Controls.Add(this.objectDataGridView);
+            this.Name = "SelectObject";
+            this.Size = new System.Drawing.Size(443, 293);
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button addUserButton;
+        private System.Windows.Forms.DataGridView objectDataGridView;
+        private System.Windows.Forms.Button goBackButton;
+        private System.Windows.Forms.Button selectButton;
     }
 }

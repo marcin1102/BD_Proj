@@ -21,7 +21,7 @@ namespace BD.Manager
 
         private void selectClientButton_Click(object sender, EventArgs e)
         {
-            this.GoToNextView(new SelectClient(this));
+            this.GoToNextView(new ManageClients(this));
         }
 
         public void SetClient(ClientData client)

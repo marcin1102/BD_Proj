@@ -144,6 +144,7 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "Dodaj";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -194,7 +195,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 323);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -202,7 +202,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Name = "ActivityCreate";
-            this.Text = "ActivityCreate";
+            this.Size = new System.Drawing.Size(519, 323);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);

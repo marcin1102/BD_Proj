@@ -7,12 +7,12 @@ using System.Collections.Generic;
 
 namespace BD.Manager
 {
-    public partial class SelectClient : UserControl
+    public partial class ManageClients : UserControl
     {
         private readonly UserControl previousControl;
         private ICollection<ClientData> searchedClients;
 
-        public SelectClient(UserControl previousControl)
+        public ManageClients(UserControl previousControl)
         {
             this.previousControl = previousControl;
             InitializeComponent();

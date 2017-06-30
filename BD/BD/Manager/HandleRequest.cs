@@ -16,5 +16,10 @@ namespace BD.Manager.beta
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
