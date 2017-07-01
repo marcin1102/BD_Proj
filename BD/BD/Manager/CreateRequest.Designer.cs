@@ -30,7 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.descriptionTextBox = new System.Windows.Forms.RichTextBox();
-            this.searchButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
@@ -40,11 +39,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.clientDataGridView = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.objectDataGridView = new System.Windows.Forms.DataGridView();
             this.registerRequestButton = new System.Windows.Forms.Button();
             this.returnButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.manageClientsButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -56,7 +56,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.descriptionTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 197);
+            this.groupBox1.Location = new System.Drawing.Point(6, 236);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(607, 144);
             this.groupBox1.TabIndex = 0;
@@ -71,20 +71,9 @@
             this.descriptionTextBox.TabIndex = 0;
             this.descriptionTextBox.Text = "";
             // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(522, 14);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(79, 27);
-            this.searchButton.TabIndex = 24;
-            this.searchButton.Text = "Szukaj";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.phoneNumberTextBox);
-            this.groupBox2.Controls.Add(this.searchButton);
             this.groupBox2.Controls.Add(this.firstNameTextBox);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lastNameTextBox);
@@ -92,7 +81,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(607, 47);
+            this.groupBox2.Size = new System.Drawing.Size(474, 47);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtr";
@@ -149,7 +138,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.clientDataGridView);
-            this.groupBox3.Location = new System.Drawing.Point(12, 65);
+            this.groupBox3.Location = new System.Drawing.Point(3, 65);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(330, 126);
             this.groupBox3.TabIndex = 27;
@@ -159,25 +148,17 @@
             // clientDataGridView
             // 
             this.clientDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.clientDataGridView.Location = new System.Drawing.Point(7, 20);
+            this.clientDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clientDataGridView.Location = new System.Drawing.Point(3, 16);
             this.clientDataGridView.Name = "clientDataGridView";
-            this.clientDataGridView.Size = new System.Drawing.Size(315, 100);
+            this.clientDataGridView.Size = new System.Drawing.Size(324, 107);
             this.clientDataGridView.TabIndex = 0;
             this.clientDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientDataGridView_CellEnter);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(702, 445);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Szukaj";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.objectDataGridView);
-            this.groupBox4.Location = new System.Drawing.Point(348, 65);
+            this.groupBox4.Location = new System.Drawing.Point(339, 65);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(272, 126);
             this.groupBox4.TabIndex = 28;
@@ -187,14 +168,15 @@
             // objectDataGridView
             // 
             this.objectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.objectDataGridView.Location = new System.Drawing.Point(7, 20);
+            this.objectDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectDataGridView.Location = new System.Drawing.Point(3, 16);
             this.objectDataGridView.Name = "objectDataGridView";
-            this.objectDataGridView.Size = new System.Drawing.Size(258, 100);
+            this.objectDataGridView.Size = new System.Drawing.Size(266, 107);
             this.objectDataGridView.TabIndex = 0;
             // 
             // registerRequestButton
             // 
-            this.registerRequestButton.Location = new System.Drawing.Point(12, 347);
+            this.registerRequestButton.Location = new System.Drawing.Point(6, 386);
             this.registerRequestButton.Name = "registerRequestButton";
             this.registerRequestButton.Size = new System.Drawing.Size(301, 40);
             this.registerRequestButton.TabIndex = 37;
@@ -204,7 +186,7 @@
             // 
             // returnButton
             // 
-            this.returnButton.Location = new System.Drawing.Point(319, 347);
+            this.returnButton.Location = new System.Drawing.Point(313, 386);
             this.returnButton.Name = "returnButton";
             this.returnButton.Size = new System.Drawing.Size(300, 40);
             this.returnButton.TabIndex = 38;
@@ -212,19 +194,38 @@
             this.returnButton.UseVisualStyleBackColor = true;
             this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(492, 21);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(79, 35);
+            this.searchButton.TabIndex = 40;
+            this.searchButton.Text = "Szukaj";
+            this.searchButton.UseVisualStyleBackColor = true;
+            // 
+            // manageClientsButton
+            // 
+            this.manageClientsButton.Location = new System.Drawing.Point(6, 197);
+            this.manageClientsButton.Name = "manageClientsButton";
+            this.manageClientsButton.Size = new System.Drawing.Size(327, 33);
+            this.manageClientsButton.TabIndex = 41;
+            this.manageClientsButton.Text = "Zarządzaj klientami";
+            this.manageClientsButton.UseVisualStyleBackColor = true;
+            // 
             // CreateRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.manageClientsButton);
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.returnButton);
             this.Controls.Add(this.registerRequestButton);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "CreateRequest";
-            this.Size = new System.Drawing.Size(632, 417);
+            this.Size = new System.Drawing.Size(639, 438);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -240,11 +241,9 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox descriptionTextBox;
-        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView clientDataGridView;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox lastNameTextBox;
@@ -255,5 +254,7 @@
         private System.Windows.Forms.DataGridView objectDataGridView;
         private System.Windows.Forms.Button registerRequestButton;
         private System.Windows.Forms.Button returnButton;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button manageClientsButton;
     }
 }

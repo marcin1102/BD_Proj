@@ -1,6 +1,6 @@
 ﻿namespace BD.Manager
 {
-    partial class SelectClient
+    partial class ManageClients
     {
         /// <summary>
         /// Required designer variable.
@@ -47,10 +47,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.returnButton = new System.Windows.Forms.Button();
             this.addObjectButton = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.objectDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // chooseClientButton
@@ -214,10 +218,30 @@
             this.addObjectButton.UseVisualStyleBackColor = true;
             this.addObjectButton.Click += new System.EventHandler(this.addObjectButton_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.objectDataGridView);
+            this.groupBox4.Location = new System.Drawing.Point(368, 65);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(251, 126);
+            this.groupBox4.TabIndex = 34;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Obiekty klienta";
+            // 
+            // objectDataGridView
+            // 
+            this.objectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.objectDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.objectDataGridView.Name = "objectDataGridView";
+            this.objectDataGridView.Size = new System.Drawing.Size(245, 107);
+            this.objectDataGridView.TabIndex = 0;
+            // 
             // SelectClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.addObjectButton);
             this.Controls.Add(this.returnButton);
             this.Controls.Add(this.groupBox3);
@@ -225,12 +249,14 @@
             this.Controls.Add(this.addClientButton);
             this.Controls.Add(this.chooseClientButton);
             this.Name = "SelectClient";
-            this.Size = new System.Drawing.Size(630, 257);
+            this.Size = new System.Drawing.Size(646, 255);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,5 +280,7 @@
         private System.Windows.Forms.BindingSource clientBindingSource;
         private System.Windows.Forms.Button returnButton;
         private System.Windows.Forms.Button addObjectButton;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView objectDataGridView;
     }
 }

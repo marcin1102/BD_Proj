@@ -1,6 +1,6 @@
 ﻿namespace BD
 {
-    partial class WorkerMain
+    partial class FinishOrCancelActivity
     {
         /// <summary>
         /// Required designer variable.
@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.requestDescrTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.activityDescrTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.activityResultTextBox = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.objectNameLabel = new System.Windows.Forms.Label();
+            this.objectTypeLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.activityNameLabel = new System.Windows.Forms.Label();
+            this.activityIdLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.goBackButton = new System.Windows.Forms.Button();
+            this.acceptButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.requestDescrTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 79);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(390, 100);
@@ -63,19 +63,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opis Zgłoszenia";
             // 
-            // richTextBox1
+            // requestDescrTextBox
             // 
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(6, 19);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(378, 75);
-            this.richTextBox1.TabIndex = 14;
-            this.richTextBox1.Text = "";
+            this.requestDescrTextBox.Enabled = false;
+            this.requestDescrTextBox.Location = new System.Drawing.Point(6, 19);
+            this.requestDescrTextBox.Name = "requestDescrTextBox";
+            this.requestDescrTextBox.ReadOnly = true;
+            this.requestDescrTextBox.Size = new System.Drawing.Size(378, 75);
+            this.requestDescrTextBox.TabIndex = 14;
+            this.requestDescrTextBox.Text = "";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.richTextBox2);
+            this.groupBox2.Controls.Add(this.activityDescrTextBox);
             this.groupBox2.Location = new System.Drawing.Point(12, 185);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(390, 100);
@@ -83,18 +83,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opis Czynności";
             // 
-            // richTextBox2
+            // activityDescrTextBox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(6, 19);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(378, 75);
-            this.richTextBox2.TabIndex = 14;
-            this.richTextBox2.Text = "";
+            this.activityDescrTextBox.Location = new System.Drawing.Point(6, 19);
+            this.activityDescrTextBox.Name = "activityDescrTextBox";
+            this.activityDescrTextBox.ReadOnly = true;
+            this.activityDescrTextBox.Size = new System.Drawing.Size(378, 75);
+            this.activityDescrTextBox.TabIndex = 14;
+            this.activityDescrTextBox.Text = "";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.richTextBox3);
+            this.groupBox3.Controls.Add(this.activityResultTextBox);
             this.groupBox3.Location = new System.Drawing.Point(12, 291);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(390, 100);
@@ -102,13 +102,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Wynik";
             // 
-            // richTextBox3
+            // activityResultTextBox
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(6, 19);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(378, 75);
-            this.richTextBox3.TabIndex = 14;
-            this.richTextBox3.Text = "";
+            this.activityResultTextBox.Location = new System.Drawing.Point(6, 19);
+            this.activityResultTextBox.Name = "activityResultTextBox";
+            this.activityResultTextBox.Size = new System.Drawing.Size(378, 75);
+            this.activityResultTextBox.TabIndex = 14;
+            this.activityResultTextBox.Text = "";
             // 
             // label1
             // 
@@ -121,8 +121,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.objectNameLabel);
+            this.groupBox4.Controls.Add(this.objectTypeLabel);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Location = new System.Drawing.Point(12, 12);
@@ -132,23 +132,23 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Obiekt";
             // 
-            // label5
+            // objectNameLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(132, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "label2";
+            this.objectNameLabel.AutoSize = true;
+            this.objectNameLabel.Location = new System.Drawing.Point(132, 32);
+            this.objectNameLabel.Name = "objectNameLabel";
+            this.objectNameLabel.Size = new System.Drawing.Size(35, 13);
+            this.objectNameLabel.TabIndex = 13;
+            this.objectNameLabel.Text = "label2";
             // 
-            // label4
+            // objectTypeLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(132, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "label2";
+            this.objectTypeLabel.AutoSize = true;
+            this.objectTypeLabel.Location = new System.Drawing.Point(132, 16);
+            this.objectTypeLabel.Name = "objectTypeLabel";
+            this.objectTypeLabel.Size = new System.Drawing.Size(35, 13);
+            this.objectTypeLabel.TabIndex = 11;
+            this.objectTypeLabel.Text = "label2";
             // 
             // label3
             // 
@@ -161,8 +161,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Controls.Add(this.label7);
+            this.groupBox5.Controls.Add(this.activityNameLabel);
+            this.groupBox5.Controls.Add(this.activityIdLabel);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Location = new System.Drawing.Point(210, 12);
@@ -172,23 +172,23 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Czynność";
             // 
-            // label6
+            // activityNameLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(132, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "label2";
+            this.activityNameLabel.AutoSize = true;
+            this.activityNameLabel.Location = new System.Drawing.Point(132, 32);
+            this.activityNameLabel.Name = "activityNameLabel";
+            this.activityNameLabel.Size = new System.Drawing.Size(35, 13);
+            this.activityNameLabel.TabIndex = 13;
+            this.activityNameLabel.Text = "label2";
             // 
-            // label7
+            // activityIdLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(132, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "label2";
+            this.activityIdLabel.AutoSize = true;
+            this.activityIdLabel.Location = new System.Drawing.Point(132, 16);
+            this.activityIdLabel.Name = "activityIdLabel";
+            this.activityIdLabel.Size = new System.Drawing.Size(35, 13);
+            this.activityIdLabel.TabIndex = 11;
+            this.activityIdLabel.Text = "label2";
             // 
             // label8
             // 
@@ -208,35 +208,36 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "ID";
             // 
-            // button3
+            // goBackButton
             // 
-            this.button3.Location = new System.Drawing.Point(12, 443);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(235, 40);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Wróć";
-            this.button3.UseVisualStyleBackColor = true;
+            this.goBackButton.Location = new System.Drawing.Point(12, 443);
+            this.goBackButton.Name = "goBackButton";
+            this.goBackButton.Size = new System.Drawing.Size(235, 40);
+            this.goBackButton.TabIndex = 33;
+            this.goBackButton.Text = "Wróć";
+            this.goBackButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // acceptButton
             // 
-            this.button5.Location = new System.Drawing.Point(12, 397);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(235, 40);
-            this.button5.TabIndex = 32;
-            this.button5.Text = "Akceptuj";
-            this.button5.UseVisualStyleBackColor = true;
+            this.acceptButton.Location = new System.Drawing.Point(12, 397);
+            this.acceptButton.Name = "acceptButton";
+            this.acceptButton.Size = new System.Drawing.Size(235, 40);
+            this.acceptButton.TabIndex = 32;
+            this.acceptButton.Text = "Akceptuj";
+            this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
             // WorkerMain
             // 
-            this.ClientSize = new System.Drawing.Size(432, 502);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.goBackButton);
+            this.Controls.Add(this.acceptButton);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "WorkerMain";
+            this.Size = new System.Drawing.Size(432, 502);
             this.Load += new System.EventHandler(this.WorkerActivityForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -251,22 +252,22 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox requestDescrTextBox;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox activityDescrTextBox;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox activityResultTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label objectNameLabel;
+        private System.Windows.Forms.Label objectTypeLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label activityNameLabel;
+        private System.Windows.Forms.Label activityIdLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button goBackButton;
+        private System.Windows.Forms.Button acceptButton;
     }
 }

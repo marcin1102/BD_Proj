@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.goBackButton = new System.Windows.Forms.Button();
+            this.submitButton = new System.Windows.Forms.Button();
+            this.requestStatusLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.requestResultRichTextBox = new System.Windows.Forms.RichTextBox();
             this.richTextBox6 = new System.Windows.Forms.RichTextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.activityResultRichTextBox = new System.Windows.Forms.RichTextBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.workerAssignedToActivityLabel = new System.Windows.Forms.TextBox();
+            this.activityDescrRichTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.requestDescrRichTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.objectNameLabel = new System.Windows.Forms.Label();
+            this.objectTypeLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.activitiesDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox7.SuspendLayout();
@@ -59,56 +59,56 @@
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // goBackButton
             // 
-            this.button2.Location = new System.Drawing.Point(6, 540);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 40);
-            this.button2.TabIndex = 52;
-            this.button2.Text = "Wróć";
-            this.button2.UseVisualStyleBackColor = true;
+            this.goBackButton.Location = new System.Drawing.Point(6, 540);
+            this.goBackButton.Name = "goBackButton";
+            this.goBackButton.Size = new System.Drawing.Size(200, 40);
+            this.goBackButton.TabIndex = 52;
+            this.goBackButton.Text = "Wróć";
+            this.goBackButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // submitButton
             // 
-            this.button1.Location = new System.Drawing.Point(6, 494);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 40);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Akceptuj";
-            this.button1.UseVisualStyleBackColor = true;
+            this.submitButton.Location = new System.Drawing.Point(6, 494);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(200, 40);
+            this.submitButton.TabIndex = 44;
+            this.submitButton.Text = "Akceptuj";
+            this.submitButton.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // requestStatusLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(121, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 15);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "OPN";
+            this.requestStatusLabel.AutoSize = true;
+            this.requestStatusLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.requestStatusLabel.Location = new System.Drawing.Point(122, 36);
+            this.requestStatusLabel.Name = "requestStatusLabel";
+            this.requestStatusLabel.Size = new System.Drawing.Size(32, 15);
+            this.requestStatusLabel.TabIndex = 27;
+            this.requestStatusLabel.Text = "OPN";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 32);
+            this.label7.Location = new System.Drawing.Point(6, 36);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 13);
             this.label7.TabIndex = 14;
             this.label7.Text = "Status Zgłoszenia";
             // 
-            // richTextBox5
+            // requestResultRichTextBox
             // 
-            this.richTextBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox5.Location = new System.Drawing.Point(3, 16);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(397, 81);
-            this.richTextBox5.TabIndex = 15;
-            this.richTextBox5.Text = "";
+            this.requestResultRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.requestResultRichTextBox.Location = new System.Drawing.Point(3, 16);
+            this.requestResultRichTextBox.Name = "requestResultRichTextBox";
+            this.requestResultRichTextBox.Size = new System.Drawing.Size(397, 81);
+            this.requestResultRichTextBox.TabIndex = 15;
+            this.requestResultRichTextBox.Text = "";
             // 
             // richTextBox6
             // 
@@ -120,7 +120,7 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.richTextBox5);
+            this.groupBox7.Controls.Add(this.requestResultRichTextBox);
             this.groupBox7.Controls.Add(this.richTextBox6);
             this.groupBox7.Location = new System.Drawing.Point(6, 388);
             this.groupBox7.Name = "groupBox7";
@@ -129,16 +129,16 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Wynik Zgłoszenia";
             // 
-            // richTextBox3
+            // activityResultRichTextBox
             // 
-            this.richTextBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox3.Enabled = false;
-            this.richTextBox3.Location = new System.Drawing.Point(3, 16);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(397, 81);
-            this.richTextBox3.TabIndex = 15;
-            this.richTextBox3.Text = "status czynności będzie widoczny w gridview \'czynosci w zgłoszeniu\'";
+            this.activityResultRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activityResultRichTextBox.Enabled = false;
+            this.activityResultRichTextBox.Location = new System.Drawing.Point(3, 16);
+            this.activityResultRichTextBox.Name = "activityResultRichTextBox";
+            this.activityResultRichTextBox.ReadOnly = true;
+            this.activityResultRichTextBox.Size = new System.Drawing.Size(397, 81);
+            this.activityResultRichTextBox.TabIndex = 15;
+            this.activityResultRichTextBox.Text = "status czynności będzie widoczny w gridview \'czynosci w zgłoszeniu\'";
             // 
             // richTextBox4
             // 
@@ -150,7 +150,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.richTextBox3);
+            this.groupBox6.Controls.Add(this.activityResultRichTextBox);
             this.groupBox6.Controls.Add(this.richTextBox4);
             this.groupBox6.Location = new System.Drawing.Point(9, 282);
             this.groupBox6.Name = "groupBox6";
@@ -173,27 +173,27 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // textBox1
+            // workerAssignedToActivityLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(68, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 24;
+            this.workerAssignedToActivityLabel.Location = new System.Drawing.Point(68, 13);
+            this.workerAssignedToActivityLabel.Name = "workerAssignedToActivityLabel";
+            this.workerAssignedToActivityLabel.Size = new System.Drawing.Size(137, 20);
+            this.workerAssignedToActivityLabel.TabIndex = 24;
             // 
-            // richTextBox2
+            // activityDescrRichTextBox
             // 
-            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox2.Enabled = false;
-            this.richTextBox2.Location = new System.Drawing.Point(3, 16);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(194, 81);
-            this.richTextBox2.TabIndex = 0;
-            this.richTextBox2.Text = "";
+            this.activityDescrRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activityDescrRichTextBox.Enabled = false;
+            this.activityDescrRichTextBox.Location = new System.Drawing.Point(3, 16);
+            this.activityDescrRichTextBox.Name = "activityDescrRichTextBox";
+            this.activityDescrRichTextBox.ReadOnly = true;
+            this.activityDescrRichTextBox.Size = new System.Drawing.Size(194, 81);
+            this.activityDescrRichTextBox.TabIndex = 0;
+            this.activityDescrRichTextBox.Text = "";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.richTextBox2);
+            this.groupBox3.Controls.Add(this.activityDescrRichTextBox);
             this.groupBox3.Location = new System.Drawing.Point(212, 176);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 100);
@@ -201,20 +201,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Opis Czynności";
             // 
-            // richTextBox1
+            // requestDescrRichTextBox
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 16);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(403, 81);
-            this.richTextBox1.TabIndex = 14;
-            this.richTextBox1.Text = "";
+            this.requestDescrRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.requestDescrRichTextBox.Enabled = false;
+            this.requestDescrRichTextBox.Location = new System.Drawing.Point(3, 16);
+            this.requestDescrRichTextBox.Name = "requestDescrRichTextBox";
+            this.requestDescrRichTextBox.ReadOnly = true;
+            this.requestDescrRichTextBox.Size = new System.Drawing.Size(403, 81);
+            this.requestDescrRichTextBox.TabIndex = 14;
+            this.requestDescrRichTextBox.Text = "";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.requestDescrRichTextBox);
             this.groupBox1.Location = new System.Drawing.Point(3, 70);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(409, 100);
@@ -222,23 +222,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opis Zgłoszenia";
             // 
-            // label5
+            // objectNameLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(132, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "label2";
+            this.objectNameLabel.AutoSize = true;
+            this.objectNameLabel.Location = new System.Drawing.Point(132, 34);
+            this.objectNameLabel.Name = "objectNameLabel";
+            this.objectNameLabel.Size = new System.Drawing.Size(35, 13);
+            this.objectNameLabel.TabIndex = 13;
+            this.objectNameLabel.Text = "label2";
             // 
-            // label4
+            // objectTypeLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(132, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "label2";
+            this.objectTypeLabel.AutoSize = true;
+            this.objectTypeLabel.Location = new System.Drawing.Point(132, 16);
+            this.objectTypeLabel.Name = "objectTypeLabel";
+            this.objectTypeLabel.Size = new System.Drawing.Size(35, 13);
+            this.objectTypeLabel.TabIndex = 11;
+            this.objectTypeLabel.Text = "label2";
             // 
             // label3
             // 
@@ -260,8 +260,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.objectNameLabel);
+            this.groupBox4.Controls.Add(this.objectTypeLabel);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
@@ -271,21 +271,21 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Obiekt";
             // 
-            // dataGridView2
+            // activitiesDataGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(194, 81);
-            this.dataGridView2.TabIndex = 0;
+            this.activitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.activitiesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activitiesDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.activitiesDataGridView.Name = "activitiesDataGridView";
+            this.activitiesDataGridView.Size = new System.Drawing.Size(194, 81);
+            this.activitiesDataGridView.TabIndex = 0;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.label8);
+            this.groupBox5.Controls.Add(this.requestStatusLabel);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.workerAssignedToActivityLabel);
             this.groupBox5.Location = new System.Drawing.Point(201, 3);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(211, 61);
@@ -294,7 +294,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.activitiesDataGridView);
             this.groupBox2.Location = new System.Drawing.Point(6, 176);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
@@ -306,8 +306,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.goBackButton);
+            this.Controls.Add(this.submitButton);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox3);
@@ -323,7 +323,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -333,29 +333,29 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button goBackButton;
+        private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Label requestStatusLabel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.RichTextBox requestResultRichTextBox;
         private System.Windows.Forms.RichTextBox richTextBox6;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox activityResultRichTextBox;
         private System.Windows.Forms.RichTextBox richTextBox4;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.TextBox workerAssignedToActivityLabel;
+        private System.Windows.Forms.RichTextBox activityDescrRichTextBox;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox requestDescrRichTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label objectNameLabel;
+        private System.Windows.Forms.Label objectTypeLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView activitiesDataGridView;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox2;
     }

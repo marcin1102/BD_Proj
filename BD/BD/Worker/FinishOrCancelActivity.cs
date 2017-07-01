@@ -11,14 +11,14 @@ using BusinessLayer;
 
 namespace BD
 {
-    public partial class WorkerMain : UserControl
+    public partial class FinishOrCancelActivity : UserControl
     {
-        public WorkerMain()
+        public FinishOrCancelActivity()
         {
             InitializeComponent();
         }
 
-        public WorkerMain(FormOpenMode mode, DataLayer.Activity activity)
+        public FinishOrCancelActivity(FormOpenMode mode, DataLayer.Activity activity)
         {
             InitializeComponent();
         }
@@ -29,6 +29,11 @@ namespace BD
         }
 
         private void WorkerActivityForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void acceptButton_Click(object sender, EventArgs e)
         {
 
         }
