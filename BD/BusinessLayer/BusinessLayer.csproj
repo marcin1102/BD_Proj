@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\ActivityData.cs" />
+    <Compile Include="Services\ActivityService.cs" />
     <Compile Include="DTO\RequestData.cs" />
     <Compile Include="DTO\WorkerData.cs" />
     <Compile Include="Helpers\PasswordExtensions.cs" />
