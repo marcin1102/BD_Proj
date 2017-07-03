@@ -35,11 +35,11 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.requestsDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.registerRequestButton = new System.Windows.Forms.Button();
             this.manageRequestButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestsDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,7 @@
             this.searchButton.TabIndex = 27;
             this.searchButton.Text = "Szukaj";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // label2
             // 
@@ -106,18 +107,18 @@
             this.statusComboBox.Size = new System.Drawing.Size(121, 21);
             this.statusComboBox.TabIndex = 22;
             // 
-            // dataGridView1
+            // requestsDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(478, 337);
-            this.dataGridView1.TabIndex = 0;
+            this.requestsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.requestsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.requestsDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.requestsDataGridView.Name = "requestsDataGridView";
+            this.requestsDataGridView.Size = new System.Drawing.Size(478, 337);
+            this.requestsDataGridView.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.requestsDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(15, 94);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(484, 356);
@@ -161,7 +162,7 @@
             this.Name = "ManagerPanel";
             this.Size = new System.Drawing.Size(523, 520);
             this.Load += new System.EventHandler(this.ManagerPanel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestsDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -177,7 +178,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox statusComboBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView requestsDataGridView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button registerRequestButton;
         private System.Windows.Forms.Button manageRequestButton;

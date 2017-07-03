@@ -1,6 +1,10 @@
 ﻿using BD.Helpers;
 using BusinessLayer.DTO;
+using BusinessLayer.Searchers;
+using DataLayer.Status;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BD.Manager
@@ -33,6 +37,27 @@ namespace BD.Manager
         private void registerRequestButton_Click(object sender, EventArgs e)
         {
             this.GoToNextView(new CreateRequest(this));
+        }
+
+        private async void searchButton_Click(object sender, EventArgs e)
+        {
+            var searcher = new RequestSearcher();
+            try
+            {
+                if (string.IsNullOrEmpty(currentClientTextBox.Text) || SelectedClient != null)
+                   requestsDataGridView.DataSource = await searcher.GetRequestsWithStatuses(new List<Statuses>
+                    {
+                        Statuses.OPN,
+                        Statuses.PRG
+                    });
+                else
+                    requestsDataGridView.DataSource = await searcher.GetClientRequests(SelectedClient.Id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

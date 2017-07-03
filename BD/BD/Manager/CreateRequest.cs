@@ -1,15 +1,11 @@
 ﻿using BD.Helpers;
 using BusinessLayer.DTO;
 using BusinessLayer.Searchers;
-using BusinessLayer.Services.Object;
+using BusinessLayer.Services;
+using DataLayer.Status;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BD.Manager
@@ -29,14 +25,28 @@ namespace BD.Manager
 
         }
 
-        private void registerRequestButton_Click(object sender, EventArgs e)
+        private async void registerRequestButton_Click(object sender, EventArgs e)
         {
-            //var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
-            //var description = descriptionTextBox.Text;
-
-
-            //var requestService = new RequestService();
-            //requestService.CreateObject();
+            var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
+            var @object = (ObjectData)objectDataGridView.CurrentRow.DataBoundItem;
+            if(client != null && @object != null)
+            {
+                try
+                {
+                    var requestService = new RequestService();
+                    await requestService.CreateRequest(new RequestData
+                    {
+                        Descr = descriptionTextBox.Text,
+                        ObjId = @object.Id
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+                MessageBox.Show("Nie wybrano klienta lub obiektu klienta!");
         }
 
         private async void searchButton_Click(object sender, EventArgs e)
