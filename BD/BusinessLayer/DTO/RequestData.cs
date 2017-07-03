@@ -16,7 +16,7 @@ namespace BusinessLayer.DTO
         public int ObjId { get; set; }
         public ObjectData Object { get; set; }
 
-        public int WorkerId { get; set; }
+        public int? WorkerId { get; set; }
         public WorkerData Worker { get; set; }
     }
 }

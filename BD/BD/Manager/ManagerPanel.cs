@@ -4,7 +4,6 @@ using BusinessLayer.Searchers;
 using DataLayer.Status;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BD.Manager
@@ -44,7 +43,7 @@ namespace BD.Manager
             var searcher = new RequestSearcher();
             try
             {
-                if (string.IsNullOrEmpty(currentClientTextBox.Text) || SelectedClient != null)
+                if (string.IsNullOrEmpty(currentClientTextBox.Text) || SelectedClient == null)
                    requestsDataGridView.DataSource = await searcher.GetRequestsWithStatuses(new List<Statuses>
                     {
                         Statuses.OPN,
@@ -57,7 +56,6 @@ namespace BD.Manager
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
     }
 }

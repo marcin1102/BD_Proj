@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7d44a73381594d0c9052662864415943" Name="Diagram1">
-        <EntityTypeShape EntityType="BazaNaprawModel.ActivitiesTypesDictionary" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BazaNaprawModel.Activity" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BazaNaprawModel.Client" Width="1.5" PointX="1.5" PointY="11.75" IsExpanded="true" />
+      <Diagram DiagramId="d93a7765fe634766af2fe344dc4cf0a6" Name="Diagram1">
+        <EntityTypeShape EntityType="BazaNaprawModel.ActivitiesTypesDictionary" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.Activity" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.Client" Width="1.5" PointX="1.5" PointY="11.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BazaNaprawModel.Login" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BazaNaprawModel.Object" Width="1.5" PointX="3.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BazaNaprawModel.ObjectType" Width="1.5" PointX="1.5" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BazaNaprawModel.Request" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BazaNaprawModel.Worker" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.Object" Width="1.5" PointX="3.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.ObjectType" Width="1.5" PointX="1.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.Request" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaNaprawModel.Worker" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
         <AssociationConnector Association="BazaNaprawModel.FK_Activity_ActivitiesTypesDictionary1" ManuallyRouted="false" />
         <AssociationConnector Association="BazaNaprawModel.FK_Activity_Request1" ManuallyRouted="false" />
         <AssociationConnector Association="BazaNaprawModel.FK_Activity_Worker" ManuallyRouted="false" />

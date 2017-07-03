@@ -41,10 +41,28 @@ namespace BD.Manager
 
         private void chooseClientButton_Click(object sender, EventArgs e)
         {
-            var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
-            var managerPanel = previousControl as ManagerPanel;
-            managerPanel.SetClient(client);
-            this.GoToPreviousView(managerPanel);
+            try
+            {
+                var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
+                var managerPanel = previousControl as ManagerPanel;
+                if (managerPanel != null)
+                {
+                    managerPanel.SetClient(client);
+                    this.GoToPreviousView(managerPanel);
+                }
+                else
+                {
+                    var createRequestPanel = previousControl as CreateRequest;
+                    createRequestPanel.SetSearchFields(client.LastName, client.FirstName, client.PhoneNumber);
+                    this.GoToPreviousView(createRequestPanel);
+                }
+                    
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+               
         }
 
         private void addObjectButton_Click(object sender, EventArgs e)

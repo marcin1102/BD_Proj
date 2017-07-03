@@ -84,5 +84,17 @@ namespace BD.Manager
         {
             this.GoToPreviousView(previousView);
         }
+
+        private void manageClientsButton_Click(object sender, EventArgs e)
+        {
+            this.GoToNextView(new ManageClients(this));
+        }
+
+        public void SetSearchFields(string lastName, string firstName, string phoneNumber)
+        {
+            firstNameTextBox.Text = firstName;
+            lastNameTextBox.Text = lastName;
+            phoneNumberTextBox.Text = phoneNumber;
+        }
     }
 }

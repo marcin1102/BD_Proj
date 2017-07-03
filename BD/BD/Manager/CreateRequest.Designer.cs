@@ -202,6 +202,7 @@
             this.searchButton.TabIndex = 40;
             this.searchButton.Text = "Szukaj";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // manageClientsButton
             // 
@@ -211,6 +212,7 @@
             this.manageClientsButton.TabIndex = 41;
             this.manageClientsButton.Text = "Zarządzaj klientami";
             this.manageClientsButton.UseVisualStyleBackColor = true;
+            this.manageClientsButton.Click += new System.EventHandler(this.manageClientsButton_Click);
             // 
             // CreateRequest
             // 

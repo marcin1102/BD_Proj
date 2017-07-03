@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BazaNaprawModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BazaNaprawModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ActivitiesTypesDictionary">
           <Key>
             <PropertyRef Name="Type" />
@@ -68,7 +68,7 @@
           <Property Name="Result" Type="nvarchar" MaxLength="254" />
           <Property Name="ObjId" Type="int" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="WorkerId" Type="int" Nullable="false" />
+          <Property Name="WorkerId" Type="int" />
         </EntityType>
         <EntityType Name="Worker">
           <Key>
@@ -164,7 +164,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Request_Worker">
-          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
           <End Role="Request" Type="Self.Request" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Worker">
@@ -217,7 +217,8 @@
             <End Role="Request" EntitySet="Request" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BazaNaprawModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -294,7 +295,7 @@
           <Property Name="Result" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
           <Property Name="ObjId" Type="Int32" Nullable="false" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="WorkerId" Type="Int32" Nullable="false" />
+          <Property Name="WorkerId" Type="Int32" />
           <NavigationProperty Name="Activities" Relationship="Self.FK_Activity_Request1" FromRole="Request" ToRole="Activity" />
           <NavigationProperty Name="Object" Relationship="Self.FK_Request_Object" FromRole="Request" ToRole="Object" />
           <NavigationProperty Name="Worker" Relationship="Self.FK_Request_Worker" FromRole="Request" ToRole="Worker" />
@@ -396,7 +397,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Request_Worker">
-          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
           <End Role="Request" Type="Self.Request" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Worker">
