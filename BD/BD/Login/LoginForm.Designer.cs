@@ -33,11 +33,12 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.tableAdapterManager1 = new BD.BazaNaprawDataSetTableAdapters.TableAdapterManager();
             this.SuspendLayout();
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(178, 204);
+            this.loginButton.Location = new System.Drawing.Point(92, 101);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(78, 23);
             this.loginButton.TabIndex = 0;
@@ -48,7 +49,7 @@
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(133, 70);
+            this.loginLabel.Location = new System.Drawing.Point(48, 39);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(39, 13);
             this.loginLabel.TabIndex = 1;
@@ -57,7 +58,7 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(133, 119);
+            this.passwordLabel.Location = new System.Drawing.Point(45, 65);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(42, 13);
             this.passwordLabel.TabIndex = 2;
@@ -65,23 +66,29 @@
             // 
             // loginTextBox
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(178, 70);
+            this.loginTextBox.Location = new System.Drawing.Point(93, 36);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(78, 20);
             this.loginTextBox.TabIndex = 3;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(178, 119);
+            this.passwordTextBox.Location = new System.Drawing.Point(93, 62);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(77, 20);
             this.passwordTextBox.TabIndex = 4;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.UpdateOrder = BD.BazaNaprawDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 308);
+            this.ClientSize = new System.Drawing.Size(237, 159);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.loginTextBox);
             this.Controls.Add(this.passwordLabel);
@@ -101,5 +108,6 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
+        private BazaNaprawDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
     }
 }

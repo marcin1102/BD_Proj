@@ -46,16 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\RequestData.cs" />
+    <Compile Include="DTO\WorkerData.cs" />
+    <Compile Include="Helpers\PasswordExtensions.cs" />
+    <Compile Include="Helpers\WorkerExtensions.cs" />
     <Compile Include="Searchers\ClientSearcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Searchers\ObjectSearcher.cs" />
     <Compile Include="Searchers\ObjectTypeSearcher.cs" />
+    <Compile Include="Searchers\RequestSearcher.cs" />
+    <Compile Include="Searchers\WorkerSearcher.cs" />
     <Compile Include="Services\ClientService.cs" />
+    <Compile Include="Exceptions\EntityDoesNotExist.cs" />
+    <Compile Include="Services\LoginService.cs" />
+    <Compile Include="Exceptions\EntityCreationFailure.cs" />
     <Compile Include="Services\ObjectTypeService.cs" />
     <Compile Include="Services\ObjectService.cs" />
-    <Compile Include="ValueObjects\ClientData.cs" />
-    <Compile Include="ValueObjects\ObjectData.cs" />
-    <Compile Include="ValueObjects\ObjectTypeData.cs" />
+    <Compile Include="Exceptions\ValueCannotBeNull.cs" />
+    <Compile Include="DTO\ClientData.cs" />
+    <Compile Include="DTO\ObjectData.cs" />
+    <Compile Include="DTO\ObjectTypeData.cs" />
+    <Compile Include="Exceptions\WorkerAccountExpire.cs" />
+    <Compile Include="Services\RequestService.cs" />
+    <Compile Include="Services\WorkerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">

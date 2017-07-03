@@ -91,6 +91,8 @@
     <Compile Include="Request.cs">
       <DependentUpon>RepairContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Role\Roles.cs" />
+    <Compile Include="Status\Statuses.cs" />
     <Compile Include="Worker.cs">
       <DependentUpon>RepairContext.tt</DependentUpon>
     </Compile>

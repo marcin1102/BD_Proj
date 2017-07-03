@@ -25,7 +25,7 @@ namespace DataLayer
         public string Result { get; set; }
         public int ObjId { get; set; }
         public int Id { get; set; }
-        public int WorkerId { get; set; }
+        public Nullable<int> WorkerId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Activity> Activities { get; set; }

@@ -1,4 +1,4 @@
-﻿using BusinessLayer.ValueObjects;
+﻿using BusinessLayer.DTO;
 
 namespace BusinessLayer.Services.ObjectType
 {
