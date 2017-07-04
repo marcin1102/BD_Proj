@@ -21,10 +21,14 @@ namespace BD.Manager.beta
             InitializeComponent();
 			this.request = request;
 		}
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+		private void addActivityButton_Click(object sender, EventArgs e)
+		{
 			this.GoToNextView(new CreateActivity(this, request));
 		}
-    }
+
+		private void goBackButton_Click(object sender, EventArgs e)
+		{
+			
+		}
+	}
 }
