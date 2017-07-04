@@ -36,10 +36,10 @@ namespace BusinessLayer.Services.Activity
             await db.SaveChangesAsync();
         }
 
-        public async Task UpdateDetails(ActivityData activity)
-        {
-			var request = await db.Requests.SingleAsync(entity => entity.Id == activity.ReqId);
-            var worker = await db.Workers.SingleAsync(entity => entity.Id == activity.WorkerId);
+		public async Task UpdateDetails(ActivityData activity)
+		{
+			var request = db.Requests.Single(entity => entity.Id == activity.ReqId);
+			var worker = activity.WorkerId != null ? db.Workers.Single(entity => entity.Id == activity.WorkerId) : null;
 
             var activityEntity = await db.Activities.SingleAsync(entity => entity.Id == activity.Id);
 
