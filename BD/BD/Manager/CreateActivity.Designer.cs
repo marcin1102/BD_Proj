@@ -215,6 +215,7 @@
 			this.typeButton.TabIndex = 28;
 			this.typeButton.Text = "...";
 			this.typeButton.UseVisualStyleBackColor = true;
+			this.typeButton.Click += new System.EventHandler(this.typeButton_Click);
 			// 
 			// label6
 			// 

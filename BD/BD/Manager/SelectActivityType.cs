@@ -8,15 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer.Services;
+using BD.Helpers;
 
 namespace BD.Manager
 {
 	public partial class SelectActivityType : UserControl
 	{
-		public SelectActivityType()
+		private readonly UserControl previousView;
+
+		public SelectActivityType(UserControl previousView)
 		{
 			InitializeComponent();
 			GetData();
+
+			this.previousView = previousView;
 		}
 
 		public async void GetData()
@@ -32,7 +37,7 @@ namespace BD.Manager
 
 		private void backButton_Click(object sender, EventArgs e)
 		{
-
+			this.GoToPreviousView(previousView);
 		}
 	}
 }
