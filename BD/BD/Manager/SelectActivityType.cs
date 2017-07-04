@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer.Services;
 using BD.Helpers;
+using BusinessLayer.DTO;
 
 namespace BD.Manager
 {
@@ -32,7 +33,20 @@ namespace BD.Manager
 
 		private void selectButton_Click(object sender, EventArgs e)
 		{
-
+			try
+			{
+				var type = (ActivityTypeData)activityTypesDataGridView.CurrentRow.DataBoundItem;
+				var activityPanel = previousView as CreateActivity;
+				if (activityPanel != null)
+				{
+					activityPanel.SetType(type);
+					this.GoToPreviousView(previousView);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 
 		private void backButton_Click(object sender, EventArgs e)
