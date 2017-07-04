@@ -19,20 +19,25 @@ namespace BD.Worker
     {
         private readonly UserControl previousControl;
 
-        public SelectObject(UserControl previousControl)
+        public async void GetObjectsData()
         {
-            this.previousControl = previousControl;
-            InitializeComponent();
-
             try
             {
                 var objectSearcher = new ObjectSearcher();
-                objectDataGridView.DataSource = objectSearcher.GetObjects();
+                objectDataGridView.DataSource = await objectSearcher.GetObjects();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public SelectObject(UserControl previousControl)
+        {
+            this.previousControl = previousControl;
+            InitializeComponent();
+
+            GetObjectsData();
         }
 
         private void goBackButton_Click(object sender, EventArgs e)
