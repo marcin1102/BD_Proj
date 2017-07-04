@@ -51,7 +51,7 @@ namespace BD.Worker
             try
             {
                 var activity = (ActivityData)activitiesDataGridView.CurrentRow.DataBoundItem;
-                this.GoToNextView(new FinishOrCancelActivity(FormOpenMode.CANCEL, activity));
+                this.GoToNextView(new FinishOrCancelActivity(this, FormOpenMode.FINISH, activity, SelectedObject));
             }
             catch (Exception ex)
             {
@@ -64,7 +64,7 @@ namespace BD.Worker
             try
             {
                 var activity = (ActivityData)activitiesDataGridView.CurrentRow.DataBoundItem;
-                this.GoToNextView(new FinishOrCancelActivity(FormOpenMode.CANCEL, activity));
+                this.GoToNextView(new FinishOrCancelActivity(this, FormOpenMode.CANCEL, activity, SelectedObject));
             }
             catch (Exception ex)
             {
