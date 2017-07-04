@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\ActivityData.cs" />
+    <Compile Include="DTO\ActivityTypeData.cs" />
     <Compile Include="Searchers\ActivitySearcher.cs" />
     <Compile Include="Services\ActivityService.cs" />
     <Compile Include="DTO\RequestData.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Searchers\ObjectTypeSearcher.cs" />
     <Compile Include="Searchers\RequestSearcher.cs" />
     <Compile Include="Searchers\WorkerSearcher.cs" />
+    <Compile Include="Searchers\ActivitiesTypesDictionarySearcher.cs" />
     <Compile Include="Services\ClientService.cs" />
     <Compile Include="Exceptions\EntityDoesNotExist.cs" />
     <Compile Include="Services\LoginService.cs" />

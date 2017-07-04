@@ -18,6 +18,20 @@ namespace BD.Manager
     {
 		private readonly UserControl previousView;
 		private readonly RequestData request;
+		public WorkerData SelectedWorker { get; private set; }
+		public string SelectedType { get; private set; } 
+
+		public void SetType(string type)
+		{
+			SelectedType = type;
+			typeTextBox.Text = SelectedType;
+		}
+
+		public void SetWorker(WorkerData worker)
+		{
+			SelectedWorker = worker;
+			workerTextBox.Text = worker.FirstName + " " + worker.LastName;
+		}
 
 		public CreateActivity(UserControl previousView, RequestData request)
 		{
