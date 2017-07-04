@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.DTO;
 using DataLayer;
+using DataLayer.Status;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,24 @@ namespace BusinessLayer.Searchers
 				WorkerId = activity.Worker.Id,
 				Worker = activity.Worker
 			}).ToList();
+		}
+
+		public async Task<ICollection<ActivityData>> GetActivities(string status)
+		{
+			var context = new RepairContext();
+			return context.Activities
+					.Where(activity => activity.Status == status)
+					.Select(activity => new ActivityData()
+					{
+						Type = activity.Type,
+						Descr = activity.Descr,
+						Status = activity.Status,
+						Result = activity.Result,
+						ReqId = activity.Request.Id,
+						Request = activity.Request,
+						WorkerId = activity.Worker.Id,
+						Worker = activity.Worker
+					}).ToList();
 		}
 	}
 }
