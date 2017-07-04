@@ -24,20 +24,15 @@ namespace BD.Manager.beta
             this.previousView = previousView;
             this.request = request;
 		}
-<<<<<<< Updated upstream
-		private void addActivityButton_Click(object sender, EventArgs e)
-		{
-=======
+
+        private void addActivityButton_Click(object sender, EventArgs e)
+        {
+            this.GoToNextView(new CreateActivity(this, request));
+        }
 
         private void goBackButton_Click(object sender, EventArgs e)
         {
->>>>>>> Stashed changes
-			this.GoToNextView(new CreateActivity(this, request));
-		}
-
-		private void goBackButton_Click(object sender, EventArgs e)
-		{
-			
+			this.GoToPreviousView(previousView);
 		}
 	}
 }
