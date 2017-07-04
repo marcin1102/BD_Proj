@@ -5,6 +5,7 @@ using DataLayer.Status;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using BD.Manager.beta;
 
 namespace BD.Manager
 {
@@ -56,6 +57,11 @@ namespace BD.Manager
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void manageRequestButton_Click(object sender, EventArgs e)
+        {
+            this.GoToNextView(new HandleRequest(this));
         }
     }
 }

@@ -76,6 +76,7 @@
             // 
             this.currentClientTextBox.Location = new System.Drawing.Point(53, 68);
             this.currentClientTextBox.Name = "currentClientTextBox";
+            this.currentClientTextBox.ReadOnly = true;
             this.currentClientTextBox.Size = new System.Drawing.Size(100, 20);
             this.currentClientTextBox.TabIndex = 24;
             // 
@@ -144,6 +145,7 @@
             this.manageRequestButton.TabIndex = 29;
             this.manageRequestButton.Text = "Obsłuż zgłoszenie";
             this.manageRequestButton.UseVisualStyleBackColor = true;
+            this.manageRequestButton.Click += new System.EventHandler(this.manageRequestButton_Click);
             // 
             // ManagerPanel
             // 

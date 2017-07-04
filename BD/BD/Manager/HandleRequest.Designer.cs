@@ -296,7 +296,6 @@
             this.addActivityButton.TabIndex = 22;
             this.addActivityButton.Text = "Dodaj Czynność";
             this.addActivityButton.UseVisualStyleBackColor = true;
-            this.addActivityButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // cancelActivityButton
             // 
@@ -324,6 +323,7 @@
             this.goBackButton.TabIndex = 41;
             this.goBackButton.Text = "Wróć";
             this.goBackButton.UseVisualStyleBackColor = true;
+            this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
             // 
             // HandleRequest
             // 
