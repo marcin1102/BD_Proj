@@ -12,5 +12,10 @@ namespace BusinessLayer.DTO
         public string Name { get; set; }
         public int ClientId { get; set; }
         public string ObjectTypeCode { get; set; }
-    }
+
+		public override string ToString()
+		{
+			return Name;
+		}
+	}
 }
