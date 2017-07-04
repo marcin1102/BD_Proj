@@ -31,9 +31,9 @@
             this.activitiesDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.currentObjectTextBox = new System.Windows.Forms.TextBox();
             this.openObjectListBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.searchBtn = new System.Windows.Forms.Button();
@@ -70,17 +70,14 @@
             this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker.TabIndex = 7;
             // 
-            // comboBox1
+            // statusComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "OPN",
-            ""});
-            this.comboBox1.Location = new System.Drawing.Point(284, 6);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.Text = "OPN";
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Location = new System.Drawing.Point(284, 6);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(121, 21);
+            this.statusComboBox.TabIndex = 8;
+            this.statusComboBox.Text = "OPN";
             // 
             // label1
             // 
@@ -91,12 +88,12 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "status";
             // 
-            // textBox1
+            // currentObjectTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(284, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
+            this.currentObjectTextBox.Location = new System.Drawing.Point(284, 33);
+            this.currentObjectTextBox.Name = "currentObjectTextBox";
+            this.currentObjectTextBox.Size = new System.Drawing.Size(100, 20);
+            this.currentObjectTextBox.TabIndex = 10;
             // 
             // openObjectListBtn
             // 
@@ -106,6 +103,7 @@
             this.openObjectListBtn.TabIndex = 11;
             this.openObjectListBtn.Text = "...";
             this.openObjectListBtn.UseVisualStyleBackColor = true;
+            this.openObjectListBtn.Click += new System.EventHandler(this.openObjectListBtn_Click);
             // 
             // label2
             // 
@@ -124,6 +122,7 @@
             this.searchBtn.TabIndex = 13;
             this.searchBtn.Text = "Szukaj";
             this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // finishRequestButton
             // 
@@ -133,6 +132,7 @@
             this.finishRequestButton.TabIndex = 30;
             this.finishRequestButton.Text = "Zakończ czynność";
             this.finishRequestButton.UseVisualStyleBackColor = true;
+            this.finishRequestButton.Click += new System.EventHandler(this.finishRequestButton_Click);
             // 
             // cancelRequestButton
             // 
@@ -142,6 +142,7 @@
             this.cancelRequestButton.TabIndex = 31;
             this.cancelRequestButton.Text = "Anuluj czynność";
             this.cancelRequestButton.UseVisualStyleBackColor = true;
+            this.cancelRequestButton.Click += new System.EventHandler(this.cancelRequestButton_Click);
             // 
             // WorkerPanel
             // 
@@ -153,9 +154,9 @@
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.openObjectListBtn);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.currentObjectTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.statusComboBox);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.groupBox1);
             this.Name = "WorkerPanel";
@@ -172,9 +173,9 @@
         private System.Windows.Forms.DataGridView activitiesDataGridView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox statusComboBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox currentObjectTextBox;
         private System.Windows.Forms.Button openObjectListBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button searchBtn;

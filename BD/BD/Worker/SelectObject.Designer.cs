@@ -50,6 +50,7 @@
             this.goBackButton.TabIndex = 17;
             this.goBackButton.Text = "Wróć";
             this.goBackButton.UseVisualStyleBackColor = true;
+            this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
             // 
             // selectButton
             // 
@@ -59,6 +60,7 @@
             this.selectButton.TabIndex = 16;
             this.selectButton.Text = "Wybierz";
             this.selectButton.UseVisualStyleBackColor = true;
+            this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
             // 
             // SelectObject
             // 
