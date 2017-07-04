@@ -59,5 +59,10 @@ namespace BD.Manager
 		{
 			this.GoToPreviousView(previousView);
 		}
-    }
+
+		private void typeButton_Click(object sender, EventArgs e)
+		{
+			this.GoToNextView(this);
+		}
+	}
 }
