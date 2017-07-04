@@ -38,7 +38,10 @@
             // 
             this.objectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.objectDataGridView.Location = new System.Drawing.Point(13, 13);
+            this.objectDataGridView.MultiSelect = false;
             this.objectDataGridView.Name = "objectDataGridView";
+            this.objectDataGridView.ReadOnly = true;
+            this.objectDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.objectDataGridView.Size = new System.Drawing.Size(418, 237);
             this.objectDataGridView.TabIndex = 0;
             // 
@@ -50,6 +53,7 @@
             this.goBackButton.TabIndex = 17;
             this.goBackButton.Text = "Wróć";
             this.goBackButton.UseVisualStyleBackColor = true;
+            this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
             // 
             // selectButton
             // 
@@ -59,6 +63,7 @@
             this.selectButton.TabIndex = 16;
             this.selectButton.Text = "Wybierz";
             this.selectButton.UseVisualStyleBackColor = true;
+            this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
             // 
             // SelectObject
             // 

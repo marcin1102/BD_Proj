@@ -18,5 +18,7 @@ namespace BusinessLayer.DTO
 
         public int? WorkerId { get; set; }
         public WorkerData Worker { get; set; }
-    }
+
+		public ICollection<ActivityData> Activities { get; set; }
+	}
 }

@@ -10,7 +10,7 @@ namespace BusinessLayer.Services.Activity
 	{
 		private readonly RepairContext db;
 
-		ActivityService()
+		public ActivityService()
 		{
 			db = new RepairContext();
 		}
@@ -18,9 +18,9 @@ namespace BusinessLayer.Services.Activity
 		public async void Create(ActivityData activity)
         {
             var request = await db.Requests.SingleAsync(entity => entity.Id == activity.ReqId);
-            var worker = await db.Workers.SingleAsync(entity => entity.Id == activity.WorkerId);
+			var worker = activity.WorkerId != null ? db.Workers.Single(entity => entity.Id == activity.WorkerId) : null;
 
-            var activityToCreate = new DataLayer.Activity()
+			var activityToCreate = new DataLayer.Activity()
             {
 				Type = activity.Type,
 				Descr = activity.Descr,
@@ -29,20 +29,17 @@ namespace BusinessLayer.Services.Activity
 				ReqId = activity.ReqId,
 				Request = request,
 				WorkerId = activity.WorkerId,
-				Worker = worker,
-
-				//ActivitiesTypesDictionary = activity.ActivitiesTypesDictionary,
-
+				Worker = worker
             };
 
 			db.Activities.Add(activityToCreate);
             await db.SaveChangesAsync();
         }
 
-        public async Task UpdateDetails(ActivityData activity)
-        {
-			var request = await db.Requests.SingleAsync(entity => entity.Id == activity.ReqId);
-            var worker = await db.Workers.SingleAsync(entity => entity.Id == activity.WorkerId);
+		public async Task UpdateDetails(ActivityData activity)
+		{
+			var request = db.Requests.Single(entity => entity.Id == activity.ReqId);
+			var worker = activity.WorkerId != null ? db.Workers.Single(entity => entity.Id == activity.WorkerId) : null;
 
             var activityEntity = await db.Activities.SingleAsync(entity => entity.Id == activity.Id);
 

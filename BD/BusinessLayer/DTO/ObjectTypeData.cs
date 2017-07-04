@@ -11,5 +11,10 @@ namespace BusinessLayer.DTO
         public string Code { get; set; }
         public string Name { get; set; }
         public IReadOnlyCollection<int> ObjectsIds { get; set; }
-    }
+
+		public override string ToString()
+		{
+			return Name;
+		}
+	}
 }

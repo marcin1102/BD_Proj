@@ -25,7 +25,7 @@ namespace BD.Manager
         {
             var searcher = new ObjectTypeSearcher();
             var result = await searcher.GetObjectTypes();
-            objectTypeComboBox.DataSource = result.Select(x => x.Code).ToList();
+            objectTypeComboBox.DataSource = result.ToList();
         }
 
         private void returnButton_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace BD.Manager
                 await objectService.CreateObject(new ObjectData()
                 {
                     Name = nameTextBox.Text,
-                    ObjectTypeCode = objectTypeComboBox.Text,
+                    ObjectTypeCode = ((ObjectTypeData)objectTypeComboBox.SelectedItem).Code,
                     ClientId = clientId
                 });
                 MessageBox.Show($"Dodano obiekt {nameTextBox.Text}");

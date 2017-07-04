@@ -33,5 +33,10 @@ namespace BusinessLayer.DTO
         public DateTime? Expiration { get; set; }
         public int Id { get; set; }
         public string Pass { get; set; }
-    }
+
+		public override string ToString()
+		{
+			return FirstName + " " + LastName;
+		}
+	}
 }

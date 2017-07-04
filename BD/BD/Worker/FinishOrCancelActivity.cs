@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using BusinessLayer.DTO;
 
 namespace BD
 {
@@ -18,7 +19,7 @@ namespace BD
             InitializeComponent();
         }
 
-        public FinishOrCancelActivity(FormOpenMode mode, DataLayer.Activity activity)
+        public FinishOrCancelActivity(FormOpenMode mode, ActivityData activity)
         {
             InitializeComponent();
         }

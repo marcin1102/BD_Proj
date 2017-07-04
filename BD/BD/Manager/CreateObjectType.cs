@@ -32,7 +32,7 @@ namespace BD.Manager
                     Code = codeTextBox.Text,
                     Name = nameTextBox.Text
                 });
-                MessageBox.Show($"Dodano {codeTextBox.Text}");
+                MessageBox.Show($"Dodano {nameTextBox.Text}");
             }
             catch (Exception ex)
             {

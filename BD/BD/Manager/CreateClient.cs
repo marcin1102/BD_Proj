@@ -27,12 +27,12 @@ namespace BD.Manager
                     Name = nameTextBox.Text + " " + lastNameTextBox.Text
                 });
                 MessageBox.Show($"Utworzono klienta {nameTextBox.Text} {lastNameTextBox.Text}");
+                this.GoToPreviousView(previousView);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
         private void returnButton_Click(object sender, EventArgs e)
