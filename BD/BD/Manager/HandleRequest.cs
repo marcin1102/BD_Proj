@@ -14,15 +14,24 @@ namespace BD.Manager.beta
 {
     public partial class HandleRequest : UserControl
     {
-		private readonly RequestData request;
+        private readonly UserControl previousView;
 
-        public HandleRequest(RequestData request)
+        private readonly RequestData request;
+
+        public HandleRequest(UserControl previousView, RequestData request)
         {
             InitializeComponent();
-			this.request = request;
+            this.previousView = previousView;
+            this.request = request;
 		}
+<<<<<<< Updated upstream
 		private void addActivityButton_Click(object sender, EventArgs e)
 		{
+=======
+
+        private void goBackButton_Click(object sender, EventArgs e)
+        {
+>>>>>>> Stashed changes
 			this.GoToNextView(new CreateActivity(this, request));
 		}
 

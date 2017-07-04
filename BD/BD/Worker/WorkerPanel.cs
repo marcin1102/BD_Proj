@@ -74,7 +74,7 @@ namespace BD.Worker
 
         private void openObjectListBtn_Click(object sender, EventArgs e)
         {
-            this.GoToNextView(new SelectObject());
+            this.GoToNextView(new SelectObject(this));
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BD.Helpers;
 using BusinessLayer.DTO;
+using BusinessLayer.Searchers;
 using BusinessLayer.Services;
 using BusinessLayer.Services.Object;
 
@@ -18,9 +19,20 @@ namespace BD.Worker
     {
         private readonly UserControl previousControl;
 
-        public SelectObject()
+        public SelectObject(UserControl previousControl)
         {
+            this.previousControl = previousControl;
             InitializeComponent();
+
+            try
+            {
+                var objectSearcher = new ObjectSearcher();
+                objectDataGridView.DataSource = objectSearcher.GetObjects();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void goBackButton_Click(object sender, EventArgs e)
