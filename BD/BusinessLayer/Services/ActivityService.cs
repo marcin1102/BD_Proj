@@ -18,9 +18,9 @@ namespace BusinessLayer.Services.Activity
 		public async void Create(ActivityData activity)
         {
             var request = await db.Requests.SingleAsync(entity => entity.Id == activity.ReqId);
-            var worker = await db.Workers.SingleAsync(entity => entity.Id == activity.WorkerId);
+			var worker = activity.WorkerId != null ? db.Workers.Single(entity => entity.Id == activity.WorkerId) : null;
 
-            var activityToCreate = new DataLayer.Activity()
+			var activityToCreate = new DataLayer.Activity()
             {
 				Type = activity.Type,
 				Descr = activity.Descr,
