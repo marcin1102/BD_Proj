@@ -226,6 +226,7 @@
             this.confirmBtn.TabIndex = 32;
             this.confirmBtn.Text = "Akceptuj";
             this.confirmBtn.UseVisualStyleBackColor = true;
+            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
             // 
             // FinishOrCancelActivity
             // 
@@ -238,7 +239,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FinishOrCancelActivity";
             this.Size = new System.Drawing.Size(432, 502);
-            this.Load += new System.EventHandler(this.WorkerActivityForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

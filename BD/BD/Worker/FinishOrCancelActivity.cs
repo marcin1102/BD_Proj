@@ -19,6 +19,8 @@ namespace BD
         private readonly UserControl previousControl;
         private readonly RequestData request;
 
+        private FormOpenMode MODE;
+
         public FinishOrCancelActivity(UserControl previousControl)
         {
             this.previousControl = previousControl;
@@ -27,14 +29,15 @@ namespace BD
 
         public void LoadObjectDataToLabels(ObjectData @object)
         {
-            objectTypeLabel.Text = @object.ObjectTypeCode.ToString();
-            objectNameLabel.Text = @object.Name.ToString();
+            objectTypeLabel.Text = @object.ObjectTypeCode;
+            objectNameLabel.Text = @object.Name;
         }
 
         public void LoadActivityDataToLabels(ActivityData activity)
         {
             activityIdLabel.Text = activity.Id.ToString();
-            activityStatusLabel.Text = activity.Status.ToString();
+            activityStatusLabel.Text = activity.Status;
+            activityDescrTextBox.Text = activity.Descr;
         }
 
         public void LoadRequestDesc(ActivityData activity)
@@ -42,7 +45,7 @@ namespace BD
             var requestSearcher = new RequestSearcher();
             try
             {
-                requestDescrTextBox.Text = requestSearcher.GetRequest(activity.ReqId).Result.Descr.ToString();
+                requestDescrTextBox.Text = requestSearcher.GetRequest(activity.ReqId).Result.Descr;
             }
             catch (Exception ex)
             {
@@ -55,6 +58,8 @@ namespace BD
             this.previousControl = previousControl;
             InitializeComponent();
 
+            MODE = mode;
+
             if (mode == FormOpenMode.FINISH)
                 confirmBtn.Text = "Zakończ";
             else if (mode == FormOpenMode.CANCEL)
@@ -65,14 +70,28 @@ namespace BD
             LoadRequestDesc(activity);
         }
 
-        private void WorkerActivityForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void goBackButton_Click(object sender, EventArgs e)
         {
             this.GoToPreviousView(previousControl);
+        }
+
+        private void confirmBtn_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(activityResultTextBox.Text))
+            {
+                if (MODE == FormOpenMode.CANCEL)
+                {
+
+                }
+                else if (MODE == FormOpenMode.FINISH)
+                {
+                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wynik nie został uzupełniony");
+            }
         }
     }
 }
