@@ -4,6 +4,7 @@ using BD.Helpers;
 using BusinessLayer.Searchers;
 using BusinessLayer.DTO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BD.Manager
 {
@@ -71,6 +72,19 @@ namespace BD.Manager
             {
                 var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
                 this.GoToNextView(new CreateObject(this, client.Id));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void clientDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
+                objectDataGridView.DataSource = searchedClients.Single(x => x.Id == client.Id).Objects.ToList();
             }
             catch (Exception ex)
             {
