@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Searchers
 {
-	class ActivitySearcher
+	public class ActivitySearcher
 	{
 		public async Task<IReadOnlyCollection<ActivityData>> GetActivities()
 		{
@@ -64,5 +64,5 @@ namespace BusinessLayer.Searchers
 						Worker = activity.Worker
 					}).ToList();
 		}
-	}
+    }
 }
