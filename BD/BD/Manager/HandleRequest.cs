@@ -1,22 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using BD.Helpers;
+using BusinessLayer.DTO;
 
 namespace BD.Manager.beta
 {
     public partial class HandleRequest : UserControl
     {
-        private readonly UserControl previousControl;
+		private readonly RequestData request;
 
-        public HandleRequest(UserControl previousControl)
+        public HandleRequest(RequestData request)
         {
-            this.previousControl = previousControl;
             InitializeComponent();
-        }
+			this.request = request;
+		}
 
-        private void goBackButton_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.GoToPreviousView(previousControl);
-        }
+			this.GoToNextView(new CreateActivity(this, request));
+		}
     }
 }

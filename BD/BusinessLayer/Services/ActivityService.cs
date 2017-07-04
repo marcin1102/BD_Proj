@@ -10,7 +10,7 @@ namespace BusinessLayer.Services.Activity
 	{
 		private readonly RepairContext db;
 
-		ActivityService()
+		public ActivityService()
 		{
 			db = new RepairContext();
 		}
