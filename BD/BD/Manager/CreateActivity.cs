@@ -62,7 +62,7 @@ namespace BD.Manager
 
 		private void typeButton_Click(object sender, EventArgs e)
 		{
-			this.GoToNextView(this);
+			this.GoToNextView(new SelectActivityType(this));
 		}
 	}
 }

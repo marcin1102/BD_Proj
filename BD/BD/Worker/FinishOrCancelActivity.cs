@@ -20,6 +20,7 @@ namespace BD
         private readonly RequestData request;
 
         private FormOpenMode MODE;
+        private ActivityData ACTIVITY;
 
         public FinishOrCancelActivity(UserControl previousControl)
         {
@@ -59,6 +60,7 @@ namespace BD
             InitializeComponent();
 
             MODE = mode;
+            ACTIVITY = activity;
 
             if (mode == FormOpenMode.FINISH)
                 confirmBtn.Text = "Zakończ";
@@ -81,11 +83,11 @@ namespace BD
             {
                 if (MODE == FormOpenMode.CANCEL)
                 {
-
+                    //TODO:
                 }
                 else if (MODE == FormOpenMode.FINISH)
                 {
-                    
+                    //TODO:
                 }
             }
             else
