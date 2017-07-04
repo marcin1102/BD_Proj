@@ -48,7 +48,10 @@
             this.activitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.activitiesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.activitiesDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.activitiesDataGridView.MultiSelect = false;
             this.activitiesDataGridView.Name = "activitiesDataGridView";
+            this.activitiesDataGridView.ReadOnly = true;
+            this.activitiesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.activitiesDataGridView.Size = new System.Drawing.Size(470, 280);
             this.activitiesDataGridView.TabIndex = 3;
             // 

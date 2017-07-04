@@ -146,6 +146,12 @@
     <Compile Include="Manager\ManageClients.Designer.cs">
       <DependentUpon>ManageClients.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\SelectActivityType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\SelectActivityType.Designer.cs">
+      <DependentUpon>SelectActivityType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="testForm.cs">
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManageClients.resx">
       <DependentUpon>ManageClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\SelectActivityType.resx">
+      <DependentUpon>SelectActivityType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
