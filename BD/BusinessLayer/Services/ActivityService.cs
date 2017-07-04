@@ -29,10 +29,7 @@ namespace BusinessLayer.Services.Activity
 				ReqId = activity.ReqId,
 				Request = request,
 				WorkerId = activity.WorkerId,
-				Worker = worker,
-
-				//ActivitiesTypesDictionary = activity.ActivitiesTypesDictionary,
-
+				Worker = worker
             };
 
 			db.Activities.Add(activityToCreate);
