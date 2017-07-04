@@ -37,8 +37,19 @@ namespace BusinessLayer.Searchers
                     ObjectTypeCode = request.Object.Type
                 },
                 WorkerId = request.WorkerId,
-                Worker = new WorkerData(request.Worker.Login.UName, request.Worker.FirstName, request.Worker.LastName, request.Worker.Role, request.Worker.Login.Expiration)
-            };
+                Worker = new WorkerData(request.Worker.Login.UName, request.Worker.FirstName, request.Worker.LastName, request.Worker.Role, request.Worker.Login.Expiration),
+				Activities = db.Activities.Where(activity => activity.ReqId == request.Id).Select(activity => new ActivityData()
+				{
+					Type = activity.Type,
+					Descr = activity.Descr,
+					Status = activity.Status,
+					Result = activity.Result,
+					ReqId = activity.Request.Id,
+					Request = activity.Request,
+					WorkerId = activity.Worker.Id,
+					Worker = activity.Worker
+				}).ToList()
+			};
         }
 
         public async Task<ICollection<RequestData>> GetRequests(int workerId)
@@ -65,8 +76,19 @@ namespace BusinessLayer.Searchers
                     LastName = req.Worker.LastName,
                     Role = req.Worker.Role,
                     Expiration = req.Worker.Login.Expiration
-                }
-            }).ToListAsync();
+                },
+				Activities = db.Activities.Where(activity => activity.ReqId == req.Id).Select(activity => new ActivityData()
+				{
+					Type = activity.Type,
+					Descr = activity.Descr,
+					Status = activity.Status,
+					Result = activity.Result,
+					ReqId = activity.Request.Id,
+					Request = activity.Request,
+					WorkerId = activity.Worker.Id,
+					Worker = activity.Worker
+				}).ToList()
+			}).ToListAsync();
             return result;
         }
 
@@ -94,8 +116,19 @@ namespace BusinessLayer.Searchers
                     LastName = req.Worker.LastName,
                     Role = req.Worker.Role,
                     Expiration = req.Worker.Login.Expiration
-                }
-            }).ToListAsync();
+                },
+				Activities = db.Activities.Where(activity => activity.ReqId == req.Id).Select(activity => new ActivityData()
+				{
+					Type = activity.Type,
+					Descr = activity.Descr,
+					Status = activity.Status,
+					Result = activity.Result,
+					ReqId = activity.Request.Id,
+					Request = activity.Request,
+					WorkerId = activity.Worker.Id,
+					Worker = activity.Worker
+				}).ToList()
+			}).ToListAsync();
             return result;
         }
 
@@ -123,8 +156,19 @@ namespace BusinessLayer.Searchers
                     LastName = req.Worker.LastName,
                     Role = req.Worker.Role,
                     Expiration = req.Worker.Login.Expiration
-                }
-            }).ToListAsync();
+                },
+				Activities = db.Activities.Where(activity => activity.ReqId == req.Id).Select(activity => new ActivityData()
+				{
+					Type = activity.Type,
+					Descr = activity.Descr,
+					Status = activity.Status,
+					Result = activity.Result,
+					ReqId = activity.Request.Id,
+					Request = activity.Request,
+					WorkerId = activity.Worker.Id,
+					Worker = activity.Worker
+				}).ToList()
+			}).ToListAsync();
             return result;
         }
     }
