@@ -160,7 +160,7 @@
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(79, 27);
             this.searchButton.TabIndex = 24;
-            this.searchButton.Text = "Szukaj";
+            this.searchButton.Text = "Odśwież";
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
