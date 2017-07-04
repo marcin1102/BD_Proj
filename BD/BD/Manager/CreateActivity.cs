@@ -26,7 +26,7 @@ namespace BD.Manager
 			this.request = request;
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void addBtn_Click(object sender, EventArgs e)
         {
 			var service = new ActivityService();
 			service.Create(new ActivityData()
@@ -41,9 +41,9 @@ namespace BD.Manager
 
         }
 
-		private void button2_Click(object sender, EventArgs e)
+		private void goBackBtn_Click(object sender, EventArgs e)
 		{
 			this.GoToPreviousView(previousView);
 		}
-	}
+    }
 }
