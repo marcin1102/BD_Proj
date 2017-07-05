@@ -61,7 +61,15 @@ namespace BD.Manager
 
         private void manageRequestButton_Click(object sender, EventArgs e)
         {
-            this.GoToNextView(new HandleRequest(this, (RequestData)requestsDataGridView.CurrentRow.DataBoundItem));
+            try
+            {
+                this.GoToNextView(new HandleRequest(this, (RequestData)requestsDataGridView.CurrentRow.DataBoundItem));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

@@ -68,7 +68,7 @@
             // objectNameLabel
             // 
             this.objectNameLabel.AutoSize = true;
-            this.objectNameLabel.Location = new System.Drawing.Point(132, 32);
+            this.objectNameLabel.Location = new System.Drawing.Point(77, 32);
             this.objectNameLabel.Name = "objectNameLabel";
             this.objectNameLabel.Size = new System.Drawing.Size(35, 13);
             this.objectNameLabel.TabIndex = 13;
@@ -77,7 +77,7 @@
             // objectTypeLabel
             // 
             this.objectTypeLabel.AutoSize = true;
-            this.objectTypeLabel.Location = new System.Drawing.Point(132, 16);
+            this.objectTypeLabel.Location = new System.Drawing.Point(77, 16);
             this.objectTypeLabel.Name = "objectTypeLabel";
             this.objectTypeLabel.Size = new System.Drawing.Size(35, 13);
             this.objectTypeLabel.TabIndex = 11;

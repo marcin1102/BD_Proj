@@ -272,6 +272,7 @@
     <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BusinessLayer.DTO.ActivityData.datasource" />
+    <None Include="Properties\DataSources\BusinessLayer.DTO.ClientData.datasource" />
     <None Include="Properties\DataSources\BusinessLayer.DTO.ObjectData.datasource" />
     <None Include="Properties\DataSources\BusinessLayer.DTO.RequestData.datasource" />
     <None Include="Properties\DataSources\DataLayer.Client.datasource" />

@@ -1,4 +1,5 @@
 ﻿using BD.Helpers;
+using BD.Manager.beta;
 using BusinessLayer.DTO;
 using BusinessLayer.Searchers;
 using BusinessLayer.Services;
@@ -14,19 +15,34 @@ namespace BD.Manager
     {
         private readonly UserControl previousView;
         private ICollection<ClientData> searchedClients;
+        private bool editMode;
+        private readonly int requestId;
         public CreateRequest(UserControl previousView)
         {
             InitializeComponent();
             this.previousView = previousView;
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        public CreateRequest(UserControl previousView, bool editMode, int requestId)
         {
-
+            InitializeComponent();
+            this.previousView = previousView;
+            this.editMode = editMode;
+            this.requestId = requestId;
         }
 
         private async void registerRequestButton_Click(object sender, EventArgs e)
         {
+            if(editMode == true)
+            {
+                EditData();
+                MessageBox.Show("Dane zostaly zaktualizowane");
+                var view = previousView as HandleRequest;
+                view.RefreshDescription();
+                this.GoToPreviousView(view);
+                return;
+            }
+
             try
             {
                 var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
@@ -41,6 +57,7 @@ namespace BD.Manager
                         Worker = LoggedUser.Worker,
                         WorkerId = LoggedUser.Worker.Id
                     });
+                    MessageBox.Show("Zadanie dodano z powodzeniem!");
                 }
                 else
                     MessageBox.Show("Nie wybrano klienta lub obiektu klienta!");
@@ -51,6 +68,20 @@ namespace BD.Manager
                 MessageBox.Show(ex.Message);
             }
          }
+
+        private async void EditData()
+        {
+            try
+            {
+                var requestService = new RequestService();
+                await requestService.UpdateDescription(requestId, descriptionTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
 
         private async void searchButton_Click(object sender, EventArgs e)
         {

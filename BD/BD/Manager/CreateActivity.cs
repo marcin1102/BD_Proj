@@ -42,7 +42,10 @@ namespace BD.Manager
 			InitializeComponent();
 			this.previousView = previousView;
 			this.request = request;
-		}
+            objectTypeLabel.Text = request.Object.ObjectTypeCode;
+            objectNameLabel.Text = request.Object.Name;
+            requestDescriptionRichTextBox.Text = request.Descr;
+        }
 
 		public CreateActivity(UserControl previousView, RequestData request, ActivityData activity)
 		{

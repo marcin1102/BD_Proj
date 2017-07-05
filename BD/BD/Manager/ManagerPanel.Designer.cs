@@ -127,6 +127,7 @@
             this.requestsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.requestsDataGridView.Location = new System.Drawing.Point(3, 16);
             this.requestsDataGridView.Name = "requestsDataGridView";
+            this.requestsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.requestsDataGridView.Size = new System.Drawing.Size(478, 337);
             this.requestsDataGridView.TabIndex = 0;
             // 

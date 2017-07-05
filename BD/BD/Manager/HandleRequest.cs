@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BD.Helpers;
 using BusinessLayer.DTO;
-using BusinessLayer.Services.Activity;
 using BusinessLayer.Searchers;
 
 namespace BD.Manager.beta
@@ -38,6 +31,13 @@ namespace BD.Manager.beta
             this.GoToNextView(new CreateActivity(this, request));
         }
 
+        public async void RefreshDescription()
+        {
+            var requestSearcher = new RequestSearcher();
+            request = await requestSearcher.GetRequest(request.Id);
+            activityDescrRichTextBox.Text = request.Descr;
+        }
+
         private void goBackButton_Click(object sender, EventArgs e)
         {
 			this.GoToPreviousView(previousView);
@@ -45,7 +45,7 @@ namespace BD.Manager.beta
 
         private void finishRequestButton_Click(object sender, EventArgs e)
         {
-
+            this.GoToNextView(new CloseOrCancelRequest(this, request, true));
         }
 
         private void activitiesDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -69,9 +69,43 @@ namespace BD.Manager.beta
             }
         }
 
-		private void editButton_Click(object sender, EventArgs e)
+        public async void RefreshControls()
+        {
+            try
+            {
+                var requestSearcher = new RequestSearcher();
+                request = await requestSearcher.GetRequest(request.Id);
+                activitiesDataGridView.DataSource = request.Activities;
+                requestStatusLabel.Text = request.Status;
+                requestResultRichTextBox.Text = request.Result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
 		{
-			this.GoToNextView(new CreateActivity(this, request, (ActivityData)activitiesDataGridView.CurrentRow.DataBoundItem));
+            try
+            {
+                this.GoToNextView(new CreateActivity(this, request, (ActivityData)activitiesDataGridView.CurrentRow.DataBoundItem));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nie wybrano aktywności do edycji");
+            }			
 		}
-	}
+
+        private void editRequestButton_Click(object sender, EventArgs e)
+        {
+            this.GoToNextView(new CreateRequest(this, true, request.Id));
+        }
+
+        private void cancelActivityButton_Click(object sender, EventArgs e)
+        {
+            this.GoToNextView(new CloseOrCancelRequest(this, request, false));
+        }
+    }
 }

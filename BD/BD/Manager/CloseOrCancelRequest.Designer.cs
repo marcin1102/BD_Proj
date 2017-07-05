@@ -41,7 +41,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.workerAssignedToActivityLabel = new System.Windows.Forms.TextBox();
+            this.managerLabel = new System.Windows.Forms.TextBox();
             this.activityDescrRichTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.requestDescrRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -72,6 +72,7 @@
             this.goBackButton.TabIndex = 52;
             this.goBackButton.Text = "Wróć";
             this.goBackButton.UseVisualStyleBackColor = true;
+            this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
             // 
             // submitButton
             // 
@@ -81,6 +82,7 @@
             this.submitButton.TabIndex = 44;
             this.submitButton.Text = "Akceptuj";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // requestStatusLabel
             // 
@@ -173,12 +175,12 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // workerAssignedToActivityLabel
+            // managerLabel
             // 
-            this.workerAssignedToActivityLabel.Location = new System.Drawing.Point(68, 13);
-            this.workerAssignedToActivityLabel.Name = "workerAssignedToActivityLabel";
-            this.workerAssignedToActivityLabel.Size = new System.Drawing.Size(137, 20);
-            this.workerAssignedToActivityLabel.TabIndex = 24;
+            this.managerLabel.Location = new System.Drawing.Point(68, 13);
+            this.managerLabel.Name = "managerLabel";
+            this.managerLabel.Size = new System.Drawing.Size(137, 20);
+            this.managerLabel.TabIndex = 24;
             // 
             // activityDescrRichTextBox
             // 
@@ -285,7 +287,7 @@
             this.groupBox5.Controls.Add(this.requestStatusLabel);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Controls.Add(this.workerAssignedToActivityLabel);
+            this.groupBox5.Controls.Add(this.managerLabel);
             this.groupBox5.Location = new System.Drawing.Point(201, 3);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(211, 61);
@@ -345,7 +347,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox workerAssignedToActivityLabel;
+        private System.Windows.Forms.TextBox managerLabel;
         private System.Windows.Forms.RichTextBox activityDescrRichTextBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RichTextBox requestDescrRichTextBox;

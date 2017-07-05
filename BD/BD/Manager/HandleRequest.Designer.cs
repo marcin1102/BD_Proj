@@ -63,6 +63,7 @@
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editRequestButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityDataBindingSource1)).BeginInit();
@@ -122,7 +123,7 @@
             // objectNameLabel
             // 
             this.objectNameLabel.AutoSize = true;
-            this.objectNameLabel.Location = new System.Drawing.Point(132, 34);
+            this.objectNameLabel.Location = new System.Drawing.Point(64, 34);
             this.objectNameLabel.Name = "objectNameLabel";
             this.objectNameLabel.Size = new System.Drawing.Size(35, 13);
             this.objectNameLabel.TabIndex = 13;
@@ -131,7 +132,7 @@
             // objectTypeLabel
             // 
             this.objectTypeLabel.AutoSize = true;
-            this.objectTypeLabel.Location = new System.Drawing.Point(132, 16);
+            this.objectTypeLabel.Location = new System.Drawing.Point(64, 16);
             this.objectTypeLabel.Name = "objectTypeLabel";
             this.objectTypeLabel.Size = new System.Drawing.Size(35, 13);
             this.objectTypeLabel.TabIndex = 11;
@@ -311,9 +312,9 @@
             // 
             // addActivityButton
             // 
-            this.addActivityButton.Location = new System.Drawing.Point(6, 495);
+            this.addActivityButton.Location = new System.Drawing.Point(20, 495);
             this.addActivityButton.Name = "addActivityButton";
-            this.addActivityButton.Size = new System.Drawing.Size(200, 40);
+            this.addActivityButton.Size = new System.Drawing.Size(189, 39);
             this.addActivityButton.TabIndex = 22;
             this.addActivityButton.Text = "Dodaj Czynność";
             this.addActivityButton.UseVisualStyleBackColor = true;
@@ -321,18 +322,19 @@
             // 
             // cancelActivityButton
             // 
-            this.cancelActivityButton.Location = new System.Drawing.Point(6, 586);
+            this.cancelActivityButton.Location = new System.Drawing.Point(215, 540);
             this.cancelActivityButton.Name = "cancelActivityButton";
-            this.cancelActivityButton.Size = new System.Drawing.Size(200, 40);
+            this.cancelActivityButton.Size = new System.Drawing.Size(191, 41);
             this.cancelActivityButton.TabIndex = 40;
             this.cancelActivityButton.Text = "Anuluj Zgłoszenie";
             this.cancelActivityButton.UseVisualStyleBackColor = true;
+            this.cancelActivityButton.Click += new System.EventHandler(this.cancelActivityButton_Click);
             // 
             // finishRequestButton
             // 
-            this.finishRequestButton.Location = new System.Drawing.Point(6, 541);
+            this.finishRequestButton.Location = new System.Drawing.Point(20, 587);
             this.finishRequestButton.Name = "finishRequestButton";
-            this.finishRequestButton.Size = new System.Drawing.Size(200, 40);
+            this.finishRequestButton.Size = new System.Drawing.Size(189, 37);
             this.finishRequestButton.TabIndex = 39;
             this.finishRequestButton.Text = "Zakończ Zgłoszenie";
             this.finishRequestButton.UseVisualStyleBackColor = true;
@@ -340,9 +342,9 @@
             // 
             // goBackButton
             // 
-            this.goBackButton.Location = new System.Drawing.Point(6, 633);
+            this.goBackButton.Location = new System.Drawing.Point(215, 587);
             this.goBackButton.Name = "goBackButton";
-            this.goBackButton.Size = new System.Drawing.Size(200, 40);
+            this.goBackButton.Size = new System.Drawing.Size(191, 37);
             this.goBackButton.TabIndex = 41;
             this.goBackButton.Text = "Wróć";
             this.goBackButton.UseVisualStyleBackColor = true;
@@ -354,9 +356,9 @@
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(215, 496);
+            this.editButton.Location = new System.Drawing.Point(215, 495);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(191, 39);
+            this.editButton.Size = new System.Drawing.Size(191, 40);
             this.editButton.TabIndex = 42;
             this.editButton.Text = "Edytuj czynność";
             this.editButton.UseVisualStyleBackColor = true;
@@ -388,10 +390,21 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
+            // editRequestButton
+            // 
+            this.editRequestButton.Location = new System.Drawing.Point(20, 540);
+            this.editRequestButton.Name = "editRequestButton";
+            this.editRequestButton.Size = new System.Drawing.Size(189, 41);
+            this.editRequestButton.TabIndex = 43;
+            this.editRequestButton.Text = "Edytuj zgłoszenie";
+            this.editRequestButton.UseVisualStyleBackColor = true;
+            this.editRequestButton.Click += new System.EventHandler(this.editRequestButton_Click);
+            // 
             // HandleRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.editRequestButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.goBackButton);
             this.Controls.Add(this.cancelActivityButton);
@@ -458,5 +471,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn workerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.Button editRequestButton;
     }
 }
