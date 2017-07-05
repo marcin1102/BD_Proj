@@ -158,6 +158,12 @@
     <Compile Include="Manager\SelectActivityType.Designer.cs">
       <DependentUpon>SelectActivityType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\SelectWorker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\SelectWorker.Designer.cs">
+      <DependentUpon>SelectWorker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="testForm.cs">
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\SelectActivityType.resx">
       <DependentUpon>SelectActivityType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\SelectWorker.resx">
+      <DependentUpon>SelectWorker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
