@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer.Services;
 using BusinessLayer.Searchers;
+using BusinessLayer.DTO;
+using BD.Helpers;
 
 namespace BD.Manager
 {
@@ -26,6 +28,29 @@ namespace BD.Manager
 		{
 			var searcher = new WorkerSearcher();
 			workerGridView.DataSource = await searcher.FullTextSearch(searchTextBox.Text);
+		}
+
+		private void backButton_Click(object sender, EventArgs e)
+		{
+			this.GoToPreviousView(previousView);
+		}
+
+		private void selectButton_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				var worker = (WorkerData)workerGridView.CurrentRow.DataBoundItem;
+				var activityPanel = previousView as CreateActivity;
+				if (activityPanel != null)
+				{
+					activityPanel.SetWorker(worker);
+					this.GoToPreviousView(previousView);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 	}
 }
