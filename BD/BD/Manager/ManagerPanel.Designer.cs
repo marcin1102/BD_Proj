@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.searchButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.selectClientButton = new System.Windows.Forms.Button();
@@ -36,10 +37,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.requestsDataGridView = new System.Windows.Forms.DataGridView();
+            this.objectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.requestDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.registerRequestButton = new System.Windows.Forms.Button();
             this.manageRequestButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.requestsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestDataBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,9 +108,6 @@
             // statusComboBox
             // 
             this.statusComboBox.FormattingEnabled = true;
-            this.statusComboBox.Items.AddRange(new object[] {
-            "OPN",
-            ""});
             this.statusComboBox.Location = new System.Drawing.Point(53, 41);
             this.statusComboBox.Name = "statusComboBox";
             this.statusComboBox.Size = new System.Drawing.Size(121, 21);
@@ -110,12 +115,54 @@
             // 
             // requestsDataGridView
             // 
+            this.requestsDataGridView.AutoGenerateColumns = false;
             this.requestsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.requestsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.objectDataGridViewTextBoxColumn,
+            this.descrDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.resultDataGridViewTextBoxColumn,
+            this.workerDataGridViewTextBoxColumn});
+            this.requestsDataGridView.DataSource = this.requestDataBindingSource;
             this.requestsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.requestsDataGridView.Location = new System.Drawing.Point(3, 16);
             this.requestsDataGridView.Name = "requestsDataGridView";
             this.requestsDataGridView.Size = new System.Drawing.Size(478, 337);
             this.requestsDataGridView.TabIndex = 0;
+            // 
+            // objectDataGridViewTextBoxColumn
+            // 
+            this.objectDataGridViewTextBoxColumn.DataPropertyName = "Object";
+            this.objectDataGridViewTextBoxColumn.HeaderText = "Object";
+            this.objectDataGridViewTextBoxColumn.Name = "objectDataGridViewTextBoxColumn";
+            // 
+            // descrDataGridViewTextBoxColumn
+            // 
+            this.descrDataGridViewTextBoxColumn.DataPropertyName = "Descr";
+            this.descrDataGridViewTextBoxColumn.HeaderText = "Descr";
+            this.descrDataGridViewTextBoxColumn.Name = "descrDataGridViewTextBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // resultDataGridViewTextBoxColumn
+            // 
+            this.resultDataGridViewTextBoxColumn.DataPropertyName = "Result";
+            this.resultDataGridViewTextBoxColumn.HeaderText = "Result";
+            this.resultDataGridViewTextBoxColumn.Name = "resultDataGridViewTextBoxColumn";
+            // 
+            // workerDataGridViewTextBoxColumn
+            // 
+            this.workerDataGridViewTextBoxColumn.DataPropertyName = "Worker";
+            this.workerDataGridViewTextBoxColumn.HeaderText = "Worker";
+            this.workerDataGridViewTextBoxColumn.Name = "workerDataGridViewTextBoxColumn";
+            // 
+            // requestDataBindingSource
+            // 
+            this.requestDataBindingSource.DataSource = typeof(BusinessLayer.DTO.RequestData);
             // 
             // groupBox1
             // 
@@ -165,6 +212,7 @@
             this.Size = new System.Drawing.Size(523, 520);
             this.Load += new System.EventHandler(this.ManagerPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.requestsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestDataBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,5 +232,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button registerRequestButton;
         private System.Windows.Forms.Button manageRequestButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objectDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resultDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource requestDataBindingSource;
     }
 }

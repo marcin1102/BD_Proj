@@ -12,8 +12,8 @@ namespace BusinessLayer.DTO
 		public int ReqId { get; set; }
         public int? WorkerId { get; set; }
 
-        public virtual ActivitiesTypesDictionary ActivitiesTypesDictionary { get; set; }
-        public virtual Request Request { get; set; }
-        public virtual Worker Worker { get; set; }
+        public ActivityTypeData ActivityTypeData { get; set; }
+        public RequestData Request { get; set; }
+        public WorkerData Worker { get; set; }
     }
 }

@@ -44,54 +44,68 @@ namespace BD.Manager
 			this.request = request;
 		}
 
-		public CreateActivity(UserControl previousView, ActivityData activity)
+		public CreateActivity(UserControl previousView, RequestData request, ActivityData activity)
 		{
 			InitializeComponent();
 			this.previousView = previousView;
 			this.activity = activity;
-
-			GetData();
+            SelectedWorker = activity.Worker;
+            workerTextBox.Text = activity.Worker?.ToString();
+            typeTextBox.Text = activity.Type;
+            objectTypeLabel.Text = request.Object.ObjectTypeCode;
+            objectNameLabel.Text = request.Object.Name;
+            requestDescriptionRichTextBox.Text = request.Descr;
+            descrTextBox.Text = activity.Descr;
+            GetData();
 
 			addBtn.Text = "Zapisz";
 		}
 
 		private async void GetData()
 		{
-			SelectedWorker = new WorkerData()
-			{
-				Id = activity.Worker.Id
-			};
-			var searcher = new ActivitiesTypesDictionarySearcher();
-			SelectedType = await searcher.GetByCode(activity.Type);
+            if(activity.WorkerId.HasValue)
+            {
+                SelectedWorker = activity.Worker;
+                var searcher = new ActivitiesTypesDictionarySearcher();
+                SelectedType = await searcher.GetByCode(activity.Type);
+            }			
 		}
 
 		private async void addBtn_Click(object sender, EventArgs e)
         {
-			var service = new ActivityService();
-			if (activity == null)
-			{
-				await service.Create(new ActivityData()
-				{
-					Type = SelectedType.Type,
-					Descr = descrTextBox.Text,
-					Status = Statuses.OPN.ToString(),
-					Result = "",
-					ReqId = request.Id,
-					WorkerId = SelectedWorker.Id
-				});
-			}
-			else
-			{
-				await service.UpdateDetails(new ActivityData()
-				{
-					Type = SelectedType.Type,
-					Descr = descrTextBox.Text,
-					Status = activity.Status,
-					Result = activity.Result,
-					ReqId = activity.ReqId,
-					WorkerId = SelectedWorker.Id
-				});
-			}
+            try
+            {
+                var service = new ActivityService();
+                if (activity == null)
+                {
+                    await service.Create(new ActivityData()
+                    {
+                        Type = SelectedType.Type,
+                        Descr = descrTextBox.Text,
+                        Status = Statuses.OPN.ToString(),
+                        Result = "",
+                        ReqId = request.Id,
+                        WorkerId = SelectedWorker?.Id
+                    });
+                }
+                else
+                {
+                    await service.UpdateDetails(new ActivityData()
+                    {
+                        Id = activity.Id,
+                        Type = SelectedType != null ? SelectedType.Type : activity.Type,
+                        Descr = descrTextBox.Text,
+                        Status = activity.Status,
+                        Result = activity.Result,
+                        ReqId = activity.ReqId,
+                        WorkerId = SelectedWorker?.Id
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }			
         }
 
 		private void goBackBtn_Click(object sender, EventArgs e)

@@ -6,16 +6,19 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using BD.Manager.beta;
+using System.Linq;
 
 namespace BD.Manager
 {
     public partial class ManagerPanel : UserControl
     {
         public ClientData SelectedClient { get; private set; }
+        private ICollection<string> statuses = Enum.GetNames(typeof(Statuses));
 
         public ManagerPanel()
         {
             InitializeComponent();
+            statusComboBox.DataSource = statuses;
         }
 
         private void ManagerPanel_Load(object sender, EventArgs e)
@@ -42,16 +45,13 @@ namespace BD.Manager
         private async void searchButton_Click(object sender, EventArgs e)
         {
             var searcher = new RequestSearcher();
+            var status = !string.IsNullOrEmpty(statusComboBox.Text) ? new List<string> { statusComboBox.Text } : Enum.GetNames(typeof(Statuses)).OfType<string>().ToList();
             try
             {
                 if (string.IsNullOrEmpty(currentClientTextBox.Text) || SelectedClient == null)
-                   requestsDataGridView.DataSource = await searcher.GetRequestsWithStatuses(new List<Statuses>
-                    {
-                        Statuses.OPN,
-                        Statuses.PRG
-                    });
+                    requestsDataGridView.DataSource = await searcher.GetRequestsWithStatuses(status);
                 else
-                    requestsDataGridView.DataSource = await searcher.GetClientRequests(SelectedClient.Id);
+                    requestsDataGridView.DataSource = await searcher.GetClientRequests(SelectedClient.Id, status);
             }
             catch (Exception ex)
             {

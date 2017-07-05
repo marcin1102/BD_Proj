@@ -40,15 +40,21 @@ namespace BusinessLayer.Searchers
                 Worker = new WorkerData(request.Worker.Login.UName, request.Worker.FirstName, request.Worker.LastName, request.Worker.Role, request.Worker.Login.Expiration),
 				Activities = request.Activities.Select(activity => new ActivityData()
 				{
+                    Id = activity.Id,
 					Type = activity.Type,
 					Descr = activity.Descr,
 					Status = activity.Status,
 					Result = activity.Result,
 					ReqId = activity.Request.Id,
-					Request = activity.Request,
 					WorkerId = activity.Worker?.Id,
-					Worker = activity.Worker
-				}).ToList()
+					Worker = new WorkerData
+                        {
+                            Id = activity.Request.WorkerId.Value,
+                            FirstName = activity.Request.Worker.FirstName,
+                            LastName = activity.Request.Worker.LastName,
+                            Role = activity.Request.Worker.Role
+                        }
+                }).ToList()
 			};
         }
 
@@ -84,17 +90,59 @@ namespace BusinessLayer.Searchers
 					Status = activity.Status,
 					Result = activity.Result,
 					ReqId = activity.Request.Id,
-					Request = activity.Request,
 					WorkerId = activity.Worker.Id,
-					Worker = activity.Worker
-				}).ToList()
+					Worker = new WorkerData
+                        {
+                            Id = activity.Request.WorkerId.Value,
+                            FirstName = activity.Request.Worker.FirstName,
+                            LastName = activity.Request.Worker.LastName,
+                            Role = activity.Request.Worker.Role
+                        }
+                }).ToList()
 			}).ToListAsync();
             return result;
         }
 
-        public async Task<ICollection<RequestData>> GetRequestsWithStatuses(ICollection<Statuses> statuses)
+        public async Task<ICollection<RequestData>> GetRequestsWithStatuses(ICollection<string> statuses)
         {
-            var result = await db.Requests.Where(req => statuses.Any(status => status.ToString() == req.Status)).Select(req => new RequestData()
+            var result = await db.Requests.Where(req => statuses.Any(status => status == req.Status)).Select(req => new RequestData()
+            {
+                Id = req.Id,
+                Descr = req.Descr,
+                Result = req.Result,
+                Status = req.Status,
+                ObjId = req.ObjId,
+                Object = new ObjectData
+                {
+                    Id = req.Object.Id,
+                    ClientId = req.Object.ClientId,
+                    Name = req.Object.Name,
+                    ObjectTypeCode = req.Object.Type
+                },
+                WorkerId = req.WorkerId,
+                Worker = new WorkerData
+                {
+                    FirstName = req.Worker.FirstName,
+                    LastName = req.Worker.LastName,
+                    Role = req.Worker.Role,
+                },
+				Activities = req.Activities.Select(activity => new ActivityData()
+				{
+                    Id = activity.Id,
+					Type = activity.Type,
+					Descr = activity.Descr,
+					Status = activity.Status,
+					Result = activity.Result,
+					ReqId = activity.Request.Id,
+					WorkerId = activity.Worker.Id
+                }).ToList()
+			}).ToListAsync();
+            return result;
+        }
+
+        public async Task<ICollection<RequestData>> GetClientRequests(int clientId, ICollection<string> statuses)
+        {
+            var result = await db.Requests.Where(req => req.Object.ClientId == clientId && statuses.Any(x => x == req.Status)).Select(req => new RequestData()
             {
                 Id = req.Id,
                 Descr = req.Descr,
@@ -124,50 +172,15 @@ namespace BusinessLayer.Searchers
 					Status = activity.Status,
 					Result = activity.Result,
 					ReqId = activity.Request.Id,
-					Request = activity.Request,
 					WorkerId = activity.Worker.Id,
-					Worker = activity.Worker
-				}).ToList()
-			}).ToListAsync();
-            return result;
-        }
-
-        public async Task<ICollection<RequestData>> GetClientRequests(int clientId)
-        {
-            var result = await db.Requests.Where(req => req.Object.ClientId == clientId).Select(req => new RequestData()
-            {
-                Id = req.Id,
-                Descr = req.Descr,
-                Result = req.Result,
-                Status = req.Status,
-                ObjId = req.ObjId,
-                Object = new ObjectData
-                {
-                    Id = req.Object.Id,
-                    ClientId = req.Object.ClientId,
-                    Name = req.Object.Name,
-                    ObjectTypeCode = req.Object.Type
-                },
-                WorkerId = req.WorkerId,
-                Worker = new WorkerData
-                {
-                    UName = req.Worker.Login.UName,
-                    FirstName = req.Worker.FirstName,
-                    LastName = req.Worker.LastName,
-                    Role = req.Worker.Role,
-                    Expiration = req.Worker.Login.Expiration
-                },
-				Activities = req.Activities.Select(activity => new ActivityData()
-				{
-					Type = activity.Type,
-					Descr = activity.Descr,
-					Status = activity.Status,
-					Result = activity.Result,
-					ReqId = activity.Request.Id,
-					Request = activity.Request,
-					WorkerId = activity.Worker.Id,
-					Worker = activity.Worker
-				}).ToList()
+					Worker = new WorkerData
+                        {
+                            Id = activity.Request.WorkerId.Value,
+                            FirstName = activity.Request.Worker.FirstName,
+                            LastName = activity.Request.Worker.LastName,
+                            Role = activity.Request.Worker.Role
+                        }
+                }).ToList()
 			}).ToListAsync();
             return result;
         }

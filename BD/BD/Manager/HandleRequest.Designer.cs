@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.activitiesDataGridView = new System.Windows.Forms.DataGridView();
+            this.activityDataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.ObjectNameLabel = new System.Windows.Forms.Label();
+            this.objectNameLabel = new System.Windows.Forms.Label();
             this.objectTypeLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,12 +58,14 @@
             this.finishRequestButton = new System.Windows.Forms.Button();
             this.goBackButton = new System.Windows.Forms.Button();
             this.activityDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.activitiesDataGridView = new System.Windows.Forms.DataGridView();
-            this.activityDataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.editButton = new System.Windows.Forms.Button();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activityDataBindingSource1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -69,8 +73,6 @@
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.activityDataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityDataBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -83,9 +85,30 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Czynności w Zgłoszeniu";
             // 
+            // activitiesDataGridView
+            // 
+            this.activitiesDataGridView.AutoGenerateColumns = false;
+            this.activitiesDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.activitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.activitiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.typeDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.workerDataGridViewTextBoxColumn,
+            this.Id});
+            this.activitiesDataGridView.DataSource = this.activityDataBindingSource1;
+            this.activitiesDataGridView.Location = new System.Drawing.Point(6, 16);
+            this.activitiesDataGridView.Name = "activitiesDataGridView";
+            this.activitiesDataGridView.Size = new System.Drawing.Size(197, 84);
+            this.activitiesDataGridView.TabIndex = 16;
+            this.activitiesDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.activitiesDataGridView_CellEnter);
+            // 
+            // activityDataBindingSource1
+            // 
+            this.activityDataBindingSource1.DataSource = typeof(BusinessLayer.DTO.ActivityData);
+            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.ObjectNameLabel);
+            this.groupBox4.Controls.Add(this.objectNameLabel);
             this.groupBox4.Controls.Add(this.objectTypeLabel);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label1);
@@ -96,14 +119,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Obiekt";
             // 
-            // ObjectNameLabel
+            // objectNameLabel
             // 
-            this.ObjectNameLabel.AutoSize = true;
-            this.ObjectNameLabel.Location = new System.Drawing.Point(132, 34);
-            this.ObjectNameLabel.Name = "ObjectNameLabel";
-            this.ObjectNameLabel.Size = new System.Drawing.Size(35, 13);
-            this.ObjectNameLabel.TabIndex = 13;
-            this.ObjectNameLabel.Text = "label2";
+            this.objectNameLabel.AutoSize = true;
+            this.objectNameLabel.Location = new System.Drawing.Point(132, 34);
+            this.objectNameLabel.Name = "objectNameLabel";
+            this.objectNameLabel.Size = new System.Drawing.Size(35, 13);
+            this.objectNameLabel.TabIndex = 13;
+            this.objectNameLabel.Text = "label2";
             // 
             // objectTypeLabel
             // 
@@ -329,25 +352,15 @@
             // 
             this.activityDataBindingSource.DataSource = typeof(BusinessLayer.DTO.ActivityData);
             // 
-            // activitiesDataGridView
+            // editButton
             // 
-            this.activitiesDataGridView.AutoGenerateColumns = false;
-            this.activitiesDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.activitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.activitiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.typeDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.workerDataGridViewTextBoxColumn});
-            this.activitiesDataGridView.DataSource = this.activityDataBindingSource1;
-            this.activitiesDataGridView.Location = new System.Drawing.Point(6, 16);
-            this.activitiesDataGridView.Name = "activitiesDataGridView";
-            this.activitiesDataGridView.Size = new System.Drawing.Size(197, 84);
-            this.activitiesDataGridView.TabIndex = 16;
-            this.activitiesDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.activitiesDataGridView_CellEnter);
-            // 
-            // activityDataBindingSource1
-            // 
-            this.activityDataBindingSource1.DataSource = typeof(BusinessLayer.DTO.ActivityData);
+            this.editButton.Location = new System.Drawing.Point(215, 496);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(191, 39);
+            this.editButton.TabIndex = 42;
+            this.editButton.Text = "Edytuj czynność";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // typeDataGridViewTextBoxColumn
             // 
@@ -367,10 +380,19 @@
             this.workerDataGridViewTextBoxColumn.HeaderText = "Worker";
             this.workerDataGridViewTextBoxColumn.Name = "workerDataGridViewTextBoxColumn";
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
             // HandleRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.goBackButton);
             this.Controls.Add(this.cancelActivityButton);
             this.Controls.Add(this.finishRequestButton);
@@ -385,6 +407,8 @@
             this.Name = "HandleRequest";
             this.Size = new System.Drawing.Size(420, 675);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activityDataBindingSource1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -394,8 +418,6 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.activityDataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityDataBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -404,7 +426,7 @@
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label ObjectNameLabel;
+        private System.Windows.Forms.Label objectNameLabel;
         private System.Windows.Forms.Label objectTypeLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
@@ -430,10 +452,11 @@
         private System.Windows.Forms.Button goBackButton;
         private System.Windows.Forms.BindingSource activityDataBindingSource;
         private System.Windows.Forms.DataGridView activitiesDataGridView;
+        private System.Windows.Forms.BindingSource activityDataBindingSource1;
+		private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn workerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource activityDataBindingSource1;
-		private System.Windows.Forms.Button editButton;
-	}
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+    }
 }

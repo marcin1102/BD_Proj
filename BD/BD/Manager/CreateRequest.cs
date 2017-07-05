@@ -27,12 +27,11 @@ namespace BD.Manager
 
         private async void registerRequestButton_Click(object sender, EventArgs e)
         {
-            var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
-            var @object = (ObjectData)objectDataGridView.CurrentRow.DataBoundItem;
-
-            if(client != null && @object != null)
+            try
             {
-                try
+                var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
+                var @object = (ObjectData)objectDataGridView.CurrentRow.DataBoundItem;
+                if (client != null && @object != null)
                 {
                     var requestService = new RequestService();
                     await requestService.CreateRequest(new RequestData
@@ -43,14 +42,15 @@ namespace BD.Manager
                         WorkerId = LoggedUser.Worker.Id
                     });
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                else
+                    MessageBox.Show("Nie wybrano klienta lub obiektu klienta!");
             }
-            else
-                MessageBox.Show("Nie wybrano klienta lub obiektu klienta!");
-        }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+         }
 
         private async void searchButton_Click(object sender, EventArgs e)
         {

@@ -27,7 +27,7 @@ namespace BD.Manager.beta
             managerLabel.Text = request.Worker.ToString();
             requestStatusLabel.Text = request.Status;
             objectTypeLabel.Text = request.Object.ObjectTypeCode;
-            ObjectNameLabel.Text = request.Object.Name;
+            objectNameLabel.Text = request.Object.Name;
             requestDescrRichTextBox.Text = request.Descr;
             requestResultRichTextBox.Text = request.Result;
             activitiesDataGridView.DataSource = request.Activities.ToList();
@@ -71,7 +71,7 @@ namespace BD.Manager.beta
 
 		private void editButton_Click(object sender, EventArgs e)
 		{
-			this.GoToNextView(new CreateActivity(this, (ActivityData)activitiesDataGridView.CurrentRow.DataBoundItem));
+			this.GoToNextView(new CreateActivity(this, request, (ActivityData)activitiesDataGridView.CurrentRow.DataBoundItem));
 		}
 	}
 }

@@ -33,9 +33,6 @@
             this.addClientButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.clientDataGridView = new System.Windows.Forms.DataGridView();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
@@ -49,12 +46,19 @@
             this.addObjectButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.objectDataGridView = new System.Windows.Forms.DataGridView();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objectDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objectTypeCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // chooseClientButton
@@ -89,11 +93,14 @@
             // 
             // clientDataGridView
             // 
+            this.clientDataGridView.AllowUserToAddRows = false;
+            this.clientDataGridView.AllowUserToDeleteRows = false;
             this.clientDataGridView.AutoGenerateColumns = false;
+            this.clientDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.clientDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clientDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
+            this.FirstName,
+            this.LastName,
             this.phoneNumberDataGridViewTextBoxColumn});
             this.clientDataGridView.DataSource = this.clientBindingSource;
             this.clientDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -105,27 +112,6 @@
             this.clientDataGridView.Size = new System.Drawing.Size(344, 107);
             this.clientDataGridView.TabIndex = 0;
             this.clientDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientDataGridView_CellEnter);
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // clientBindingSource
             // 
@@ -237,7 +223,13 @@
             // 
             // objectDataGridView
             // 
+            this.objectDataGridView.AutoGenerateColumns = false;
+            this.objectDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.objectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.objectDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.objectTypeCodeDataGridViewTextBoxColumn});
+            this.objectDataGridView.DataSource = this.objectDataBindingSource;
             this.objectDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.objectDataGridView.Location = new System.Drawing.Point(3, 16);
             this.objectDataGridView.MultiSelect = false;
@@ -246,6 +238,49 @@
             this.objectDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.objectDataGridView.Size = new System.Drawing.Size(245, 107);
             this.objectDataGridView.TabIndex = 0;
+            // 
+            // FirstName
+            // 
+            this.FirstName.DataPropertyName = "FirstName";
+            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            this.FirstName.Width = 79;
+            // 
+            // LastName
+            // 
+            this.LastName.DataPropertyName = "LastName";
+            this.LastName.HeaderText = "LastName";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            this.LastName.Width = 80;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // objectDataBindingSource
+            // 
+            this.objectDataBindingSource.DataSource = typeof(BusinessLayer.DTO.ObjectData);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // objectTypeCodeDataGridViewTextBoxColumn
+            // 
+            this.objectTypeCodeDataGridViewTextBoxColumn.DataPropertyName = "ObjectTypeCode";
+            this.objectTypeCodeDataGridViewTextBoxColumn.HeaderText = "ObjectTypeCode";
+            this.objectTypeCodeDataGridViewTextBoxColumn.Name = "objectTypeCodeDataGridViewTextBoxColumn";
+            this.objectTypeCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.objectTypeCodeDataGridViewTextBoxColumn.Width = 112;
             // 
             // ManageClients
             // 
@@ -267,6 +302,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.objectDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,13 +320,16 @@
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource clientBindingSource;
         private System.Windows.Forms.Button returnButton;
         private System.Windows.Forms.Button addObjectButton;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView objectDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objectTypeCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource objectDataBindingSource;
     }
 }
