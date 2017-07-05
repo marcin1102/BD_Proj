@@ -49,6 +49,7 @@
     <Compile Include="DTO\ActivityData.cs" />
     <Compile Include="DTO\ActivityTypeData.cs" />
     <Compile Include="Searchers\ActivitySearcher.cs" />
+    <Compile Include="Services\ActivitiesTypesService.cs" />
     <Compile Include="Services\ActivityService.cs" />
     <Compile Include="DTO\RequestData.cs" />
     <Compile Include="DTO\WorkerData.cs" />

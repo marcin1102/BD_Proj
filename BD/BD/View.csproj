@@ -92,6 +92,12 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\ActivityTypeForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\ActivityTypeForm.Designer.cs">
+      <DependentUpon>ActivityTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\CloseOrCancelRequest.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\ActivityTypeForm.resx">
+      <DependentUpon>ActivityTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\CloseOrCancelRequest.resx">
       <DependentUpon>CloseOrCancelRequest.cs</DependentUpon>
