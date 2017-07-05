@@ -56,6 +56,7 @@
 			this.cancelActivityButton = new System.Windows.Forms.Button();
 			this.finishRequestButton = new System.Windows.Forms.Button();
 			this.goBackButton = new System.Windows.Forms.Button();
+			this.editButton = new System.Windows.Forms.Button();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).BeginInit();
 			this.groupBox4.SuspendLayout();
@@ -326,10 +327,21 @@
 			this.goBackButton.UseVisualStyleBackColor = true;
 			this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
 			// 
+			// editButton
+			// 
+			this.editButton.Location = new System.Drawing.Point(215, 496);
+			this.editButton.Name = "editButton";
+			this.editButton.Size = new System.Drawing.Size(191, 39);
+			this.editButton.TabIndex = 42;
+			this.editButton.Text = "Edytuj czynność";
+			this.editButton.UseVisualStyleBackColor = true;
+			this.editButton.Click += new System.EventHandler(this.editButton_Click);
+			// 
 			// HandleRequest
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.editButton);
 			this.Controls.Add(this.goBackButton);
 			this.Controls.Add(this.cancelActivityButton);
 			this.Controls.Add(this.finishRequestButton);
@@ -386,5 +398,6 @@
         private System.Windows.Forms.Button cancelActivityButton;
         private System.Windows.Forms.Button finishRequestButton;
         private System.Windows.Forms.Button goBackButton;
-    }
+		private System.Windows.Forms.Button editButton;
+	}
 }

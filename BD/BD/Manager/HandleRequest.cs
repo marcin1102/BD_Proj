@@ -34,5 +34,10 @@ namespace BD.Manager.beta
         {
 			this.GoToPreviousView(previousView);
 		}
+
+		private void editButton_Click(object sender, EventArgs e)
+		{
+			this.GoToNextView(new CreateActivity(this, (ActivityData)activitiesDataGridView.CurrentRow.DataBoundItem));
+		}
 	}
 }
