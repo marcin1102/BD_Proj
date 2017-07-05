@@ -119,8 +119,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Role;
+        private System.Windows.Forms.Button selectButton;
+        private System.Windows.Forms.Button backButton;
     }
-		private System.Windows.Forms.Button selectButton;
-		private System.Windows.Forms.Button backButton;
-	}
 }

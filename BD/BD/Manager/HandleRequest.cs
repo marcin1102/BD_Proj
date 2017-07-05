@@ -57,9 +57,17 @@ namespace BD.Manager.beta
 
         public async void RefreshActivities()
         {
-            var requestSearcher = new RequestSearcher();
-            request = await requestSearcher.GetRequest(request.Id);
-            activitiesDataGridView.DataSource = request.Activities;
+            try
+            {
+                var requestSearcher = new RequestSearcher();
+                request = await requestSearcher.GetRequest(request.Id);
+                activitiesDataGridView.DataSource = request.Activities;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

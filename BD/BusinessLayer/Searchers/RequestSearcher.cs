@@ -46,7 +46,7 @@ namespace BusinessLayer.Searchers
 					Result = activity.Result,
 					ReqId = activity.Request.Id,
 					Request = activity.Request,
-					WorkerId = activity.Worker.Id,
+					WorkerId = activity.Worker?.Id,
 					Worker = activity.Worker
 				}).ToList()
 			};
