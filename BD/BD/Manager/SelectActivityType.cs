@@ -20,15 +20,13 @@ namespace BD.Manager
 		public SelectActivityType(UserControl previousView)
 		{
 			InitializeComponent();
-			GetData();
-
 			this.previousView = previousView;
 		}
 
 		public async void GetData()
 		{
 			var searcher = new ActivitiesTypesDictionarySearcher();
-			activityTypesDataGridView.DataSource = await searcher.GetTypes();
+			activityTypesDataGridView.DataSource = await searcher.GetTypes(searchTextBox.Text);
 		}
 
 		private void selectButton_Click(object sender, EventArgs e)
@@ -52,6 +50,11 @@ namespace BD.Manager
 		private void backButton_Click(object sender, EventArgs e)
 		{
 			this.GoToPreviousView(previousView);
+		}
+
+		private void searchButton_Click(object sender, EventArgs e)
+		{
+			GetData();
 		}
 	}
 }
