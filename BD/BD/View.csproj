@@ -271,6 +271,7 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BusinessLayer.DTO.ActivityData.datasource" />
     <None Include="Properties\DataSources\DataLayer.Client.datasource" />
     <None Include="Properties\DataSources\DataLayer.Login.datasource" />
     <None Include="Properties\DataSources\DataLayer.Worker.datasource" />

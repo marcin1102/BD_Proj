@@ -17,20 +17,20 @@ namespace BD.Manager.beta
     public partial class HandleRequest : UserControl
     {
         private readonly UserControl previousView;
-        private readonly RequestData request;
+        private RequestData request;
 
         public HandleRequest(UserControl previousView, RequestData request)
         {
             InitializeComponent();
             this.previousView = previousView;
             this.request = request;
-            managerLabel.Text = request.Worker.FullName();
+            managerLabel.Text = request.Worker.ToString();
             requestStatusLabel.Text = request.Status;
             objectTypeLabel.Text = request.Object.ObjectTypeCode;
             ObjectNameLabel.Text = request.Object.Name;
             requestDescrRichTextBox.Text = request.Descr;
             requestResultRichTextBox.Text = request.Result;
-            activitiesDataGridView.DataSource = request.Activities;
+            activitiesDataGridView.DataSource = request.Activities.ToList();
 		}
 
         private void addActivityButton_Click(object sender, EventArgs e)
@@ -53,6 +53,13 @@ namespace BD.Manager.beta
             var activity = (ActivityData)activitiesDataGridView.CurrentRow.DataBoundItem;
             activityDescrRichTextBox.Text = activity.Descr;
             activityResultRichTextBox.Text = activity.Result;
+        }
+
+        public async void RefreshActivities()
+        {
+            var requestSearcher = new RequestSearcher();
+            request = await requestSearcher.GetRequest(request.Id);
+            activitiesDataGridView.DataSource = request.Activities;
         }
     }
 }

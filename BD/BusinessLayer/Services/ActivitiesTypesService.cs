@@ -15,7 +15,7 @@ namespace BusinessLayer.Services
 
 		}
 
-		public void Create(ActivityTypeData data)
+		public Task Create(ActivityTypeData data)
 		{
 			var db = new RepairContext();
 			var entity = new ActivitiesTypesDictionary()
@@ -24,6 +24,7 @@ namespace BusinessLayer.Services
 				Type = data.Type
 			};
 			db.ActivitiesTypesDictionaries.Add(entity);
+            return db.SaveChangesAsync();
 		}
 	}
 }

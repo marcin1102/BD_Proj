@@ -1,4 +1,5 @@
 ﻿using BD.Helpers;
+using BD.Manager.beta;
 using BusinessLayer.DTO;
 using BusinessLayer.Services.Activity;
 using DataLayer.Status;
@@ -52,12 +53,13 @@ namespace BD.Manager
 				ReqId = request.Id,
 				WorkerId = null //TODO
 			});
-
         }
 
 		private void goBackBtn_Click(object sender, EventArgs e)
 		{
-			this.GoToPreviousView(previousView);
+            var requestForm = previousView as HandleRequest;
+			this.GoToPreviousView(requestForm);
+            requestForm.RefreshActivities();
 		}
 
 		private void typeButton_Click(object sender, EventArgs e)

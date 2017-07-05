@@ -30,7 +30,7 @@ namespace BD.Manager
 			this.mode = (FormMode)Enum.Parse(typeof(FormMode), mode, true);
 		}
 
-		private void saveButton_Click(object sender, EventArgs e)
+		private async void saveButton_Click(object sender, EventArgs e)
 		{
 			var service = new ActivitiesTypesService();
 			
@@ -39,7 +39,7 @@ namespace BD.Manager
 				switch (mode)
 				{
 					case FormMode.CREATE:
-						service.Create(new ActivityTypeData()
+						await service.Create(new ActivityTypeData()
 						{
 							Name = nameTextBox.Text,
 							Type = codeTextBox.Text

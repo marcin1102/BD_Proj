@@ -22,10 +22,10 @@ namespace BD.Manager
 			this.previousView = previousView;
 		}
 
-		private void searchButton_Click(object sender, EventArgs e)
+		private async void searchButton_Click(object sender, EventArgs e)
 		{
 			var searcher = new WorkerSearcher();
-			workerGridView.DataSource = searcher.FullTextSearch(searchTextBox.Text);
+			workerGridView.DataSource = await searcher.FullTextSearch(searchTextBox.Text);
 		}
 	}
 }

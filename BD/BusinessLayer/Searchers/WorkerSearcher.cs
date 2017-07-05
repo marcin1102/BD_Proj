@@ -24,13 +24,13 @@ namespace BusinessLayer.Searchers
                 foreach (var word in words)
                 {
                     if (workers.Count == 0)
-                        workers = await db.Workers.Where(worker => worker.FirstName.Contains(word) ||
-                                                            worker.LastName.Contains(word) ||
-                                                            worker.Login.UName.Contains(word)).ToListAsync();
+                        workers = await db.Workers.Where(worker => !string.IsNullOrEmpty(word) ? worker.FirstName.Contains(word) : true ||
+                                                            !string.IsNullOrEmpty(word) ? worker.LastName.Contains(word) : true ||
+                                                            !string.IsNullOrEmpty(word) ? worker.Login.UName.Contains(word) : true).ToListAsync();
                     else
-                        workers = workers.Where(worker => worker.FirstName.Contains(word) ||
-                                                            worker.LastName.Contains(word) ||
-                                                            worker.Login.UName.Contains(word)).ToList();
+                        workers = workers.Where(worker => !string.IsNullOrEmpty(word) ? worker.FirstName.Contains(word) : true ||
+                                                            !string.IsNullOrEmpty(word) ? worker.LastName.Contains(word) : true ||
+                                                            !string.IsNullOrEmpty(word) ? worker.Login.UName.Contains(word) : true).ToList();
                 }
             }
 
