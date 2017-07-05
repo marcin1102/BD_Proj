@@ -107,7 +107,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.activityTypesDataGridView)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
 
 		#endregion

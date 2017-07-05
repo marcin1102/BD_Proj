@@ -38,7 +38,7 @@ namespace BusinessLayer.Searchers
                 },
                 WorkerId = request.WorkerId,
                 Worker = new WorkerData(request.Worker.Login.UName, request.Worker.FirstName, request.Worker.LastName, request.Worker.Role, request.Worker.Login.Expiration),
-				Activities = db.Activities.Where(activity => activity.ReqId == request.Id).Select(activity => new ActivityData()
+				Activities = request.Activities.Select(activity => new ActivityData()
 				{
 					Type = activity.Type,
 					Descr = activity.Descr,
@@ -77,7 +77,7 @@ namespace BusinessLayer.Searchers
                     Role = req.Worker.Role,
                     Expiration = req.Worker.Login.Expiration
                 },
-				Activities = db.Activities.Where(activity => activity.ReqId == req.Id).Select(activity => new ActivityData()
+				Activities = req.Activities.Select(activity => new ActivityData()
 				{
 					Type = activity.Type,
 					Descr = activity.Descr,
@@ -117,7 +117,7 @@ namespace BusinessLayer.Searchers
                     Role = req.Worker.Role,
                     Expiration = req.Worker.Login.Expiration
                 },
-				Activities = db.Activities.Where(activity => activity.ReqId == req.Id).Select(activity => new ActivityData()
+				Activities = req.Activities.Select(activity => new ActivityData()
 				{
 					Type = activity.Type,
 					Descr = activity.Descr,
@@ -157,7 +157,7 @@ namespace BusinessLayer.Searchers
                     Role = req.Worker.Role,
                     Expiration = req.Worker.Login.Expiration
                 },
-				Activities = db.Activities.Where(activity => activity.ReqId == req.Id).Select(activity => new ActivityData()
+				Activities = req.Activities.Select(activity => new ActivityData()
 				{
 					Type = activity.Type,
 					Descr = activity.Descr,
