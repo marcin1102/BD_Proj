@@ -76,11 +76,15 @@
             // statusComboBox
             // 
             this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Items.AddRange(new object[] {
+            "OPN",
+            "PRG",
+            "CNL",
+            "DON"});
             this.statusComboBox.Location = new System.Drawing.Point(284, 6);
             this.statusComboBox.Name = "statusComboBox";
             this.statusComboBox.Size = new System.Drawing.Size(121, 21);
             this.statusComboBox.TabIndex = 8;
-            this.statusComboBox.Text = "OPN";
             // 
             // label1
             // 

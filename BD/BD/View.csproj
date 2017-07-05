@@ -92,17 +92,17 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager\CloseOrCancelRequest.cs">
+    <Compile Include="Manager\FinishOrCancelRequest.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Manager\CloseOrCancelRequest.Designer.cs">
-      <DependentUpon>CloseOrCancelRequest.cs</DependentUpon>
+    <Compile Include="Manager\FinishOrCancelRequest.Designer.cs">
+      <DependentUpon>FinishOrCancelRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager\CreateActivity.cs">
+    <Compile Include="Manager\CreateOrEditActivity.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Manager\CreateActivity.Designer.cs">
-      <DependentUpon>CreateActivity.cs</DependentUpon>
+    <Compile Include="Manager\CreateOrEditActivity.Designer.cs">
+      <DependentUpon>CreateOrEditActivity.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\CreateObject.cs">
       <SubType>UserControl</SubType>
@@ -146,6 +146,12 @@
     <Compile Include="Manager\ManageClients.Designer.cs">
       <DependentUpon>ManageClients.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\SelectWorkers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\SelectWorkers.Designer.cs">
+      <DependentUpon>SelectWorkers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\SelectActivityType.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -187,11 +193,11 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manager\CloseOrCancelRequest.resx">
-      <DependentUpon>CloseOrCancelRequest.cs</DependentUpon>
+    <EmbeddedResource Include="Manager\FinishOrCancelRequest.resx">
+      <DependentUpon>FinishOrCancelRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manager\CreateActivity.resx">
-      <DependentUpon>CreateActivity.cs</DependentUpon>
+    <EmbeddedResource Include="Manager\CreateOrEditActivity.resx">
+      <DependentUpon>CreateOrEditActivity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\CreateObject.resx">
       <DependentUpon>CreateObject.cs</DependentUpon>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManageClients.resx">
       <DependentUpon>ManageClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\SelectWorkers.resx">
+      <DependentUpon>SelectWorkers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\SelectActivityType.resx">
       <DependentUpon>SelectActivityType.cs</DependentUpon>
