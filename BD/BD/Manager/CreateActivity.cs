@@ -45,8 +45,8 @@ namespace BD.Manager
 			var service = new ActivityService();
 			service.Create(new ActivityData()
 			{
-				Type = "", //TODO
-				Descr = descrTextBox.Text,
+				Type = SelectedType.Type,
+                Descr = descrTextBox.Text,
 				Status = Statuses.OPN.ToString(),
 				Result = "",
 				ReqId = request.Id,

@@ -28,51 +28,54 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.activityTypesDataGridView = new System.Windows.Forms.DataGridView();
-			this.selectButton = new System.Windows.Forms.Button();
-			this.backButton = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.activityTypesDataGridView)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// activityTypesDataGridView
-			// 
-			this.activityTypesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.activityTypesDataGridView.Location = new System.Drawing.Point(3, 3);
-			this.activityTypesDataGridView.Name = "activityTypesDataGridView";
-			this.activityTypesDataGridView.Size = new System.Drawing.Size(405, 435);
-			this.activityTypesDataGridView.TabIndex = 0;
-			// 
-			// selectButton
-			// 
-			this.selectButton.Location = new System.Drawing.Point(3, 444);
-			this.selectButton.Name = "selectButton";
-			this.selectButton.Size = new System.Drawing.Size(75, 23);
-			this.selectButton.TabIndex = 1;
-			this.selectButton.Text = "Wybierz";
-			this.selectButton.UseVisualStyleBackColor = true;
-			this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
-			// 
-			// backButton
-			// 
-			this.backButton.Location = new System.Drawing.Point(84, 444);
-			this.backButton.Name = "backButton";
-			this.backButton.Size = new System.Drawing.Size(75, 23);
-			this.backButton.TabIndex = 2;
-			this.backButton.Text = "Wróc";
-			this.backButton.UseVisualStyleBackColor = true;
-			this.backButton.Click += new System.EventHandler(this.backButton_Click);
-			// 
-			// SelectActivityType
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.backButton);
-			this.Controls.Add(this.selectButton);
-			this.Controls.Add(this.activityTypesDataGridView);
-			this.Name = "SelectActivityType";
-			this.Size = new System.Drawing.Size(411, 470);
-			((System.ComponentModel.ISupportInitialize)(this.activityTypesDataGridView)).EndInit();
-			this.ResumeLayout(false);
+            this.activityTypesDataGridView = new System.Windows.Forms.DataGridView();
+            this.selectButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.activityTypesDataGridView)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // activityTypesDataGridView
+            // 
+            this.activityTypesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.activityTypesDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.activityTypesDataGridView.MultiSelect = false;
+            this.activityTypesDataGridView.Name = "activityTypesDataGridView";
+            this.activityTypesDataGridView.ReadOnly = true;
+            this.activityTypesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.activityTypesDataGridView.Size = new System.Drawing.Size(405, 435);
+            this.activityTypesDataGridView.TabIndex = 0;
+            // 
+            // selectButton
+            // 
+            this.selectButton.Location = new System.Drawing.Point(3, 444);
+            this.selectButton.Name = "selectButton";
+            this.selectButton.Size = new System.Drawing.Size(75, 23);
+            this.selectButton.TabIndex = 1;
+            this.selectButton.Text = "Wybierz";
+            this.selectButton.UseVisualStyleBackColor = true;
+            this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(84, 444);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.TabIndex = 2;
+            this.backButton.Text = "Wróc";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // SelectActivityType
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.selectButton);
+            this.Controls.Add(this.activityTypesDataGridView);
+            this.Name = "SelectActivityType";
+            this.Size = new System.Drawing.Size(411, 470);
+            ((System.ComponentModel.ISupportInitialize)(this.activityTypesDataGridView)).EndInit();
+            this.ResumeLayout(false);
 
 		}
 
