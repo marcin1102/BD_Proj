@@ -29,6 +29,7 @@ namespace BD.Manager
         {
             var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;
             var @object = (ObjectData)objectDataGridView.CurrentRow.DataBoundItem;
+
             if(client != null && @object != null)
             {
                 try
@@ -37,7 +38,9 @@ namespace BD.Manager
                     await requestService.CreateRequest(new RequestData
                     {
                         Descr = descriptionTextBox.Text,
-                        ObjId = @object.Id
+                        ObjId = @object.Id,
+                        Worker = LoggedUser.Worker,
+                        WorkerId = LoggedUser.Worker.Id
                     });
                 }
                 catch (Exception ex)

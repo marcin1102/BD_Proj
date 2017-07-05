@@ -40,6 +40,7 @@ namespace BD
                 var workerSearcher = new WorkerSearcher();
                 var worker = await workerSearcher.GetByLogin(uName);
                 ChooseAndOpenNextWindow(worker.Role);
+                LoggedUser.Worker = worker;
             }
         }
 
@@ -47,8 +48,7 @@ namespace BD
         {
             if(role == Roles.Worker.ToString())
             {
-                this.OpenNextWindow(new MainWindow(new WorkerPanel()));
-                
+                this.OpenNextWindow(new MainWindow(new WorkerPanel()));                
             }
             else
             {

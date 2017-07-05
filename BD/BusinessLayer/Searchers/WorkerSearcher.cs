@@ -42,7 +42,10 @@ namespace BusinessLayer.Searchers
             var db = new RepairContext();
             var login = await db.Logins.SingleAsync(x => x.UName == uName);
             var worker = login.Worker;
-            return new WorkerData(login.UName, login.Pass, worker.FirstName, worker.LastName, worker.Role, login.Expiration);
+            return new WorkerData(login.UName, login.Pass, worker.FirstName, worker.LastName, worker.Role, login.Expiration)
+            {
+                Id = worker.Id
+            };
         }
     }
 }

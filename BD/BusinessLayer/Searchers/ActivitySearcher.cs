@@ -30,10 +30,8 @@ namespace BusinessLayer.Searchers
 		public async Task<ICollection<ActivityData>> GetActivities(string status, int objectId)
 		{
 			var context = new RepairContext();
-			var objectEntity = context.Objects.Single(entity => entity.Id == objectId);
-			var requestEntity = context.Requests.Single(entity => entity.Object.Id == objectEntity.Id);
 			return context.Activities
-					.Where(activity => activity.Status == status && activity.Request.Id == requestEntity.Id)
+					.Where(activity => activity.Status == status && activity.Request.ObjId == objectId)
 					.Select(activity => new ActivityData()
 					{
 						Type = activity.Type,

@@ -24,12 +24,15 @@ namespace BusinessLayer.Services
                 throw new EntityCreationFailure("Request cannot be null");
 
             var @object = db.Objects.Single(x => x.Id == requestToAdd.ObjId);
+            var worker = db.Workers.Single(x => x.Id == requestToAdd.WorkerId);
 
             var request = new Request()
             {
                 Descr = requestToAdd.Descr,
                 Object = @object,
-                Status = Statuses.OPN.ToString()
+                Status = Statuses.OPN.ToString(),
+                Worker = worker,
+                WorkerId = worker.Id
             };
             db.Requests.Add(request);
             return db.SaveChangesAsync(); 

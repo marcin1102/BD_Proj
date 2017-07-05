@@ -34,7 +34,7 @@ namespace BusinessLayer.DTO
         public int Id { get; set; }
         public string Pass { get; set; }
 
-		public override string ToString()
+		public string FullName()
 		{
 			return FirstName + " " + LastName;
 		}

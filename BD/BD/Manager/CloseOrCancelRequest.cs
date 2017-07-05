@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer.Services;
+using BusinessLayer.Searchers;
 
 namespace BD.Manager.beta
 {
     public partial class CloseOrCancelRequest : UserControl
     {
+        private readonly RequestService service;
+        private readonly WorkerSearcher workerSearcher;
         public CloseOrCancelRequest()
         {
             InitializeComponent();
+            service = new RequestService();
+
         }
     }
 }
