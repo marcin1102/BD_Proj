@@ -67,7 +67,11 @@ namespace BD.Manager.beta
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
-    }
+
+		private void editButton_Click(object sender, EventArgs e)
+		{
+			this.GoToNextView(new CreateActivity(this, (ActivityData)activitiesDataGridView.CurrentRow.DataBoundItem));
+		}
+	}
 }

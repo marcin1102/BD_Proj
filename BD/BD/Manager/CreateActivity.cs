@@ -1,6 +1,7 @@
 ﻿using BD.Helpers;
 using BD.Manager.beta;
 using BusinessLayer.DTO;
+using BusinessLayer.Services;
 using BusinessLayer.Services.Activity;
 using DataLayer.Status;
 using System;
@@ -19,6 +20,8 @@ namespace BD.Manager
     {
 		private readonly UserControl previousView;
 		private readonly RequestData request;
+		private readonly ActivityData activity;
+
 		public WorkerData SelectedWorker { get; private set; }
 		public ActivityTypeData SelectedType { get; private set; } 
 
@@ -41,18 +44,54 @@ namespace BD.Manager
 			this.request = request;
 		}
 
-		private void addBtn_Click(object sender, EventArgs e)
+		public CreateActivity(UserControl previousView, ActivityData activity)
+		{
+			InitializeComponent();
+			this.previousView = previousView;
+			this.activity = activity;
+
+			GetData();
+
+			addBtn.Text = "Zapisz";
+		}
+
+		private async void GetData()
+		{
+			SelectedWorker = new WorkerData()
+			{
+				Id = activity.Worker.Id
+			};
+			var searcher = new ActivitiesTypesDictionarySearcher();
+			SelectedType = await searcher.GetByCode(activity.Type);
+		}
+
+		private async void addBtn_Click(object sender, EventArgs e)
         {
 			var service = new ActivityService();
-			service.Create(new ActivityData()
+			if (activity == null)
 			{
-				Type = SelectedType.Type,
-                Descr = descrTextBox.Text,
-				Status = Statuses.OPN.ToString(),
-				Result = "",
-				ReqId = request.Id,
-				WorkerId = null //TODO
-			});
+				await service.Create(new ActivityData()
+				{
+					Type = SelectedType.Type,
+					Descr = descrTextBox.Text,
+					Status = Statuses.OPN.ToString(),
+					Result = "",
+					ReqId = request.Id,
+					WorkerId = SelectedWorker.Id
+				});
+			}
+			else
+			{
+				await service.UpdateDetails(new ActivityData()
+				{
+					Type = SelectedType.Type,
+					Descr = descrTextBox.Text,
+					Status = activity.Status,
+					Result = activity.Result,
+					ReqId = activity.ReqId,
+					WorkerId = SelectedWorker.Id
+				});
+			}
         }
 
 		private void goBackBtn_Click(object sender, EventArgs e)

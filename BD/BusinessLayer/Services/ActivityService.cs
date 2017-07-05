@@ -15,7 +15,7 @@ namespace BusinessLayer.Services.Activity
 			db = new RepairContext();
 		}
 
-		public async void Create(ActivityData activity)
+		public async Task Create(ActivityData activity)
         {
             var request = await db.Requests.SingleAsync(entity => entity.Id == activity.ReqId);
 			var worker = activity.WorkerId != null ? db.Workers.Single(entity => entity.Id == activity.WorkerId) : null;

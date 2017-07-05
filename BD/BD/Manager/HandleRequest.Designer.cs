@@ -434,5 +434,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn workerDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource activityDataBindingSource1;
-    }
+		private System.Windows.Forms.Button editButton;
+	}
 }
