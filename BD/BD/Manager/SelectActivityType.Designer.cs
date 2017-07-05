@@ -33,6 +33,7 @@
 			this.backButton = new System.Windows.Forms.Button();
 			this.searchTextBox = new System.Windows.Forms.TextBox();
 			this.searchButton = new System.Windows.Forms.Button();
+			this.createButton = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.activityTypesDataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -81,10 +82,21 @@
 			this.searchButton.UseVisualStyleBackColor = true;
 			this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
 			// 
+			// createButton
+			// 
+			this.createButton.Location = new System.Drawing.Point(268, 219);
+			this.createButton.Name = "createButton";
+			this.createButton.Size = new System.Drawing.Size(28, 23);
+			this.createButton.TabIndex = 5;
+			this.createButton.Text = "+";
+			this.createButton.UseVisualStyleBackColor = true;
+			this.createButton.Click += new System.EventHandler(this.createButton_Click);
+			// 
 			// SelectActivityType
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.createButton);
 			this.Controls.Add(this.searchButton);
 			this.Controls.Add(this.searchTextBox);
 			this.Controls.Add(this.backButton);
@@ -105,5 +117,6 @@
 		private System.Windows.Forms.Button backButton;
 		private System.Windows.Forms.TextBox searchTextBox;
 		private System.Windows.Forms.Button searchButton;
+		private System.Windows.Forms.Button createButton;
 	}
 }

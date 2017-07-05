@@ -56,5 +56,10 @@ namespace BD.Manager
 		{
 			GetData();
 		}
+
+		private void createButton_Click(object sender, EventArgs e)
+		{
+			this.GoToNextView(new ActivityTypeForm(this, "create"));
+		}
 	}
 }
