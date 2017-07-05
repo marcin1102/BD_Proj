@@ -24,5 +24,17 @@ namespace BusinessLayer.Services
 				Type = entity.Type
 			}).ToList();
 		}
+
+		public async Task<IReadOnlyCollection<ActivityTypeData>> GetTypes(string name)
+		{
+			var db = new RepairContext();
+			return db.ActivitiesTypesDictionaries
+				.Where(entity => (!string.IsNullOrEmpty(name) ? entity.Name.ToLower().Contains(name.ToLower()) : true))
+				.Select(entity => new ActivityTypeData
+			{
+				Name = entity.Name,
+				Type = entity.Type
+			}).ToList();
+		}
 	}
 }

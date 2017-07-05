@@ -64,5 +64,10 @@ namespace BD.Manager
 		{
 			this.GoToNextView(new SelectActivityType(this));
 		}
+
+		private void workerButton_Click(object sender, EventArgs e)
+		{
+			this.GoToNextView(new SelectWorker(this));
+		}
 	}
 }
