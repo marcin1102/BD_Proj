@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace BD.Manager
 {
-    public partial class CreateActivity : UserControl
+    public partial class CreateOrEditActivity : UserControl
     {
 		private readonly UserControl previousView;
 		private readonly RequestData request;
@@ -33,7 +33,7 @@ namespace BD.Manager
 			workerTextBox.Text = worker.FirstName + " " + worker.LastName;
 		}
 
-		public CreateActivity(UserControl previousView, RequestData request)
+		public CreateOrEditActivity(UserControl previousView, RequestData request, FormOpenMode mode)
 		{
 			InitializeComponent();
 			this.previousView = previousView;
@@ -43,14 +43,14 @@ namespace BD.Manager
 		private void addBtn_Click(object sender, EventArgs e)
         {
 			var service = new ActivityService();
-			service.Create(new ActivityData()
-			{
-				Type = SelectedType.Type,
+            service.Create(new ActivityData()
+            {
+                Type = SelectedType.Type,
                 Descr = descrTextBox.Text,
-				Status = Statuses.OPN.ToString(),
-				Result = "",
-				ReqId = request.Id,
-				WorkerId = null //TODO
+                Status = Statuses.OPN.ToString(),
+                Result = "",
+                ReqId = request.Id,
+                WorkerId = SelectedWorker.Id
 			});
 
         }
@@ -64,5 +64,10 @@ namespace BD.Manager
 		{
 			this.GoToNextView(new SelectActivityType(this));
 		}
-	}
+
+        private void workerButton_Click(object sender, EventArgs e)
+        {
+            this.GoToNextView(new SelectWorkers(this));
+        }
+    }
 }

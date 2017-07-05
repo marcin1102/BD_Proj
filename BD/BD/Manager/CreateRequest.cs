@@ -20,11 +20,6 @@ namespace BD.Manager
             this.previousView = previousView;
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private async void registerRequestButton_Click(object sender, EventArgs e)
         {
             var client = (ClientData)clientDataGridView.CurrentRow.DataBoundItem;

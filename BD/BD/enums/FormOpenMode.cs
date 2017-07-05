@@ -9,6 +9,8 @@ namespace BD
     public enum FormOpenMode
     {
         FINISH,
-        CANCEL
+        CANCEL,
+        CREATE,
+        EDIT
     }
 }

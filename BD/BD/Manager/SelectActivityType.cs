@@ -36,7 +36,7 @@ namespace BD.Manager
 			try
 			{
 				var type = (ActivityTypeData)activityTypesDataGridView.CurrentRow.DataBoundItem;
-				var activityPanel = previousView as CreateActivity;
+				var activityPanel = previousView as CreateOrEditActivity;
 				if (activityPanel != null)
 				{
 					activityPanel.SetType(type);

@@ -1,6 +1,6 @@
 ﻿namespace BD.Manager.beta
 {
-    partial class CloseOrCancelRequest
+    partial class FinishOrCancelRequest
     {
         /// <summary> 
         /// Required designer variable.
@@ -66,20 +66,21 @@
             // 
             // goBackButton
             // 
-            this.goBackButton.Location = new System.Drawing.Point(6, 540);
+            this.goBackButton.Location = new System.Drawing.Point(3, 646);
             this.goBackButton.Name = "goBackButton";
             this.goBackButton.Size = new System.Drawing.Size(200, 40);
             this.goBackButton.TabIndex = 52;
             this.goBackButton.Text = "Wróć";
             this.goBackButton.UseVisualStyleBackColor = true;
+            this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(6, 494);
+            this.submitButton.Location = new System.Drawing.Point(3, 600);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(200, 40);
             this.submitButton.TabIndex = 44;
-            this.submitButton.Text = "Akceptuj";
+            this.submitButton.Text = "Zapisz";
             this.submitButton.UseVisualStyleBackColor = true;
             // 
             // requestStatusLabel
@@ -122,7 +123,7 @@
             // 
             this.groupBox7.Controls.Add(this.requestResultRichTextBox);
             this.groupBox7.Controls.Add(this.richTextBox6);
-            this.groupBox7.Location = new System.Drawing.Point(6, 388);
+            this.groupBox7.Location = new System.Drawing.Point(3, 494);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(403, 100);
             this.groupBox7.TabIndex = 49;
@@ -152,7 +153,7 @@
             // 
             this.groupBox6.Controls.Add(this.activityResultRichTextBox);
             this.groupBox6.Controls.Add(this.richTextBox4);
-            this.groupBox6.Location = new System.Drawing.Point(9, 282);
+            this.groupBox6.Location = new System.Drawing.Point(6, 388);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(403, 100);
             this.groupBox6.TabIndex = 48;
@@ -187,16 +188,16 @@
             this.activityDescrRichTextBox.Location = new System.Drawing.Point(3, 16);
             this.activityDescrRichTextBox.Name = "activityDescrRichTextBox";
             this.activityDescrRichTextBox.ReadOnly = true;
-            this.activityDescrRichTextBox.Size = new System.Drawing.Size(194, 81);
+            this.activityDescrRichTextBox.Size = new System.Drawing.Size(403, 81);
             this.activityDescrRichTextBox.TabIndex = 0;
             this.activityDescrRichTextBox.Text = "";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.activityDescrRichTextBox);
-            this.groupBox3.Location = new System.Drawing.Point(212, 176);
+            this.groupBox3.Location = new System.Drawing.Point(3, 282);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 100);
+            this.groupBox3.Size = new System.Drawing.Size(409, 100);
             this.groupBox3.TabIndex = 43;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Opis Czynności";
@@ -277,7 +278,7 @@
             this.activitiesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.activitiesDataGridView.Location = new System.Drawing.Point(3, 16);
             this.activitiesDataGridView.Name = "activitiesDataGridView";
-            this.activitiesDataGridView.Size = new System.Drawing.Size(194, 81);
+            this.activitiesDataGridView.Size = new System.Drawing.Size(400, 81);
             this.activitiesDataGridView.TabIndex = 0;
             // 
             // groupBox5
@@ -297,12 +298,12 @@
             this.groupBox2.Controls.Add(this.activitiesDataGridView);
             this.groupBox2.Location = new System.Drawing.Point(6, 176);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.Size = new System.Drawing.Size(406, 100);
             this.groupBox2.TabIndex = 42;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Czynności w Zgłoszeniu";
             // 
-            // CloseOrCancelRequest
+            // FinishOrCancelRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -315,8 +316,8 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
-            this.Name = "CloseOrCancelRequest";
-            this.Size = new System.Drawing.Size(445, 608);
+            this.Name = "FinishOrCancelRequest";
+            this.Size = new System.Drawing.Size(419, 700);
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
