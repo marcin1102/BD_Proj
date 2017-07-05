@@ -43,9 +43,9 @@
 			this.workerButton = new System.Windows.Forms.Button();
 			this.workerTextBox = new System.Windows.Forms.TextBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.typeTextBox = new System.Windows.Forms.TextBox();
-			this.typeButton = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
+			this.typeButton = new System.Windows.Forms.Button();
+			this.typeTextBox = new System.Windows.Forms.TextBox();
 			this.groupBox4.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -176,6 +176,7 @@
 			this.workerButton.TabIndex = 25;
 			this.workerButton.Text = "...";
 			this.workerButton.UseVisualStyleBackColor = true;
+			this.workerButton.Click += new System.EventHandler(this.workerButton_Click);
 			// 
 			// workerTextBox
 			// 
@@ -199,13 +200,14 @@
 			this.groupBox3.TabIndex = 29;
 			this.groupBox3.TabStop = false;
 			// 
-			// typeTextBox
+			// label6
 			// 
-			this.typeTextBox.Location = new System.Drawing.Point(68, 35);
-			this.typeTextBox.Name = "typeTextBox";
-			this.typeTextBox.ReadOnly = true;
-			this.typeTextBox.Size = new System.Drawing.Size(89, 20);
-			this.typeTextBox.TabIndex = 27;
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(6, 38);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(21, 13);
+			this.label6.TabIndex = 29;
+			this.label6.Text = "typ";
 			// 
 			// typeButton
 			// 
@@ -217,14 +219,13 @@
 			this.typeButton.UseVisualStyleBackColor = true;
 			this.typeButton.Click += new System.EventHandler(this.typeButton_Click);
 			// 
-			// label6
+			// typeTextBox
 			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(6, 38);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(21, 13);
-			this.label6.TabIndex = 29;
-			this.label6.Text = "typ";
+			this.typeTextBox.Location = new System.Drawing.Point(68, 35);
+			this.typeTextBox.Name = "typeTextBox";
+			this.typeTextBox.ReadOnly = true;
+			this.typeTextBox.Size = new System.Drawing.Size(89, 20);
+			this.typeTextBox.TabIndex = 27;
 			// 
 			// CreateActivity
 			// 
