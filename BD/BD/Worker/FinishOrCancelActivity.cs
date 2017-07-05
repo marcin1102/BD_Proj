@@ -7,10 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using BD.Helpers;
 using BusinessLayer;
 using BusinessLayer.DTO;
 using BusinessLayer.Searchers;
+using BusinessLayer.Services.Activity;
+using DataLayer.Status;
 
 namespace BD
 {
@@ -77,18 +80,30 @@ namespace BD
             this.GoToPreviousView(previousControl);
         }
 
+        private async void ChangeActivityStatus()
+        {
+            var service = new ActivityService();
+            if (MODE == FormOpenMode.CANCEL)
+            {
+                await service.UpdateDetails(new ActivityData()
+                {
+                    Status = Statuses.CNL.ToString()
+                });
+            }
+            else if (MODE == FormOpenMode.FINISH)
+            {
+                await service.UpdateDetails(new ActivityData()
+                {
+                    Status = Statuses.DON.ToString()
+                });
+            }
+        }
+
         private void confirmBtn_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(activityResultTextBox.Text))
             {
-                if (MODE == FormOpenMode.CANCEL)
-                {
-                    //TODO:
-                }
-                else if (MODE == FormOpenMode.FINISH)
-                {
-                    //TODO:
-                }
+                ChangeActivityStatus();
             }
             else
             {
