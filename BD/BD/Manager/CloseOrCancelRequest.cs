@@ -67,9 +67,9 @@ namespace BD.Manager.beta
 
         private void GoBack()
         {
-            var view = previousView as HandleRequest;
-            view.RefreshControls();
+            var view = previousView as HandleRequest;            
             this.GoToPreviousView(view);
+            view.RefreshControls();
         }
 
         private void goBackButton_Click(object sender, System.EventArgs e)

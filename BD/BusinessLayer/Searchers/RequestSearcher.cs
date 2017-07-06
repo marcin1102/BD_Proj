@@ -21,7 +21,6 @@ namespace BusinessLayer.Searchers
 
         public async Task<RequestData> GetRequest(int requestId)
         {
-
             return await db.Requests.Where(x => x.Id == requestId).Select(request => new RequestData
             {
                 Id = request.Id,
@@ -74,11 +73,9 @@ namespace BusinessLayer.Searchers
                 WorkerId = req.WorkerId,
                 Worker = new WorkerData
                 {
-                    UName = req.Worker.Login.UName,
                     FirstName = req.Worker.FirstName,
                     LastName = req.Worker.LastName,
-                    Role = req.Worker.Role,
-                    Expiration = req.Worker.Login.Expiration
+                    Role = req.Worker.Role
                 },
 				Activities = req.Activities.Select(activity => new ActivityData()
 				{
@@ -88,13 +85,11 @@ namespace BusinessLayer.Searchers
 					Result = activity.Result,
 					ReqId = activity.Request.Id,
 					WorkerId = activity.Worker.Id,
-					Worker = new WorkerData
-                        {
-                            Id = activity.Request.WorkerId.Value,
-                            FirstName = activity.Request.Worker.FirstName,
-                            LastName = activity.Request.Worker.LastName,
-                            Role = activity.Request.Worker.Role
-                        }
+                    Worker = activity.WorkerId != null ? new WorkerData
+                    {
+                        FirstName = activity.Worker.FirstName,
+                        LastName = activity.Worker.LastName
+                    } : null
                 }).ToList()
 			}).ToListAsync();
             return result;
@@ -120,8 +115,7 @@ namespace BusinessLayer.Searchers
                 Worker = new WorkerData
                 {
                     FirstName = req.Worker.FirstName,
-                    LastName = req.Worker.LastName,
-                    Role = req.Worker.Role,
+                    LastName = req.Worker.LastName
                 },
 				Activities = req.Activities.Select(activity => new ActivityData()
 				{
@@ -131,7 +125,7 @@ namespace BusinessLayer.Searchers
 					Status = activity.Status,
 					Result = activity.Result,
 					ReqId = activity.Request.Id,
-					WorkerId = activity.Worker.Id
+					WorkerId = activity.WorkerId
                 }).ToList()
 			}).ToListAsync();
             return result;
@@ -154,31 +148,29 @@ namespace BusinessLayer.Searchers
                     ObjectTypeCode = req.Object.Type
                 },
                 WorkerId = req.WorkerId,
-                Worker = new WorkerData
+                Worker = new WorkerData()
                 {
-                    UName = req.Worker.Login.UName,
+                    Id = req.WorkerId.Value,
                     FirstName = req.Worker.FirstName,
                     LastName = req.Worker.LastName,
                     Role = req.Worker.Role,
-                    Expiration = req.Worker.Login.Expiration
                 },
-				Activities = req.Activities.Select(activity => new ActivityData()
-				{
-					Type = activity.Type,
-					Descr = activity.Descr,
-					Status = activity.Status,
-					Result = activity.Result,
-					ReqId = activity.Request.Id,
-					WorkerId = activity.Worker.Id,
-					Worker = new WorkerData
-                        {
-                            Id = activity.Request.WorkerId.Value,
-                            FirstName = activity.Request.Worker.FirstName,
-                            LastName = activity.Request.Worker.LastName,
-                            Role = activity.Request.Worker.Role
-                        }
+                Activities = req.Activities.Select(activity => new ActivityData()
+                {
+                    Id = activity.Id,
+                    Type = activity.Type,
+                    Descr = activity.Descr,
+                    Status = activity.Status,
+                    Result = activity.Result,
+                    ReqId = activity.Request.Id,
+                    WorkerId = activity.WorkerId,
+                    Worker = activity.WorkerId != null ? new WorkerData
+                    {
+                        FirstName = activity.Worker.FirstName,
+                        LastName = activity.Worker.LastName
+                    } : null
                 }).ToList()
-			}).ToListAsync();
+            }).ToListAsync();
             return result;
         }
     }

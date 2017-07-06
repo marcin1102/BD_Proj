@@ -23,7 +23,7 @@ namespace BD.Manager
 		private readonly ActivityData activity;
 
 		public WorkerData SelectedWorker { get; private set; }
-		public ActivityTypeData SelectedType { get; private set; } 
+		public ActivityTypeData SelectedType { get; private set; }
 
 		public void SetType(ActivityTypeData type)
 		{
@@ -71,7 +71,7 @@ namespace BD.Manager
                 SelectedWorker = activity.Worker;
                 var searcher = new ActivitiesTypesDictionarySearcher();
                 SelectedType = await searcher.GetByCode(activity.Type);
-            }			
+            }
 		}
 
 		private async void addBtn_Click(object sender, EventArgs e)
@@ -104,11 +104,12 @@ namespace BD.Manager
                         WorkerId = SelectedWorker?.Id
                     });
                 }
+                MessageBox.Show("Dodano nową aktywność");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }			
+            }
         }
 
 		private void goBackBtn_Click(object sender, EventArgs e)

@@ -59,11 +59,10 @@
             this.goBackButton = new System.Windows.Forms.Button();
             this.activityDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.editButton = new System.Windows.Forms.Button();
+            this.editRequestButton = new System.Windows.Forms.Button();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editRequestButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityDataBindingSource1)).BeginInit();
@@ -94,11 +93,12 @@
             this.activitiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.typeDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn,
-            this.workerDataGridViewTextBoxColumn,
-            this.Id});
-            this.activitiesDataGridView.DataSource = this.activityDataBindingSource1;
+            this.workerDataGridViewTextBoxColumn});
+            this.activitiesDataGridView.DataSource = this.activityDataBindingSource;
             this.activitiesDataGridView.Location = new System.Drawing.Point(6, 16);
             this.activitiesDataGridView.Name = "activitiesDataGridView";
+            this.activitiesDataGridView.ReadOnly = true;
+            this.activitiesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.activitiesDataGridView.Size = new System.Drawing.Size(197, 84);
             this.activitiesDataGridView.TabIndex = 16;
             this.activitiesDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.activitiesDataGridView_CellEnter);
@@ -364,32 +364,6 @@
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // workerDataGridViewTextBoxColumn
-            // 
-            this.workerDataGridViewTextBoxColumn.DataPropertyName = "Worker";
-            this.workerDataGridViewTextBoxColumn.HeaderText = "Worker";
-            this.workerDataGridViewTextBoxColumn.Name = "workerDataGridViewTextBoxColumn";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
             // editRequestButton
             // 
             this.editRequestButton.Location = new System.Drawing.Point(20, 540);
@@ -399,6 +373,27 @@
             this.editRequestButton.Text = "Edytuj zgłoszenie";
             this.editRequestButton.UseVisualStyleBackColor = true;
             this.editRequestButton.Click += new System.EventHandler(this.editRequestButton_Click);
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // workerDataGridViewTextBoxColumn
+            // 
+            this.workerDataGridViewTextBoxColumn.DataPropertyName = "Worker";
+            this.workerDataGridViewTextBoxColumn.HeaderText = "Worker";
+            this.workerDataGridViewTextBoxColumn.Name = "workerDataGridViewTextBoxColumn";
+            this.workerDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // HandleRequest
             // 
@@ -467,10 +462,9 @@
         private System.Windows.Forms.DataGridView activitiesDataGridView;
         private System.Windows.Forms.BindingSource activityDataBindingSource1;
 		private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button editRequestButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn workerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.Button editRequestButton;
     }
 }
