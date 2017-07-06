@@ -36,7 +36,7 @@ namespace BD.Worker
             try
             {
                 if (string.IsNullOrEmpty(statusComboBox.Text) || SelectedObject == null)
-                    activitiesDataGridView.DataSource = await searcher.GetActivities();
+                    activitiesDataGridView.DataSource = await searcher.GetActivities(statusComboBox.Text);
                 else
                     activitiesDataGridView.DataSource = await searcher.GetActivities(statusComboBox.Text, SelectedObject.Id);
             }
@@ -51,11 +51,11 @@ namespace BD.Worker
             try
             {
                 var activity = (ActivityData)activitiesDataGridView.CurrentRow.DataBoundItem;
-                this.GoToNextView(new FinishOrCancelActivity(this, FormOpenMode.FINISH, activity, SelectedObject));
+                this.GoToNextView(new FinishOrCancelActivity(this, FormOpenMode.FINISH, activity, SelectedObject != null ? SelectedObject : activity.Request.Object));
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Nie wybrano czynności.");
             }
         }
 
@@ -64,17 +64,33 @@ namespace BD.Worker
             try
             {
                 var activity = (ActivityData)activitiesDataGridView.CurrentRow.DataBoundItem;
-                this.GoToNextView(new FinishOrCancelActivity(this, FormOpenMode.CANCEL, activity, SelectedObject));
+                this.GoToNextView(new FinishOrCancelActivity(this, FormOpenMode.CANCEL, activity, SelectedObject != null ? SelectedObject : activity.Request.Object));
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Nie wybrano czynności.");
             }
         }
 
         private void openObjectListBtn_Click(object sender, EventArgs e)
         {
             this.GoToNextView(new SelectObject(this));
+        }
+
+        internal async void RefreshView()
+        {
+            var searcher = new ActivitySearcher();
+            try
+            {
+                if (string.IsNullOrEmpty(statusComboBox.Text) || SelectedObject == null)
+                    activitiesDataGridView.DataSource = await searcher.GetActivities(statusComboBox.Text);
+                else
+                    activitiesDataGridView.DataSource = await searcher.GetActivities(statusComboBox.Text, SelectedObject.Id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

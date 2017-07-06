@@ -21,8 +21,8 @@ namespace BusinessLayer.Searchers
 
         public async Task<RequestData> GetRequest(int requestId)
         {
-            var request = await db.Requests.SingleAsync(x => x.Id == requestId);
-            return new RequestData
+
+            return await db.Requests.Where(x => x.Id == requestId).Select(request => new RequestData
             {
                 Id = request.Id,
                 Descr = request.Descr,
@@ -37,7 +37,11 @@ namespace BusinessLayer.Searchers
                     ObjectTypeCode = request.Object.Type
                 },
                 WorkerId = request.WorkerId,
-                Worker = new WorkerData(request.Worker.Login.UName, request.Worker.FirstName, request.Worker.LastName, request.Worker.Role, request.Worker.Login.Expiration),
+                Worker = new WorkerData()
+                {
+                    FirstName = request.Worker.FirstName,
+                    LastName = request.Worker.LastName
+                },
 				Activities = request.Activities.Select(activity => new ActivityData()
 				{
                     Id = activity.Id,
@@ -45,17 +49,10 @@ namespace BusinessLayer.Searchers
 					Descr = activity.Descr,
 					Status = activity.Status,
 					Result = activity.Result,
-					ReqId = activity.Request.Id,
-					WorkerId = activity.Worker?.Id,
-					Worker = new WorkerData
-                        {
-                            Id = activity.Request.WorkerId.Value,
-                            FirstName = activity.Request.Worker.FirstName,
-                            LastName = activity.Request.Worker.LastName,
-                            Role = activity.Request.Worker.Role
-                        }
+					ReqId = request.Id,
+					WorkerId = activity.WorkerId
                 }).ToList()
-			};
+			}).SingleAsync();
         }
 
         public async Task<ICollection<RequestData>> GetRequests(int workerId)

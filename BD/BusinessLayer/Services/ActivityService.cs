@@ -3,6 +3,7 @@ using DataLayer;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using DataLayer.Status;
 
 namespace BusinessLayer.Services.Activity
 {
@@ -60,5 +61,13 @@ namespace BusinessLayer.Services.Activity
 			db.Activities.Remove(activity);
 			return db.SaveChangesAsync();
 		}
-	}
+
+        public async Task FinishOrCancel(int activityId, string result, bool isFinished)
+        {
+            var activityEntity = await db.Activities.SingleAsync(entity => entity.Id == activityId);
+            activityEntity.Result = result;
+            activityEntity.Status = isFinished ? Statuses.DON.ToString() : Statuses.CNL.ToString();
+            await db.SaveChangesAsync();
+        }
+    }
 }

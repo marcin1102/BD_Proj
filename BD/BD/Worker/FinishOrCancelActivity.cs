@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using BD.Helpers;
+using BD.Worker;
 using BusinessLayer;
 using BusinessLayer.DTO;
 using BusinessLayer.Searchers;
@@ -44,12 +45,13 @@ namespace BD
             activityDescrTextBox.Text = activity.Descr;
         }
 
-        public void LoadRequestDesc(ActivityData activity)
+        public async void LoadRequestDesc(ActivityData activity)
         {
             var requestSearcher = new RequestSearcher();
             try
             {
-                requestDescrTextBox.Text = requestSearcher.GetRequest(activity.ReqId).Result.Descr;
+                var request = await requestSearcher.GetRequest(activity.ReqId);
+                requestDescrTextBox.Text = request.Descr;
             }
             catch (Exception ex)
             {
@@ -77,26 +79,46 @@ namespace BD
 
         private void goBackButton_Click(object sender, EventArgs e)
         {
-            this.GoToPreviousView(previousControl);
+            try
+            {
+                var workerPanel = previousControl as WorkerPanel;
+                this.GoToPreviousView(workerPanel);
+                workerPanel.RefreshView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private async void ChangeActivityStatus()
         {
-            var service = new ActivityService();
-            if (MODE == FormOpenMode.CANCEL)
+            try
             {
-                await service.UpdateDetails(new ActivityData()
+                var service = new ActivityService();
+                if (MODE == FormOpenMode.CANCEL)
                 {
-                    Status = Statuses.CNL.ToString()
-                });
+                    await service.FinishOrCancel(ACTIVITY.Id, activityResultTextBox.Text, false);
+                }
+                else if (MODE == FormOpenMode.FINISH)
+                {
+                    await service.FinishOrCancel(ACTIVITY.Id, activityResultTextBox.Text, true);
+                }
+
+                RefreshView();
             }
-            else if (MODE == FormOpenMode.FINISH)
+            catch (Exception ex)
             {
-                await service.UpdateDetails(new ActivityData()
-                {
-                    Status = Statuses.DON.ToString()
-                });
+                MessageBox.Show(ex.Message);
             }
+        }
+
+        private async void RefreshView()
+        {
+            var searcher = new ActivitySearcher();
+            ACTIVITY = await searcher.GetActivity(ACTIVITY.Id);
+            LoadActivityDataToLabels(ACTIVITY);
         }
 
         private void confirmBtn_Click(object sender, EventArgs e)
