@@ -1,7 +1,6 @@
 ﻿using BusinessLayer.DTO;
-using DataLayer.Role;
 
-namespace BD
+namespace BusinessLayer
 {
     public static class LoggedUser
     {

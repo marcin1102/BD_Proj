@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DTO\ActivityData.cs" />
     <Compile Include="DTO\ActivityTypeData.cs" />
+    <Compile Include="LoggedUser.cs" />
     <Compile Include="Searchers\ActivitySearcher.cs" />
     <Compile Include="Services\ActivitiesTypesService.cs" />
     <Compile Include="Services\ActivityService.cs" />

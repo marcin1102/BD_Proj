@@ -80,7 +80,6 @@
     </Compile>
     <Compile Include="enums\FormOpenMode.cs" />
     <Compile Include="Helpers\WindowExtensions.cs" />
-    <Compile Include="LoggedUser.cs" />
     <Compile Include="Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

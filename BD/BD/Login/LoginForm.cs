@@ -6,6 +6,7 @@ using BusinessLayer.Services;
 using DataLayer.Role;
 using System;
 using System.Windows.Forms;
+using BusinessLayer;
 
 namespace BD
 {
@@ -48,7 +49,7 @@ namespace BD
         {
             if(role == Roles.Worker.ToString())
             {
-                this.OpenNextWindow(new MainWindow(new WorkerPanel()));                
+                this.OpenNextWindow(new MainWindow(new WorkerPanel()));
             }
             else
             {

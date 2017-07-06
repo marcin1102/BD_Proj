@@ -14,7 +14,7 @@ namespace BusinessLayer.Searchers
 		public async Task<IReadOnlyCollection<ActivityData>> GetActivities()
 		{
 			var context = new RepairContext();
-			return context.Activities.Select(activity => new ActivityData
+			return context.Activities.Where(x => x.Worker.Login.UName == LoggedUser.Worker.UName).Select(activity => new ActivityData
 			{
 				Type = activity.Type,
 				Descr = activity.Descr,
@@ -35,23 +35,16 @@ namespace BusinessLayer.Searchers
                             ClientId = activity.Request.Object.ClientId,
                             Name = activity.Request.Object.Name,
                             ObjectTypeCode = activity.Request.Object.Type
-                        },
-                        Worker = new WorkerData
-                        {
-                            Id = activity.Request.WorkerId.Value,
-                            FirstName = activity.Request.Worker.FirstName,
-                            LastName = activity.Request.Worker.LastName,
-                            Role = activity.Request.Worker.Role
                         }
                     },
-				WorkerId = activity.Worker.Id,
-				Worker = new WorkerData
+				WorkerId = activity.WorkerId,
+				Worker = activity.Worker != null ? new WorkerData
                     {
                         Id = activity.WorkerId.Value,
                         FirstName = activity.Worker.FirstName,
                         LastName = activity.Worker.LastName,
                         Role = activity.Worker.Role
-                    }
+                    } : null
             }).ToList();
 		}
 
@@ -81,23 +74,16 @@ namespace BusinessLayer.Searchers
                                     ClientId = activity.Request.Object.ClientId,
                                     Name = activity.Request.Object.Name,
                                     ObjectTypeCode = activity.Request.Object.Type
-                                },
-                                Worker = new WorkerData
-                                {
-                                    Id = activity.Request.WorkerId.Value,
-                                    FirstName = activity.Request.Worker.FirstName,
-                                    LastName = activity.Request.Worker.LastName,
-                                    Role = activity.Request.Worker.Role
                                 }
                             },
 						WorkerId = activity.Worker.Id,
-						Worker = new WorkerData
+                        Worker = activity.Worker != null ? new WorkerData
                         {
                             Id = activity.WorkerId.Value,
                             FirstName = activity.Worker.FirstName,
                             LastName = activity.Worker.LastName,
                             Role = activity.Worker.Role
-                        }
+                        } : null
                     }).ToList();
 		}
 

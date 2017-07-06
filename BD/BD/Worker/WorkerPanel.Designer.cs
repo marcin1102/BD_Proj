@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.activitiesDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -39,13 +40,26 @@
             this.searchBtn = new System.Windows.Forms.Button();
             this.finishRequestButton = new System.Windows.Forms.Button();
             this.cancelRequestButton = new System.Windows.Forms.Button();
+            this.activityDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.requestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.activityDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // activitiesDataGridView
             // 
+            this.activitiesDataGridView.AutoGenerateColumns = false;
             this.activitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.activitiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.requestDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.descrDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
+            this.activitiesDataGridView.DataSource = this.activityDataBindingSource;
             this.activitiesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.activitiesDataGridView.Location = new System.Drawing.Point(3, 16);
             this.activitiesDataGridView.MultiSelect = false;
@@ -147,6 +161,38 @@
             this.cancelRequestButton.UseVisualStyleBackColor = true;
             this.cancelRequestButton.Click += new System.EventHandler(this.cancelRequestButton_Click);
             // 
+            // activityDataBindingSource
+            // 
+            this.activityDataBindingSource.DataSource = typeof(BusinessLayer.DTO.ActivityData);
+            // 
+            // requestDataGridViewTextBoxColumn
+            // 
+            this.requestDataGridViewTextBoxColumn.DataPropertyName = "Request";
+            this.requestDataGridViewTextBoxColumn.HeaderText = "Object";
+            this.requestDataGridViewTextBoxColumn.Name = "requestDataGridViewTextBoxColumn";
+            this.requestDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descrDataGridViewTextBoxColumn
+            // 
+            this.descrDataGridViewTextBoxColumn.DataPropertyName = "Descr";
+            this.descrDataGridViewTextBoxColumn.HeaderText = "Descr";
+            this.descrDataGridViewTextBoxColumn.Name = "descrDataGridViewTextBoxColumn";
+            this.descrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // WorkerPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +213,7 @@
             this.Load += new System.EventHandler(this.WorkerPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.activityDataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +231,10 @@
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Button finishRequestButton;
         private System.Windows.Forms.Button cancelRequestButton;
+        private System.Windows.Forms.BindingSource activityDataBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn requestDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using BusinessLayer;
 
 namespace BD.Manager
 {
@@ -80,7 +81,7 @@ namespace BD.Manager
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
 
         private async void searchButton_Click(object sender, EventArgs e)

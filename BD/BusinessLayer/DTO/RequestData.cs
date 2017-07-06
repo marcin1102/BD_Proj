@@ -20,5 +20,10 @@ namespace BusinessLayer.DTO
         public WorkerData Worker { get; set; }
 
 		public ICollection<ActivityData> Activities { get; set; }
-	}
+
+        public override string ToString()
+        {
+            return Object.Name;
+        }
+    }
 }
